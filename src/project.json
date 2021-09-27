@@ -1,0 +1,36 @@
+﻿{
+    "project" : [
+        {
+            "name": "watcha pedia",
+            "skill": "html, css, js",
+            "roll": "왓챠",
+            "git": "https://github.com/LM-channel-team-project/Watcha/tree/movie-page",
+            "deploy": "",
+            "gif": "../assets/test.gif"
+        },
+        {
+            "name": "mbti",
+            "skill": "react, postCss, netlify",
+            "roll": "mbti",
+            "git": "https://github.com/Park1016/MBTI",
+            "deploy": "https://60c01341276c9d10a699a48c--hj-mbti.netlify.app/",
+            "gif": "../assets/test.gif"
+        },
+        {
+            "name": "naver movie",
+            "skill": "react, postCss, netlify",
+            "roll": "네이버",
+            "git": "https://github.com/Park1016/Search-Naver-Movie",
+            "deploy": "https://search-naver-movie.netlify.app/",
+            "gif": "../assets/test.gif"
+        },
+        {
+            "name": "travel here",
+            "skill": "react, styled component, redux, redux thunk, firebase, netlify",
+            "roll": "트래블",
+            "git": "https://github.com/LM-TeamProject/travel-here",
+            "deploy": "https://travelhere.netlify.app/",
+            "gif": "../assets/test.gif"
+        }
+    ]
+}
