@@ -1,0 +1,60 @@
+﻿.images {
+  list-style: none;
+}
+
+.images li {
+  width: 64px;
+  height: 64px;
+  /* background: url(../assets/sprites.png) no-repeat;
+  display: inline-block; */
+}
+
+#html {
+  /* background-position: 0 -200px; */
+  background: url(../assets/html.png);
+}
+
+#css {
+  /* background-position: -64px 0; */
+  background: url(../assets/css.png);
+}
+
+#js {
+  /* background-position: -128px 0; */
+  background: url(../assets/js.png);
+}
+
+#react {
+  /* background-position: 0 0; */
+  background: url(../assets/react.png);
+}
+
+#redux {
+  /* background-position: 0 0; */
+  background: url(../assets/redux.png);
+}
+
+#next {
+  /* background-position: 0 0; */
+  background: url(../assets/next.png);
+}
+
+#firebase {
+  /* background-position: 0 0; */
+  background: url(../assets/firebase.png);
+}
+
+#git {
+  /* background-position: 0 0; */
+  background: url(../assets/git.png);
+}
+
+#github {
+  /* background-position: 0 0; */
+  background: url(../assets/github.png);
+}
+
+#vercel {
+  /* background-position: 0 0; */
+  background: url(../assets/vercel.png);
+}
