@@ -1,5 +1,6 @@
 ﻿import Nav from './Nav'
 import Head from 'next/head'
+import P from '../styles/layout.module.css';
 
 const Layout = ({ children }) => {
     return (
@@ -10,9 +11,9 @@ const Layout = ({ children }) => {
                 <meta contents="portfolio" />
             </Head>
             <Nav />
-            <div>
+            <section className={P.section}>
                 {children}
-            </div>
+            </section>
         </>
     )
 }

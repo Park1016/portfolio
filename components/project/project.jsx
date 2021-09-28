@@ -49,7 +49,7 @@ const Project = ({item}) => {
                 </S.gifLi>
                 {/* <li className={P.gif}></li> */}
             </ul>
-            {qs && <Detail item={item}/>}
+            {qs && <Detail item={item} setQs={setQs}/>}
         </>
     )
 }

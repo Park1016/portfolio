@@ -2,10 +2,10 @@
 import * as S from '../../styles/detail.Style';
 import Router from 'next/router';
 
-const Detail = ({item}) => {
+const Detail = ({item, setQs}) => {
 
     const onBack = () => {
-        Router.push(`/project`);
+        setQs(false);
     }
 
     return (

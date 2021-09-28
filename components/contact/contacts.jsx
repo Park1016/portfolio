@@ -1,5 +1,6 @@
 ﻿import React, { useEffect, useRef } from 'react';
 import emailjs from 'emailjs-com';
+import * as S from '../../styles/contact.Style';
 
 
 const Contacts = (props) => {
@@ -32,6 +33,11 @@ const Contacts = (props) => {
         }
         emailjs.sendForm('service_h7k97e2', 'template_pc5ne6r', form.current, 'user_hAmOTdBCsaXezAKKeLx5a')
         .then((result) => {
+            alert('메일이 전송되었습니다.');
+            name.current.value = '';
+            email.current.value = '';
+            phone.current.value = '';
+            content.current.value = '';
             console.log(result.text);
         }, (error) => {
             console.log(error.text);
@@ -40,17 +46,21 @@ const Contacts = (props) => {
 
 
     return (
-        <form ref={form} onSubmit={sendEmail}>
-            <label>Name</label>
-            <input ref={name} type="text" name="name" />
-            <label>Email</label>
-            <input ref={email} type="email" name="email" />
-            <label>Phone</label>
-            <input ref={phone} type="text" name="phone" />
-            <label>Message</label>
-            <textarea ref={content} name="content" />
-            <input type="submit" value="Send" />
-        </form>
+        <S.section>
+            <a href="mailto:guohjp@gmail.com">guohjp@gmail.com</a>
+            <a href="https://github.com/Park1016" target="_blank">https://github.com/Park1016</a>
+            <form ref={form} onSubmit={sendEmail}>
+                <label>Name</label>
+                <input ref={name} type="text" name="name" />
+                <label>Email</label>
+                <input ref={email} type="email" name="email" />
+                <label>Phone</label>
+                <input ref={phone} type="text" name="phone" />
+                <label>Message</label>
+                <textarea ref={content} name="content" />
+                <input type="submit" value="Send" />
+            </form>
+        </S.section>
     );
 };
 
