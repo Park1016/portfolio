@@ -1,0 +1,18 @@
+﻿.container {
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container div {
+  width: 30rem;
+  height: 20rem;
+  /* background: #fff; */
+  /* background: url("../assets/test.gif"); */
+}

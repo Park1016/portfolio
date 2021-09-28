@@ -1,7 +1,7 @@
 ﻿{
     "project" : [
         {
-            "name": "watcha pedia",
+            "name": "watchaPedia",
             "skill": "html, css, js",
             "roll": "왓챠",
             "git": "https://github.com/LM-channel-team-project/Watcha/tree/movie-page",
@@ -17,7 +17,7 @@
             "gif": "../assets/test.gif"
         },
         {
-            "name": "naver movie",
+            "name": "naverMovie",
             "skill": "react, postCss, netlify",
             "roll": "네이버",
             "git": "https://github.com/Park1016/Search-Naver-Movie",
@@ -25,7 +25,7 @@
             "gif": "../assets/test.gif"
         },
         {
-            "name": "travel here",
+            "name": "travelHere",
             "skill": "react, styled component, redux, redux thunk, firebase, netlify",
             "roll": "트래블",
             "git": "https://github.com/LM-TeamProject/travel-here",
