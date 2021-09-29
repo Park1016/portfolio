@@ -1,6 +1,6 @@
 import Router from 'next/router';
 import React from 'react';
-import About from '../components/aboutMe/about';
+import About from '../components/aboutMe/aboutMe';
 import Contacts from '../components/contact/contacts';
 import Projects from '../components/project/projects';
 import Skills from '../components/skill/skills';
