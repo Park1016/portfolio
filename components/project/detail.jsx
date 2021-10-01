@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import * as S from '../../styles/detail.Style';
+import ReactPlayer from 'react-player';
 import Router from 'next/router';
 
 const Detail = ({item, setQs}) => {
@@ -11,7 +12,16 @@ const Detail = ({item, setQs}) => {
     return (
         <S.section>
             <S.container>
-                <S.gif></S.gif>
+                <ReactPlayer
+                    // url={require('../../public/test2.mp4')}
+                    url={item.video}
+                    playing={true} 
+                    loop={true} 
+                    muted={true}
+                    controls={true}
+                    width="500px"
+                    height="400px"
+                />
                 <li>{item.name}</li>
                 <li>{item.skill}</li>
                 <li>{item.roll}</li>

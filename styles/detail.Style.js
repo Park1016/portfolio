@@ -24,11 +24,12 @@ const section = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 `;
 
 const container = styled.ul`
-    width: 30rem;
-    height: 20rem;
+    width: 50rem;
+    height: 90vh;
     background: #fff;
 `;
 

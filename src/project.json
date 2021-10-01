@@ -6,7 +6,8 @@
             "roll": "왓챠",
             "git": "https://github.com/LM-channel-team-project/Watcha/tree/movie-page",
             "deploy": "",
-            "gif": "../assets/test.gif"
+            "gif": "../assets/test.gif",
+            "video": "/_next/static/videos/test2-6672626a22b72866b85a1b322b242a3b.mp4"
         },
         {
             "name": "mbti",
@@ -14,7 +15,8 @@
             "roll": "mbti",
             "git": "https://github.com/Park1016/MBTI",
             "deploy": "https://60c01341276c9d10a699a48c--hj-mbti.netlify.app/",
-            "gif": "../assets/test.gif"
+            "gif": "../assets/test.gif",
+            "video": "/_next/static/videos/test2-6672626a22b72866b85a1b322b242a3b.mp4"
         },
         {
             "name": "naverMovie",
@@ -22,7 +24,8 @@
             "roll": "네이버",
             "git": "https://github.com/Park1016/Search-Naver-Movie",
             "deploy": "https://search-naver-movie.netlify.app/",
-            "gif": "../assets/test.gif"
+            "gif": "../assets/test.gif",
+            "video": "/_next/static/videos/test2-6672626a22b72866b85a1b322b242a3b.mp4"
         },
         {
             "name": "travelHere",
@@ -30,7 +33,8 @@
             "roll": "트래블",
             "git": "https://github.com/LM-TeamProject/travel-here",
             "deploy": "https://travelhere.netlify.app/",
-            "gif": "../assets/test.gif"
+            "gif": "../assets/test.gif",
+            "video": "/_next/static/videos/test2-6672626a22b72866b85a1b322b242a3b.mp4"
         }
     ]
 }
