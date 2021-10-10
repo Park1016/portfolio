@@ -30,11 +30,6 @@ const Nav = (props) => {
                         <a>contact</a>
                     </Link>
                 </li>
-                <li>
-                    <Link href="/SimpleSlider">
-                        <a>SimpleSlider</a>
-                    </Link>
-                </li>
             </ul>
         </nav>
     )

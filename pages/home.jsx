@@ -5,22 +5,26 @@ import Skills from '../components/skill/skills';
 import Projects from '../components/project/projects';
 import Contacts from '../components/contact/contacts';
 
-export default class SimpleSlider extends Component {
+export default class Home extends Component {
     constructor(props){
         super(props);
         this.slide = this.slide.bind(this);
     }
     slide(y){
-        y > 0 ? (
-            this.slider.slickPrev()
-        ) : (
-            this.slider.slickNext()
-        )
+        if(this.slider){
+            y > 0 ? (
+                this.slider.slickPrev()
+            ) : (
+                this.slider.slickNext()
+            )
+        }
     }
     componentWillMount(){
-        window.addEventListener('wheel', (e) => {
-            this.slide(e.wheelDelta);
-        })
+        if (typeof window !== "undefined") {
+            window.addEventListener('wheel', (e) => {
+                this.slide(e.wheelDelta);
+            })
+        }
     }
     render() {
         const settings = {
@@ -30,7 +34,7 @@ export default class SimpleSlider extends Component {
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
-            vertical : false,
+            vertical : true,
         };
 
         return (
@@ -48,24 +52,6 @@ export default class SimpleSlider extends Component {
                     <div>
                         <Contacts />
                     </div>
-                    {/* <div>
-                        <h3>1</h3>
-                    </div>
-                    <div>
-                        <h3>2</h3>
-                    </div>
-                    <div>
-                        <h3>3</h3>
-                    </div>
-                    <div>
-                        <h3>4</h3>
-                    </div>
-                    <div>
-                        <h3>5</h3>
-                    </div>
-                    <div>
-                        <h3>6</h3>
-                    </div> */}
                 </Slider>
             </div>
         );
