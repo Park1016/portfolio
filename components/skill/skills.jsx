@@ -14,7 +14,7 @@ const Skills = (props) => {
             <li id={S.git}></li>
             <li id={S.github}></li>
             <li id={S.vercel}></li>
-            <li>깃 실험</li>
+            <li>깃 실험!</li>
         </ul>
     )
 }
