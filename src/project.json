@@ -6,17 +6,19 @@
             "roll": "왓챠",
             "git": "https://github.com/LM-channel-team-project/Watcha/tree/movie-page",
             "deploy": "",
-            "gif": "../assets/test.gif",
-            "video": "/_next/static/videos/test2-6672626a22b72866b85a1b322b242a3b.mp4"
+            "time": "",
+            "timeStamp": "",
+            "video": "/_next/static/videos/movie(자막)-a16ec1377484051ece12df0942a8ab19.mp4"
         },
         {
             "name": "mbti",
             "skill": "react, postCss, netlify",
             "roll": "mbti",
             "git": "https://github.com/Park1016/MBTI",
-            "deploy": "https://60c01341276c9d10a699a48c--hj-mbti.netlify.app/",
-            "gif": "../assets/test.gif",
-            "video": "/_next/static/videos/test2-6672626a22b72866b85a1b322b242a3b.mp4"
+            "deploy": "https://hj-mbti.netlify.app",
+            "time": "",
+            "timeStamp": "",
+            "video": "/_next/static/videos/mbti(자막)-b4d5eb29aef4f3ab0d604be87a0875be.mp4"
         },
         {
             "name": "naverMovie",
@@ -24,8 +26,9 @@
             "roll": "네이버",
             "git": "https://github.com/Park1016/Search-Naver-Movie",
             "deploy": "https://search-naver-movie.netlify.app/",
-            "gif": "../assets/test.gif",
-            "video": "/_next/static/videos/test2-6672626a22b72866b85a1b322b242a3b.mp4"
+            "time": "",
+            "timeStamp": "",
+            "video": "/_next/static/videos/movie(자막)-a16ec1377484051ece12df0942a8ab19.mp4"
         },
         {
             "name": "travelHere",
@@ -33,8 +36,9 @@
             "roll": "트래블",
             "git": "https://github.com/LM-TeamProject/travel-here",
             "deploy": "https://travelhere.netlify.app/",
-            "gif": "../assets/test.gif",
-            "video": "/_next/static/videos/test2-6672626a22b72866b85a1b322b242a3b.mp4"
+            "time": "0:00\n\n2:20\n\n3:13\n\n3:34\n3:45\n4:06\n\n4:53\n5:07\n5:34\n6:54\n7:17\n7:37\n\n7:43\n7:52\n\n8:04",
+            "timeStamp": "로그인/회원가입\n\n게시글 쓰기\n\n카테고리-게시글\n\n좋아요, 북마크\n본인일 경우에만 수정/삭제 가능\n게시글,댓글 수정/삭제\n\n마이페이지\n마이페이지에서 게시글 이동\n닉네임, 사진 수정\n비밀번호 변경 유무\n비밀번호 변경\n탈퇴\n\n404오류\n비회원\n\n반응형",
+            "video": "/_next/static/videos/travel(자막)-5a3f1a8117e88a7bebd7937629753539.mp4"
         }
     ]
 }

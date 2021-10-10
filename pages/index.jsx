@@ -1,22 +1,42 @@
-import Router from 'next/router';
 import React from 'react';
-import About from '../components/aboutMe/aboutMe';
-import Contacts from '../components/contact/contacts';
-import Projects from '../components/project/projects';
-import Skills from '../components/skill/skills';
+import Home from '../components/home/home';
+import * as S from '../styles/home.style';
+import Slider from "react-slick";
 
-const Home = (props) => {
+const Index = (props) => {
+
+    const settings = {
+        // 아래 dots 줄 것인가
+        dots: false,
+        // 좌우 화살표 줄 것인가
+        arrows: false,
+        // 마지막 슬라이드에서 처음 슬라이스로
+        infinite: false,
+        speed: 2000,
+        // 한 번에 스크롤 몇 개 보여줄 건가(대개 1을 사용함)
+        slidesToShow: 1,
+        // 스크롤 할 때마다 몇 장씩 넘길 것인가
+        slidesToScroll: 1,
+        // 자동 넘김을 할 것인가. 한다면 스피드는?
+        autoplay: false,
+        // 화면에 올리면 슬라이더가 자동으로 넘어가지 않음
+        pauseOnHover: true,
+        // 슬라이더를 넘기지 않고 fade in/out 하는 식으로 트랜지션 됨
+        fade: false,
+        // 레이지 로딩할 거야?
+        lazyLoad: true,
+        vertical : true,
+    };
+
+
     return (
-        <>
-            <About />
-            <Skills />
-            <Projects />
-            <Contacts />
-        </>
+        // <S.Slider {...settings}>
+            <Home />
+        // </S.Slider>
     )
 }
 
-export default Home;
+export default Index;
 
 // 서버사이드
 // 서버에서 데이터가 바꼈을 때 바로바로 즉각적으로 빈번하게 변화

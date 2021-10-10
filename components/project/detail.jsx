@@ -10,30 +10,40 @@ const Detail = ({item, setQs}) => {
     }
 
     return (
-        <S.section>
+        <S.box>
             <S.container>
-                <ReactPlayer
-                    // url={require('../../public/test2.mp4')}
-                    url={item.video}
-                    playing={true} 
-                    loop={true} 
-                    muted={true}
-                    controls={true}
-                    width="500px"
-                    height="400px"
-                />
-                <li>{item.name}</li>
-                <li>{item.skill}</li>
-                <li>{item.roll}</li>
-                <li>
-                    <a href={item.git} target="_blank">깃허브</a>
-                </li>
-                <li>
-                    <a href={item.deploy} target="_blank">배포주소</a>
-                </li>
-                <li><button type="button" onClick={onBack}>뒤로가기</button></li>
+                <S.content>
+                    <ReactPlayer
+                        url={item.video}
+                        playing={true} 
+                        loop={false} 
+                        muted={true}
+                        controls={true}
+                        width="1152px"
+                        height="648px"
+                    />
+                    <S.timeStamp>
+                        <span>{item.time}</span>
+                        <span>{item.timeStamp}</span>
+                    </S.timeStamp>
+                </S.content>
+                <S.content>
+                    <div>{item.name}</div>
+                    <div>{item.skill}</div>
+                    <div>{item.roll}</div>
+                    <div>
+                        <a href={item.git} target="_blank">깃허브</a>
+                    </div>
+                    <div>
+                        <a href={item.deploy} target="_blank">웹사이트</a>
+                    </div>
+                </S.content>
+                <S.content>
+                    <iframe src={item.deploy} width="1152px" height="648px"/>
+                    <button type="button" onClick={onBack}>뒤로가기</button>
+                </S.content>
             </S.container>
-        </S.section>
+        </S.box>
     )
 }
 

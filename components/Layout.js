@@ -11,9 +11,9 @@ const Layout = ({ children }) => {
                 <meta contents="portfolio" />
             </Head>
             <Nav />
-            <section className={P.section}>
+            <article className={P.article}>
                 {children}
-            </section>
+            </article>
         </>
     )
 }

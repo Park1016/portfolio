@@ -1,5 +1,6 @@
 ﻿import React, { useState } from 'react';
 import aboutMe from '../../src/aboutMe.json';
+import * as S from '../../styles/aboutMe.style';
 import QandA from './QandA';
 import { v4 as uuid } from "uuid";
 
@@ -39,7 +40,7 @@ const AboutMe = (props) => {
     }
 
     return (
-        <>
+        <S.section>
             <ul>
                 {/* {aboutMe.QandA.map((item)=>(
                     <QandA key={uuid()} item={item}/>
@@ -61,7 +62,7 @@ const AboutMe = (props) => {
                     {a4 && <div>{aboutMe.QandA[3].a}</div>}
                 </li>
             </ul>
-        </>
+        </S.section>
     )
 }
 

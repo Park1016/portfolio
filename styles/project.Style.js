@@ -1,24 +1,40 @@
 ﻿import styled, {css} from 'styled-components';
 
-const gifLi = styled.li`
-    ${props => {
-        if(props.show){
-            return css`
-                display: block;
-            `
-        } else {
-            return css`
-                display: none;
-            `
+const section = styled.section`
+    width: 100vw;
+    height: calc(100vh - 4rem);
+    background: lightcoral;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* scroll-snap-align: center; */
+    div {
+        /* background: blue; */
+        width: 80%;
+        max-height: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        overflow-y: auto;
+        ::-webkit-scrollbar { 
+            display: none;
         }
-    }}
+        @media screen and (max-width: 1040px) {
+            width: 100%;
+        }
+    }
 `;
 
-const gif = styled.div`
-    width: 30rem;
-    height: 25rem;
-    /* background: url(${props=>props.gif}) no-repeat;   */
-    background: url("/_next/static/media/test.541905ee183d0aad01846372526918b8.gif") no-repeat;
+const ul = styled.ul`
+    width: 24.75rem;
+    height: 13rem;
+    background: black;
+    margin: 0.5rem;
 `;
 
 const detail = styled.div`
@@ -59,9 +75,14 @@ const content = styled.div`
     }}
 `;
 
+const None = styled.div`
+    display: none;
+`;
+
 export {
+    section,
+    ul,
     detail,
     content,
-    gifLi,
-    gif,
+    None,
 };

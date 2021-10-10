@@ -4,6 +4,12 @@ import * as S from '../../styles/project.Style';
 import P from '../../styles/projects.module.css';
 import Router from 'next/router';
 import Detail from './detail';
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+library.add(faGithub);
 
 const Project = ({item}) => {
 
@@ -12,47 +18,53 @@ const Project = ({item}) => {
     let [show, setShow] = useState(false);
     let [qs, setQs] = useState(false); 
 
-    const onShowGif = () => {
+    const onShow = () => {
         setShow(true);
     }
 
-    const onHiddenGif = () => {
+    const onHidden = () => {
         setShow(false);
     }
 
     const onDetail = () => {
         setQs(true);
-        // Router.push(`/project?${item.name}`);
     }
 
 
     return (
-        <section onMouseEnter={onShowGif} onMouseLeave={onHiddenGif}>
-            <ul>
+        <>
+            <S.ul onMouseEnter={onShow} onMouseLeave={onHidden} show={show}>
                 <li>
                     <ReactPlayer
                         ref={video}
-                        url={require('../../public/test2.mp4')}
+                        url={item.video}
+                        // url={require('../../public/travel(자막).mp4')}
                         playing={show ? (qs ? false : true) : false} 
                         loop={true} 
                         muted={true}
-                        width="500px"
-                        height="400px"
+                        width="24.75rem"
+                        height="13rem"
                     />
                 </li>
-                <li>{item.name}</li>
-                <li>{item.skill}</li>
-                <li>{item.roll}</li>
-                <li>
-                    <a href={item.git} target="_blank">깃허브</a>
-                </li>
-                <li>
-                    <a href={item.deploy} target="_blank">배포주소</a>
-                </li>
+                {show && <li>{item.name}</li>}
+                {show && <li>{item.skill}</li>}
+                {show && <li>{item.roll}</li>}
+                {show && <li>
+                    <a href={item.git} target="_blank">
+                        <FontAwesomeIcon icon={["fab", "github"]} />
+                        깃허브
+                    </a>
+                </li>}
+                {show && <li>
+                    <a href={item.deploy} target="_blank">
+                        <FontAwesomeIcon icon={faGlobe} />
+                        웹사이트
+                    </a>
+                </li>}
                 {show && <button type="button" onClick={onDetail}>상세보기</button>}
-            </ul>
+            </S.ul>
             {qs && <Detail item={item} setQs={setQs}/>}
-        </section>
+        </>
     )
 }
 

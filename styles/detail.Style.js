@@ -1,20 +1,6 @@
 ﻿import styled, {css} from 'styled-components';
 
-// const gifLi = styled.li`
-//     ${props => {
-//         if(props.show){
-//             return css`
-//                 display: block;
-//             `
-//         } else {
-//             return css`
-//                 display: none;
-//             `
-//         }
-//     }}
-// `;
-
-const section = styled.section`
+const box = styled.div`
     width: 100%;
     height: 100%;
     background: rgb(0, 0, 0, 0.5);
@@ -28,20 +14,39 @@ const section = styled.section`
 `;
 
 const container = styled.ul`
-    width: 50rem;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
     background: #fff;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    li:nth-child(1){
+        display: flex;
+        flex-direction: row;
+    }
 `;
 
-const gif = styled.li`
-    width: 10rem;
-    height: 5rem;
-    /* background: url(${props=>props.gif}) no-repeat;   */
-    background: url('/_next/static/media/test.541905ee183d0aad01846372526918b8.gif') no-repeat;
+const content = styled.li`
+    height: 100vh;
+    scroll-snap-align: center;
+`
+
+const timeStamp = styled.div`
+    display: flex;
+    flex-direction: row;
+    span {
+        white-space: pre-wrap;
+    }
+    span:nth-child(1){
+        color: blue;
+        margin-right: 0.5rem;
+    }
 `;
 
 export {
-    section,
+    box,
     container,
-    gif,
+    content,
+    timeStamp,
 };
