@@ -26,6 +26,7 @@ export default class Home extends Component {
             })
         }
     }
+    
     render() {
         const settings = {
             dots: false,
@@ -54,6 +55,6 @@ export default class Home extends Component {
                     </div>
                 </Slider>
             </div>
-        );
+        );``
     }
 }

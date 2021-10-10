@@ -10,23 +10,24 @@ const section = styled.section`
     justify-content: center;
     align-items: center;
     /* scroll-snap-align: center; */
-    div {
-        /* background: blue; */
-        width: 80%;
-        max-height: 90%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        overflow-y: auto;
-        ::-webkit-scrollbar { 
-            display: none;
-        }
-        @media screen and (max-width: 1040px) {
-            width: 100%;
-        }
+`;
+
+const div = styled.div`
+    /* background: blue; */
+    width: 80%;
+    max-height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    overflow-y: auto;
+    ::-webkit-scrollbar { 
+        display: none;
+    }
+    @media screen and (max-width: 1040px) {
+        width: 100%;
     }
 `;
 
@@ -81,6 +82,7 @@ const None = styled.div`
 
 export {
     section,
+    div,
     ul,
     detail,
     content,

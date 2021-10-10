@@ -1,5 +1,6 @@
 ﻿import React, { useState, useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player';
+import Link from 'next/link';
 import * as S from '../../styles/project.Style';
 import P from '../../styles/projects.module.css';
 import Router from 'next/router';
@@ -28,12 +29,16 @@ const Project = ({item}) => {
 
     const onDetail = () => {
         setQs(true);
+        Router.push({
+            pathname: `/project/${item.name}`,
+            query: { item: JSON.stringify(item) },
+        });
     }
 
 
     return (
         <>
-            <S.ul onMouseEnter={onShow} onMouseLeave={onHidden} show={show}>
+            <S.ul onMouseEnter={onShow} onMouseLeave={onHidden} show={show} onClick={onDetail}>
                 <li>
                     <ReactPlayer
                         ref={video}
@@ -61,9 +66,9 @@ const Project = ({item}) => {
                         웹사이트
                     </a>
                 </li>}
-                {show && <button type="button" onClick={onDetail}>상세보기</button>}
+                {show &&
+                <button type="button" onClick={onDetail}>상세보기</button>}
             </S.ul>
-            {qs && <Detail item={item} setQs={setQs}/>}
         </>
     )
 }

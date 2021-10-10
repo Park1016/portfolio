@@ -1,8 +1,8 @@
 ﻿import styled, {css} from 'styled-components';
 
 const box = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgb(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
@@ -16,23 +16,32 @@ const box = styled.div`
 const container = styled.ul`
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
+    /* overflow-y: auto; */
     background: #fff;
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    /* scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; */
     li:nth-child(1){
-        display: flex;
-        flex-direction: row;
+        span {
+            display: flex;
+            flex-direction: row;
+        }
     }
 `;
 
-const content = styled.li`
+const topContent = styled.li`
+    display: flex;
+    flex-direction: row;
     height: 100vh;
-    scroll-snap-align: center;
+`;
+
+const content = styled.li`
+    display: flex;
+    height: 100vh;
+    /* scroll-snap-align: center; */
 `
 
-const timeStamp = styled.div`
+const timeStamp = styled.span`
     display: flex;
     flex-direction: row;
     span {
@@ -47,6 +56,7 @@ const timeStamp = styled.div`
 export {
     box,
     container,
+    topContent,
     content,
     timeStamp,
 };

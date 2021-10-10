@@ -11,11 +11,11 @@ const Projects = (props) => {
     return (
         <>
             <S.section>
-                <div>
+                <S.div>
                     {project.project.map((item)=>(
                         <Project key={uuid()} item={item} />
                     ))}
-                </div>
+                </S.div>
             </S.section>
             <S.None>
                 <ReactPlayer
