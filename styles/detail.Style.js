@@ -2,7 +2,8 @@
 
 const box = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 4rem);
+    transform: translateY(4rem);
     background: rgb(0, 0, 0, 0.5);
     position: absolute;
     top: 0;
@@ -12,11 +13,12 @@ const box = styled.div`
     align-items: center;
     justify-content: center;
     z-index: 10;
+    background: lightblue;
 `;
 
 const container = styled.ul`
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 4rem);
     overflow: hidden;
     /* overflow-y: auto; */
     background: #fff;
@@ -41,13 +43,12 @@ const container = styled.ul`
 const topContent = styled.li`
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: calc(100vh - 4rem);
 `;
 
 const content = styled.li`
     display: flex;
-    height: 100vh;
-    /* scroll-snap-align: center; */
+    height: calc(100vh - 4rem);
 `
 
 const timeStamp = styled.span`

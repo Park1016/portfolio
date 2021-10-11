@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
-import '../styles/home.css';
+import '../styles/slide.css';
 
 
 function MyApp({ Component, pageProps }) {

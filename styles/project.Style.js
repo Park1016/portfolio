@@ -36,6 +36,9 @@ const ul = styled.ul`
     height: 13rem;
     background: black;
     margin: 0.5rem;
+    :hover {
+        cursor: pointer;
+    }
 `;
 
 const detail = styled.div`

@@ -4,6 +4,7 @@ import AboutMe from '../components/aboutMe/aboutMe';
 import Skills from '../components/skill/skills';
 import Projects from '../components/project/projects';
 import Contacts from '../components/contact/contacts';
+import { faDove } from '@fortawesome/free-solid-svg-icons';
 
 export default class Home extends Component {
     constructor(props){
@@ -28,6 +29,9 @@ export default class Home extends Component {
     }
 
     render() {
+
+        const text = ['aboutMe', 'skill', 'project', 'contact'];
+
         const settings = {
             dots: true,
             infinite: false,
@@ -37,21 +41,27 @@ export default class Home extends Component {
             arrows: false,
             vertical : true,
             dotsClass: "dots",
+            customPaging: function(i) {
+                return (
+                    <p>{text[i]}</p>
+                );
+            },
         };
+
 
         return (
             <div>
                 <Slider {...settings} ref={slider => this.slider = slider}>
-                    <div>
+                    <div title="AboutMe">
                         <AboutMe />
                     </div>
-                    <div>
+                    <div title="Skill">
                         <Skills />
                     </div>
-                    <div>
+                    <div title="Project">
                         <Projects />
                     </div>
-                    <div>
+                    <div title="Contact">
                         <Contacts />
                     </div>
                 </Slider>

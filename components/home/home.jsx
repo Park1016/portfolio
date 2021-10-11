@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import AboutMe from '../aboutMe/aboutMe';
-import dynamic from 'next/dynamic'
-import * as S from '../../styles/home.style'
+import dynamic from 'next/dynamic';
+import * as Slide from '../../styles/slide.style';
 import Slider from "react-slick";
 
 const Skills = dynamic(() => import('../skill/skills'));
@@ -53,7 +53,7 @@ const Home = (props) => {
         //     <Projects />
         //     <Contacts />
         // </>
-        <S.Slider {...settings}>
+        <Slide.Slider {...settings}>
             <div>
                 <h3>1</h3>
             </div>
@@ -72,7 +72,7 @@ const Home = (props) => {
             <div>
                 <h3>6</h3>
             </div>
-        </S.Slider>
+        </Slide.Slider>
     )
 }
 

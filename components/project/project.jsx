@@ -31,9 +31,16 @@ const Project = ({item}) => {
         setQs(true);
         Router.push({
             pathname: `/project/${item.name}`,
-            query: { item: JSON.stringify(item) },
+            // query: { num: JSON.stringify(item.id)},
+            query: { num: item.id },
         });
     }
+
+    useEffect(()=>{
+        if (typeof window !== 'undefined') {
+            localStorage.clear();
+        }
+    },[])
 
 
     return (
@@ -52,6 +59,7 @@ const Project = ({item}) => {
                     />
                 </li>
                 {show && <li>{item.name}</li>}
+                {show && <li>{item.num}</li>}
                 {show && <li>{item.skill}</li>}
                 {show && <li>{item.roll}</li>}
                 {show && <li>

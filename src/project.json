@@ -1,9 +1,10 @@
 ﻿{
     "project" : [
         {
-            "id": "1",
+            "id": "0",
             "name": "watchaPedia",
             "skill": "html, css, js",
+            "num": "개인프로젝트",
             "roll": "왓챠",
             "git": "https://github.com/LM-channel-team-project/Watcha/tree/movie-page",
             "deploy": "",
@@ -12,9 +13,10 @@
             "video": "/_next/static/videos/movie(자막)-a16ec1377484051ece12df0942a8ab19.mp4"
         },
         {
-            "id": "2",
+            "id": "1",
             "name": "mbti",
             "skill": "react, postCss, netlify",
+            "num": "개인프로젝트",
             "roll": "mbti",
             "git": "https://github.com/Park1016/MBTI",
             "deploy": "https://hj-mbti.netlify.app",
@@ -23,9 +25,10 @@
             "video": "/_next/static/videos/mbti(자막)-b4d5eb29aef4f3ab0d604be87a0875be.mp4"
         },
         {
-            "id": "3",
+            "id": "2",
             "name": "naverMovie",
             "skill": "react, postCss, netlify",
+            "num": "개인프로젝트",
             "roll": "네이버",
             "git": "https://github.com/Park1016/Search-Naver-Movie",
             "deploy": "https://search-naver-movie.netlify.app/",
@@ -34,9 +37,10 @@
             "video": "/_next/static/videos/movie(자막)-a16ec1377484051ece12df0942a8ab19.mp4"
         },
         {
-            "id": "4",
+            "id": "3",
             "name": "travelHere",
             "skill": "react, styled component, redux, redux thunk, firebase, netlify",
+            "num": "4인프로젝트",
             "roll": "트래블",
             "git": "https://github.com/LM-TeamProject/travel-here",
             "deploy": "https://travelhere.netlify.app/",
