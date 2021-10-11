@@ -1,6 +1,7 @@
 ﻿{
     "project" : [
         {
+            "id": "1",
             "name": "watchaPedia",
             "skill": "html, css, js",
             "roll": "왓챠",
@@ -11,6 +12,7 @@
             "video": "/_next/static/videos/movie(자막)-a16ec1377484051ece12df0942a8ab19.mp4"
         },
         {
+            "id": "2",
             "name": "mbti",
             "skill": "react, postCss, netlify",
             "roll": "mbti",
@@ -21,6 +23,7 @@
             "video": "/_next/static/videos/mbti(자막)-b4d5eb29aef4f3ab0d604be87a0875be.mp4"
         },
         {
+            "id": "3",
             "name": "naverMovie",
             "skill": "react, postCss, netlify",
             "roll": "네이버",
@@ -31,6 +34,7 @@
             "video": "/_next/static/videos/movie(자막)-a16ec1377484051ece12df0942a8ab19.mp4"
         },
         {
+            "id": "4",
             "name": "travelHere",
             "skill": "react, styled component, redux, redux thunk, firebase, netlify",
             "roll": "트래블",

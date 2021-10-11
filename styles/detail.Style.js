@@ -7,6 +7,7 @@ const box = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,6 +27,14 @@ const container = styled.ul`
             display: flex;
             flex-direction: row;
         }
+    }
+    button {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 5rem;
+        transform: translateX(calc(100vw - 5rem));
+        z-index: 10;
     }
 `;
 

@@ -26,16 +26,17 @@ export default class Home extends Component {
             })
         }
     }
-    
+
     render() {
         const settings = {
-            dots: false,
+            dots: true,
             infinite: false,
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
             vertical : true,
+            dotsClass: "dots",
         };
 
         return (

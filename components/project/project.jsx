@@ -67,6 +67,7 @@ const Project = ({item}) => {
                     </a>
                 </li>}
                 {show &&
+                // <Link href={`/project/${item.name}`}><a>상세보기</a></Link>}
                 <button type="button" onClick={onDetail}>상세보기</button>}
             </S.ul>
         </>

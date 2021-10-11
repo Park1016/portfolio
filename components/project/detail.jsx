@@ -34,18 +34,20 @@ export default class Detail extends Component {
     render(){
 
         const settings = {
-            dots: false,
+            dots: true,
             infinite: false,
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
             vertical : true,
+            dotsClass: "dots",
         };
 
         return (
             <S.box>
                 <S.container>
+                    <button type="button" onClick={() => Router.back()}>뒤로가기</button>
                     <Slider {...settings} ref={slider => this.slider = slider}>
                         <S.content>
                             <span>
@@ -83,7 +85,6 @@ export default class Detail extends Component {
                         </S.content>
                         <S.content>
                             <iframe src={this.props.item.deploy} width="1152px" height="648px"/>
-                            <button type="button" onClick={() => Router.back()}>뒤로가기</button>
                         </S.content>
                     </Slider>
                 </S.container>
