@@ -2,7 +2,8 @@
 .fa-arrow-circle-down {
   position: absolute;
   bottom: 4rem;
-  left: calc(50vw - 1rem);
+  /* left: calc(50vw - 1rem); */
+  right: 1rem;
   z-index: 12;
   font-size: 2rem;
 }
