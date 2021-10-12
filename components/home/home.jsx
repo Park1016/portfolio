@@ -21,9 +21,6 @@ export default class Home extends Component {
     constructor(props){
         super(props);
         this.slide = this.slide.bind(this);
-        this.scroll = React.createRef();
-        this.top = React.createRef();
-        this.bottom = React.createRef();
         this.onScroll = this.onScroll.bind(this);
         this.scrollUp = this.scrollUp.bind(this);
         this.scrollDown = this.scrollDown.bind(this);
@@ -64,16 +61,16 @@ export default class Home extends Component {
     }
 
     onScroll = () => {
-        this.scroll.current.scrollIntoView({behavior:'auto', block:"center"});
+        this.slider.slickGoTo(2);
         sessionStorage.clear();
     }
 
     scrollUp = () => {
-        this.top.current.scrollIntoView({behavior:'smooth', block:"center"});
+        this.slider.slickGoTo(0);
     }
 
     scrollDown = () => {
-        this.bottom.current.scrollIntoView({behavior:'smooth', block:"center"});
+        this.slider.slickGoTo(3);
     }
 
     render() {
@@ -102,16 +99,16 @@ export default class Home extends Component {
                 <FontAwesomeIcon icon={faArrowCircleUp} onClick={this.scrollUp} />
                 <FontAwesomeIcon icon={faArrowCircleDown} onClick={this.scrollDown} />
                 <Slider {...settings} ref={slider => this.slider = slider}>
-                    <div ref={this.top}>
+                    <div>
                         <AboutMe />
                     </div>
                     <div>
                         <Skills />
                     </div>
-                    <div ref={this.scroll}>
+                    <div>
                         <Projects />
                     </div>
-                    <div ref={this.bottom}>
+                    <div>
                         <Contacts />
                     </div>
                 </Slider>
