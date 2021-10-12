@@ -39,6 +39,7 @@ const Project = ({item}) => {
     useEffect(()=>{
         if (typeof window !== 'undefined') {
             localStorage.clear();
+            sessionStorage.clear();
         }
     },[])
 

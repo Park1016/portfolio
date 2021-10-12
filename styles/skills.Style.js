@@ -3,7 +3,7 @@
 const section = styled.section`
     width: 100vw;
     height: calc(100vh - 4rem);
-    background: lightblue;
+    background: #fff;
     /* scroll-snap-align: center; */
     ul {
         width: 100%;

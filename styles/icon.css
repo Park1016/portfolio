@@ -1,0 +1,17 @@
+﻿.fa-arrow-circle-up,
+.fa-arrow-circle-down {
+  position: absolute;
+  bottom: 4rem;
+  left: calc(50vw - 1rem);
+  z-index: 12;
+  font-size: 2rem;
+}
+
+.fa-arrow-circle-down {
+  bottom: 2rem;
+}
+
+.fa-arrow-circle-up:hover,
+.fa-arrow-circle-down:hover {
+  cursor: pointer;
+}

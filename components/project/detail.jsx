@@ -33,7 +33,7 @@ export default class Detail extends Component {
             )
         }
     }
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
         if (typeof window !== "undefined") {
             window.addEventListener('wheel', (e) => {
                 this.slide(e.wheelDelta);
@@ -49,8 +49,6 @@ export default class Detail extends Component {
         const text = ['시연영상', '설명', 'view'];
 
         const id = this.props.id;
-
-        console.log(id);
 
         if (typeof window !== 'undefined' && id) {
             localStorage.setItem('num', id);
@@ -72,6 +70,11 @@ export default class Detail extends Component {
             },
         };
 
+        const goBack = () => {
+            sessionStorage.setItem('scroll', true);
+            Router.back();
+        }
+
         if(!id){
             return <h1>no post</h1>
         }
@@ -79,7 +82,7 @@ export default class Detail extends Component {
         return (
             <S.box>
                 <S.container>
-                    <button type="button" onClick={() => Router.back()}>뒤로가기</button>
+                    <button type="button" onClick={goBack}>뒤로가기</button>
                     <Slide.Slider {...settings} ref={slider => this.slider = slider}>
                         <S.content>
                             <span>
