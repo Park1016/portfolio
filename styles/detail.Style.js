@@ -1,4 +1,4 @@
-﻿import styled, {css} from 'styled-components';
+﻿import styled, { css, keyframes } from 'styled-components';
 
 const box = styled.div`
     width: 100vw;
@@ -62,6 +62,78 @@ const timeStamp = styled.span`
         margin-right: 0.5rem;
     }
 `;
+const text = keyframes`
+    0% {
+        color: #fff;
+    }
+    65% {
+        color: #fff;
+    }
+    85% {
+        color: transparent;
+    }
+    95% {
+        color: #fff;
+    }
+    100% {
+        color: #fff;
+    }
+`;
+
+const icon = keyframes`
+    0% {
+        color: rgb(255,255,255,0.8);
+    }
+    70% {
+        color: rgb(255,255,255,0.8);
+    }
+    90% {
+        color: transparent;
+    }
+    100% {
+        color: rgb(255,255,255,0.8);
+    }
+`;
+
+
+const alert = styled.div`
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: transparent;
+    position: absolute;
+    bottom: 1rem;
+    /* left: calc(50vw - 1rem); */
+    right: 1rem;
+    z-index: 13;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0,0,0,0.1);
+    p:nth-child(1) {
+        font-size: 1rem;
+        animation: ${text} 5000ms;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        transform: translateY(0.3rem);
+    }
+    p:nth-child(2) {
+        animation: ${icon} 5000ms;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    ${(props) => {
+        if (props.page === 2) {
+            return css`
+                display: none;
+            `;
+        } else {
+            return css`
+                display: flex;
+            `;
+        }
+    }}
+`;
 
 export {
     box,
@@ -69,4 +141,5 @@ export {
     topContent,
     content,
     timeStamp,
+    alert
 };

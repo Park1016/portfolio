@@ -1,7 +1,7 @@
 ﻿.fa-arrow-circle-up,
 .fa-arrow-circle-down {
   position: absolute;
-  bottom: 4rem;
+  bottom: 3rem;
   /* left: calc(50vw - 1rem); */
   right: 1rem;
   z-index: 12;
@@ -9,7 +9,7 @@
 }
 
 .fa-arrow-circle-down {
-  bottom: 2rem;
+  bottom: 1rem;
 }
 
 .fa-arrow-circle-up:hover,

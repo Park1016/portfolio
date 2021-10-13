@@ -1,11 +1,11 @@
-﻿import styled, { css } from 'styled-components';
+﻿import styled, { css, keyframes } from 'styled-components';
 
 const up = styled.div`
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     position: absolute;
-    bottom: 4rem;
+    bottom: 3rem;
     /* left: calc(50vw - 1rem); */
     right: 1rem;
     z-index: 13;
@@ -42,7 +42,7 @@ const down = styled.div`
     border-radius: 50%;
     background: transparent;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
     /* left: calc(50vw - 1rem); */
     right: 1rem;
     z-index: 13;
@@ -73,7 +73,81 @@ const down = styled.div`
     }}
 `;
 
+const text = keyframes`
+    0% {
+        color: #fff;
+    }
+    65% {
+        color: #fff;
+    }
+    85% {
+        color: transparent;
+    }
+    95% {
+        color: #fff;
+    }
+    100% {
+        color: #fff;
+    }
+`;
+
+const icon = keyframes`
+    0% {
+        color: rgb(255,255,255,0.8);
+    }
+    70% {
+        color: rgb(255,255,255,0.8);
+    }
+    90% {
+        color: transparent;
+    }
+    100% {
+        color: rgb(255,255,255,0.8);
+    }
+`;
+
+const alert = styled.div`
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: transparent;
+    position: absolute;
+    bottom: 1rem;
+    left: calc(50vw - 1rem);
+    z-index: 13;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0,0,0,0.1);
+    p:nth-child(1) {
+        font-size: 1rem;
+        animation: ${text} 5000ms;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        transform: translateY(0.3rem);
+    }
+    p:nth-child(2) {
+        animation: ${icon} 5000ms;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    ${(props) => {
+        if (props.page === 3) {
+            return css`
+                display: none;
+            `;
+        } else {
+            return css`
+                display: flex;
+            `;
+        }
+    }}
+`;
+
+
+
 export {
     up,
     down,
+    alert
 }

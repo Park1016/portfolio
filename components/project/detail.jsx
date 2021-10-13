@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player';
 import Router from 'next/router';
 import * as Slide from '../../styles/slide.style';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import p from '../../src/project.json';
@@ -13,6 +13,7 @@ import p from '../../src/project.json';
 library.add(
     faGithub,
     faGlobe,
+    faChevronDown
 );
 
 export default class Detail extends Component {
@@ -22,6 +23,7 @@ export default class Detail extends Component {
         this.slide = this.slide.bind(this);
         this.state = {
             num: 0,
+            slideIndex: 0,
         }
     }
     slide(y){
@@ -68,6 +70,7 @@ export default class Detail extends Component {
                     <p>{text[i]}</p>
                 );
             },
+            beforeChange: (current, next) => this.setState({ slideIndex: next })
         };
 
         const goBack = () => {
@@ -83,6 +86,10 @@ export default class Detail extends Component {
             <S.box>
                 <S.container>
                     <button type="button" onClick={goBack}>뒤로가기</button>
+                    <S.alert page={this.state.slideIndex}>
+                        <p>Scroll</p>
+                        <p><FontAwesomeIcon icon={faChevronDown} /></p>
+                    </S.alert>
                     <Slide.Slider {...settings} ref={slider => this.slider = slider}>
                         <S.content>
                             <span>

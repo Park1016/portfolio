@@ -1,7 +1,7 @@
 ﻿import React, { Component } from "react";
 import Slider from "react-slick";
 import dynamic from 'next/dynamic';
-import { faArrowCircleUp, faArrowCircleDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleUp, faArrowCircleDown, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import * as S from '../../styles/home.style';
@@ -15,6 +15,7 @@ const Contacts = dynamic(() => import('../contact/contacts'));
 library.add(
     faArrowCircleUp,
     faArrowCircleDown,
+    faChevronDown
 );
 
 
@@ -26,7 +27,6 @@ export default class Home extends Component {
         this.onScroll = this.onScroll.bind(this);
         this.scrollUp = this.scrollUp.bind(this);
         this.scrollDown = this.scrollDown.bind(this);
-        this.upDown = this.upDown.bind(this);
         this.upEnter = this.upEnter.bind(this);
         this.upLeave = this.upLeave.bind(this);
         this.downEnter = this.downEnter.bind(this);
@@ -85,10 +85,6 @@ export default class Home extends Component {
         this.slider.slickGoTo(3);
     }
 
-    upDown = () => {
-        console.log(this.box.current.scrollTop);
-    }
-
     upEnter = () => {
         this.setState({ upText: true }); 
     }
@@ -138,6 +134,10 @@ export default class Home extends Component {
                     {this.state.downText && <p>맨아래로</p>}
                     {/* <p>맨아래로</p> */}
                 </S.down>
+                <S.alert page={this.state.slideIndex}>
+                    <p>Scroll</p>
+                    <p><FontAwesomeIcon icon={faChevronDown} /></p>
+                </S.alert>
                 <FontAwesomeIcon icon={faArrowCircleDown} />
                 <Slider {...settings} ref={slider => this.slider = slider}>
                     <div>
