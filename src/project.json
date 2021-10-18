@@ -10,7 +10,7 @@
             "deploy": "https://park1016.github.io/Watcha/",
             "time": "",
             "timeStamp": "",
-            "video": "/_next/static/videos/movie(자막)-a16ec1377484051ece12df0942a8ab19.mp4"
+            "video": "https://www.youtube-nocookie.com/embed/watch?v=zHvnPIbFr-k"
         },
         {
             "id": "1",
@@ -22,7 +22,7 @@
             "deploy": "https://hj-mbti.netlify.app",
             "time": "",
             "timeStamp": "",
-            "video": "/_next/static/videos/mbti(자막)-b4d5eb29aef4f3ab0d604be87a0875be.mp4"
+            "video": "https://www.youtube-nocookie.com/embed/watch?v=zHvnPIbFr-k"
         },
         {
             "id": "2",
@@ -34,7 +34,7 @@
             "deploy": "https://search-naver-movie.netlify.app/",
             "time": "",
             "timeStamp": "",
-            "video": "/_next/static/videos/movie(자막)-a16ec1377484051ece12df0942a8ab19.mp4"
+            "video": "https://www.youtube-nocookie.com/embed/watch?v=tpHGeJiywH0"
         },
         {
             "id": "3",
@@ -46,7 +46,7 @@
             "deploy": "https://travelhere.netlify.app/",
             "time": "0:00\n\n2:20\n\n3:13\n\n3:34\n3:45\n4:06\n\n4:53\n5:07\n5:34\n6:54\n7:17\n7:37\n\n7:43\n7:52\n\n8:04",
             "timeStamp": "로그인/회원가입\n\n게시글 쓰기\n\n카테고리-게시글\n\n좋아요, 북마크\n본인일 경우에만 수정/삭제 가능\n게시글,댓글 수정/삭제\n\n마이페이지\n마이페이지에서 게시글 이동\n닉네임, 사진 수정\n비밀번호 변경 유무\n비밀번호 변경\n탈퇴\n\n404오류\n비회원\n\n반응형",
-            "video": "/_next/static/videos/travel(자막)-5a3f1a8117e88a7bebd7937629753539.mp4"
+            "video": "https://www.youtube-nocookie.com/embed/watch?v=E1qkUKJi3Ho"
         }
     ]
 }

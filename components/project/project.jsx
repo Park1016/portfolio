@@ -1,5 +1,5 @@
 ﻿import React, { useState, useRef, useEffect } from 'react';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/youtube';
 import Link from 'next/link';
 import * as S from '../../styles/project.Style';
 import P from '../../styles/projects.module.css';
@@ -48,13 +48,20 @@ const Project = ({item}) => {
         <>
             <S.ul onMouseEnter={onShow} onMouseLeave={onHidden} show={show} onClick={onDetail}>
                 <li>
-                    <ReactPlayer
+                    {/* <ReactPlayer
                         ref={video}
-                        url={item.video}
+                        // url={item.video}
                         // url={require('../../public/travel(자막).mp4')}
+                        url="https://www.youtube/watch?v=E1qkUKJi3Ho"
                         playing={show ? (qs ? false : true) : false} 
                         loop={true} 
                         muted={true}
+                        width="24.75rem"
+                        height="13rem"
+                    /> */}
+                    <embed
+                        ref={video}
+                        src="https://www.youtube-nocookie.com/embed/watch?v=zHvnPIbFr-k"
                         width="24.75rem"
                         height="13rem"
                     />
