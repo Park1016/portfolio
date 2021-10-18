@@ -48,7 +48,7 @@ const Contacts = (props) => {
     return (
         <S.section>
             <a href="mailto:guohjp@gmail.com">guohjp@gmail.com</a>
-            <a href="https://github.com/Park1016" target="_blank">https://github.com/Park1016</a>
+            <a href="https://github.com/Park1016" target="_blank" rel="noreferrer">https://github.com/Park1016</a>
             <form ref={form} onSubmit={sendEmail}>
                 <label>Name</label>
                 <input ref={name} type="text" name="name" />
