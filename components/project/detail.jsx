@@ -114,13 +114,13 @@ export default class Detail extends Component {
                             <div>{id ? p.project[id].skill : p.project[this.state.num].skill}</div>
                             <div>{id ? p.project[id].roll : p.project[this.state.num].roll}</div>
                             <div>
-                                <a href={id ? p.project[id].git : p.project[this.state.num].git} target="_blank">
+                                <a href={id ? p.project[id].git : p.project[this.state.num].git} target="_blank" rel="noreferrer">
                                     <FontAwesomeIcon icon={["fab", "github"]} />
                                     깃허브
                                 </a>
                             </div>
                             <div>
-                                <a href={id ? p.project[id].deploy : p.project[this.state.num].deploy} target="_blank">
+                                <a href={id ? p.project[id].deploy : p.project[this.state.num].deploy} target="_blank" rel="noreferrer">
                                     <FontAwesomeIcon icon={faGlobe} />
                                     웹사이트
                                 </a>

@@ -64,13 +64,13 @@ const Project = ({item}) => {
                 {show && <li>{item.skill}</li>}
                 {show && <li>{item.roll}</li>}
                 {show && <li>
-                    <a href={item.git} target="_blank">
+                    <a href={item.git} target="_blank" rel="noreferrer">
                         <FontAwesomeIcon icon={["fab", "github"]} />
                         깃허브
                     </a>
                 </li>}
                 {show && <li>
-                    <a href={item.deploy} target="_blank">
+                    <a href={item.deploy} target="_blank" rel="noreferrer">
                         <FontAwesomeIcon icon={faGlobe} />
                         웹사이트
                     </a>

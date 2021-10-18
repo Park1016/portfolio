@@ -49,20 +49,16 @@ export default class Home extends Component {
         }
     }
 
-    componentWillMount(){
-        if (typeof window !== "undefined") {
-            window.addEventListener('wheel', (e) => {
-                this.slide(e.wheelDelta);
-            })
-        }
-    }
-
     componentDidMount(){
         const check = sessionStorage.getItem('scroll');
         if(check){
             this.setState({ scroll: true });
         }
-        
+        if (typeof window !== "undefined") {
+            window.addEventListener('wheel', (e) => {
+                this.slide(e.wheelDelta);
+            })
+        }
     }
 
     componentDidUpdate(){

@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
     return (
         <>
             <Head>
-                <title>Park's portfolio</title>
+                <title>Park&apos;s portfolio</title>
                 <meta keyword="portfolio" />
                 <meta contents="portfolio" />
             </Head>
