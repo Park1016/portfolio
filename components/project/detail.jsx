@@ -93,18 +93,12 @@ export default class Detail extends Component {
                     <Slide.Slider {...settings} ref={slider => this.slider = slider}>
                         <S.content>
                             <span>
-                                {/* <ReactPlayer
+                                <ReactPlayer
                                     url={id ? p.project[id].video : p.project[this.state.num].video}
-                                    // url="https://www.youtube/watch?v=E1qkUKJi3Ho"
                                     playing={true} 
                                     loop={false} 
                                     muted={true}
                                     controls={true}
-                                    width="1152px"
-                                    height="648px"
-                                /> */}
-                                <embed
-                                    src="https://www.youtube-nocookie.com/embed/watch?v=zHvnPIbFr-k"
                                     width="1152px"
                                     height="648px"
                                 />

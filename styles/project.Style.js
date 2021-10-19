@@ -39,6 +39,11 @@ const ul = styled.ul`
     :hover {
         cursor: pointer;
     }
+    /* li:nth-child(1){
+        div {
+            position: relative;
+        }
+    } */
 `;
 
 const detail = styled.div`
@@ -83,10 +88,19 @@ const None = styled.div`
     display: none;
 `;
 
+const over = styled.div`
+    position: absolute;
+    width: 24.75rem;
+    height: 13rem;
+    transform: translateY(-13rem);
+    background: transparent;
+`;
+
 export {
     section,
     div,
     ul,
+    over,
     detail,
     content,
     None,

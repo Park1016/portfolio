@@ -16,6 +16,7 @@ const Project = ({item}) => {
 
     const video = useRef();
 
+    let [lender, setLender] = useState(false);
     let [show, setShow] = useState(false);
     let [qs, setQs] = useState(false); 
 
@@ -41,30 +42,39 @@ const Project = ({item}) => {
             localStorage.clear();
             sessionStorage.clear();
         }
-    },[])
+        setShow(true);
+        let timer = setTimeout(()=>{
+            setShow(false);
+        }, 3000)
+        return () => {
+            clearTimeout(timer);
+        };
+    },[]);
 
 
     return (
         <>
             <S.ul onMouseEnter={onShow} onMouseLeave={onHidden} show={show} onClick={onDetail}>
                 <li>
-                    {/* <ReactPlayer
+                    <ReactPlayer
                         ref={video}
-                        // url={item.video}
+                        url={item.video}
                         // url={require('../../public/travel(자막).mp4')}
-                        url="https://www.youtube/watch?v=E1qkUKJi3Ho"
+                        // url="https://www.youtube/watch?v=E1qkUKJi3Ho"
                         playing={show ? (qs ? false : true) : false} 
                         loop={true} 
                         muted={true}
                         width="24.75rem"
                         height="13rem"
-                    /> */}
-                    <embed
+                        position="relative"
+                    />
+                    {/* <embed
                         ref={video}
                         src="https://www.youtube-nocookie.com/embed/watch?v=zHvnPIbFr-k"
                         width="24.75rem"
                         height="13rem"
-                    />
+                    /> */}
+                    <S.over onClick={onDetail}></S.over>
                 </li>
                 {show && <li>{item.name}</li>}
                 {show && <li>{item.num}</li>}
