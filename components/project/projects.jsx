@@ -17,44 +17,6 @@ const Projects = (props) => {
                     ))}
                 </S.div>
             </S.section>
-            <S.None>
-                {/* <ReactPlayer
-                    url='https://www.youtube/watch?v=zHvnPIbFr-k'
-                    playing={false} 
-                    muted={true}
-                    width="0"
-                    height ="0"
-                />
-                <ReactPlayer
-                    url='https://www.youtube/watch?v=tpHGeJiywH0'
-                    playing={false} 
-                    muted={true}
-                    width="0"
-                    height ="0"
-                />
-                <ReactPlayer
-                    url='https://www.youtube/watch?v=E1qkUKJi3Ho'
-                    playing={false}  
-                    muted={true}
-                    width="0"
-                    height ="0"
-                /> */}
-                <embed
-                    src="https://www.youtube-nocookie.com/embed/watch?v=zHvnPIbFr-k"
-                    width="0"
-                    height ="0"
-                />
-                <embed
-                    src="https://www.youtube-nocookie.com/embed/watch?v=tpHGeJiywH0"
-                    width="0"
-                    height ="0"
-                />
-                <embed
-                    src="https://www.youtube-nocookie.com/embed/watch?v=E1qkUKJi3Ho"
-                    width="0"
-                    height ="0"
-                />
-            </S.None>
         </>
     )
 }

@@ -54,13 +54,17 @@ const Project = ({item}) => {
 
     return (
         <>
-            <S.ul onMouseEnter={onShow} onMouseLeave={onHidden} show={show} onClick={onDetail}>
-                <li>
+            <S.box
+                onMouseEnter={onShow}
+                onMouseLeave={onHidden}
+                show={show}
+                onClick={onDetail}
+                className={item.id === '0' ? 'first' : item.id === '1' ? 'second' : item.id === '2' ? 'third' : item.id === '3' && 'fourth'}
+            >
+                <div>
                     <ReactPlayer
                         ref={video}
                         url={item.video}
-                        // url={require('../../public/travel(자막).mp4')}
-                        // url="https://www.youtube/watch?v=E1qkUKJi3Ho"
                         playing={show ? (qs ? false : true) : false} 
                         loop={true} 
                         muted={true}
@@ -68,34 +72,32 @@ const Project = ({item}) => {
                         height="13rem"
                         position="relative"
                     />
-                    {/* <embed
-                        ref={video}
-                        src="https://www.youtube-nocookie.com/embed/watch?v=zHvnPIbFr-k"
-                        width="24.75rem"
-                        height="13rem"
-                    /> */}
                     <S.over onClick={onDetail}></S.over>
-                </li>
-                {show && <li>{item.name}</li>}
-                {show && <li>{item.num}</li>}
-                {show && <li>{item.skill}</li>}
-                {show && <li>{item.roll}</li>}
-                {show && <li>
-                    <a href={item.git} target="_blank" rel="noreferrer">
-                        <FontAwesomeIcon icon={["fab", "github"]} />
-                        깃허브
-                    </a>
-                </li>}
-                {show && <li>
-                    <a href={item.deploy} target="_blank" rel="noreferrer">
-                        <FontAwesomeIcon icon={faGlobe} />
-                        웹사이트
-                    </a>
-                </li>}
-                {show &&
-                // <Link href={`/project/${item.name}`}><a>상세보기</a></Link>}
-                <button type="button" onClick={onDetail}>상세보기</button>}
-            </S.ul>
+                </div>
+                <ul>
+                    <li>{item.name}</li>
+                    <li>{item.num}</li>
+                    <li>{item.skill}</li>
+                    {/* <li>{item.roll}</li> */}
+                    <li>
+                        <a href={item.git} target="_blank" rel="noreferrer">
+                            <FontAwesomeIcon icon={["fab", "github"]} />
+                            깃허브
+                        </a>
+                        <a href={item.deploy} target="_blank" rel="noreferrer">
+                            <FontAwesomeIcon icon={faGlobe} />
+                            웹사이트
+                        </a>
+                    </li>
+                    {/* <li>
+                        <a href={item.deploy} target="_blank" rel="noreferrer">
+                            <FontAwesomeIcon icon={faGlobe} />
+                            웹사이트
+                        </a>
+                    </li> */}
+                    <button type="button" onClick={onDetail}>상세보기</button>
+                </ul>
+            </S.box>
         </>
     )
 }

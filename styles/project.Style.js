@@ -3,7 +3,8 @@
 const section = styled.section`
     width: 100vw;
     height: calc(100vh - 4rem);
-    background: lightcoral;
+    /* background: lightcoral; */
+    background: white;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -14,7 +15,7 @@ const section = styled.section`
 
 const div = styled.div`
     /* background: blue; */
-    width: 80%;
+    width: 90%;
     max-height: 90%;
     display: flex;
     flex-wrap: wrap;
@@ -31,19 +32,43 @@ const div = styled.div`
     }
 `;
 
-const ul = styled.ul`
-    width: 24.75rem;
-    height: 13rem;
-    background: black;
+const box = styled.div`
+    width: 38rem;
+    height: 15rem;
     margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    div {
+        margin: 0 0.5rem 0 0.3rem;
+    }
     :hover {
         cursor: pointer;
     }
-    /* li:nth-child(1){
-        div {
-            position: relative;
+    ${(props) => {
+        if (props.className === 'first') {
+            return css`
+                background: #E1D6CD;
+            `;
         }
-    } */
+        if (props.className === 'second'){
+            return css`
+                background: #F1D9AC;
+            `;
+        }
+        if (props.className === 'third'){
+            return css`
+                background: #EABAAE;
+            `;
+        }
+        if (props.className === 'fourth'){
+            return css`
+                background: #EFDFE5;
+            `;
+        }
+    }}
 `;
 
 const detail = styled.div`
@@ -99,7 +124,7 @@ const over = styled.div`
 export {
     section,
     div,
-    ul,
+    box,
     over,
     detail,
     content,
