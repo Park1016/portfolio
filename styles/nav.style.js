@@ -7,7 +7,7 @@ const nav = styled.nav`
     align-items: center;
     justify-content: center;
     background: transparent;
-    border-bottom: 1px solid #E1B1B1;
+    /* border-bottom: 1px solid #E1B1B1; */
     ul {
         width: 100vw;
         display: flex;

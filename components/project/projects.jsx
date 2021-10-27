@@ -12,10 +12,12 @@ const Projects = (props) => {
         <>
             <S.section>
                 <S.div>
+                    <S.text><span>🚀</span><span>PROJECT</span></S.text>
                     {project.project.map((item)=>(
                         <Project key={uuid()} item={item} />
-                    ))}
+                        ))}
                 </S.div>
+                {/* <S.text><span>P</span><span>R</span><span>O</span><span>J</span><span>E</span><span>C</span><span>T</span></S.text> */}
             </S.section>
         </>
     )

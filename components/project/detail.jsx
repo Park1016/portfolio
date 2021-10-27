@@ -64,6 +64,7 @@ export default class Detail extends Component {
             slidesToScroll: 1,
             arrows: false,
             vertical : true,
+            lazyLoad: true,
             dotsClass: "dots",
             customPaging: function(i) {
                 return (

@@ -1,7 +1,14 @@
 ﻿import React, { useEffect, useRef } from 'react';
 import emailjs from 'emailjs-com';
+import Image from 'next/image'
 import * as S from '../../styles/contact.Style';
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
+
+library.add(faGithub, faEnvelope);
 
 const Contacts = (props) => {
     const form = useRef();
@@ -47,19 +54,36 @@ const Contacts = (props) => {
 
     return (
         <S.section>
-            <a href="mailto:guohjp@gmail.com">guohjp@gmail.com</a>
-            <a href="https://github.com/Park1016" target="_blank" rel="noreferrer">https://github.com/Park1016</a>
-            <form ref={form} onSubmit={sendEmail}>
-                <label>Name</label>
-                <input ref={name} type="text" name="name" />
-                <label>Email</label>
-                <input ref={email} type="email" name="email" />
-                <label>Phone</label>
-                <input ref={phone} type="text" name="phone" />
-                <label>Message</label>
-                <textarea ref={content} name="content" />
-                <input type="submit" value="Send" />
-            </form>
+            <S.link>
+                <a href="mailto:guohjp@gmail.com">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <span>Gmail</span>
+                </a>
+                <a href="https://github.com/Park1016" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon icon={["fab", "github"]} />
+                    <span>Github</span>
+                </a>
+            </S.link>
+            <S.contents>
+                {/* <div>
+                    <Image
+                        src={'/photo5.png'}
+                        width={450}
+                        height={500}
+                    />
+                </div> */}
+                <form ref={form} onSubmit={sendEmail}>
+                    <label>Name</label>
+                    <input ref={name} type="text" name="name" />
+                    <label>Email</label>
+                    <input ref={email} type="email" name="email" />
+                    <label>Phone</label>
+                    <input ref={phone} type="text" name="phone" />
+                    <label>Message</label>
+                    <textarea ref={content} name="content" />
+                    <input type="submit" value="Send" />
+                </form>
+            </S.contents>
         </S.section>
     );
 };

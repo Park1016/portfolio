@@ -109,6 +109,7 @@ export default class Home extends Component {
             slidesToScroll: 1,
             arrows: false,
             vertical : true,
+            lazyLoad: true,
             dotsClass: "dots",
             customPaging: function(i) {
                 return (
