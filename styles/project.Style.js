@@ -1,4 +1,4 @@
-﻿import styled, {css} from 'styled-components';
+﻿import styled, {css, keyframes} from 'styled-components';
 
 const text = styled.p`
     color: #737373;
@@ -108,15 +108,31 @@ const box = styled.div`
     }} */
 `;
 
+const show = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
+
 const modal = styled.div`
     position: absolute;
     /* width: 45rem; */
-    height: 20rem;
     z-index: 10;
     display: flex;
-    flex-direction: row;
-    transition: all 100ms ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+    transform: translate(-3rem, 0);
+    transition: height 200ms ease-in-out;
     ul:nth-child(1) {
+        /* animation: ${show} 2000ms;
+        animation-iteration-count: 1;
+        animation-direction: normal; */
+        transition: opacity 500ms ease-in-out;
         li:nth-child(2){
             position: absolute;
             top: 0;
@@ -127,12 +143,24 @@ const modal = styled.div`
         }
     }
     ul:nth-child(2){
+        /* width: 24.5rem; */
+        /* animation: ${show} 2000ms;
+        animation-iteration-count: 1;
+        animation-direction: normal; */
+        transition: opacity 500ms ease-in-out;
+        li {
+            width: 24.5rem;
+        }
         li:nth-child(3){
             display: flex;
+            flex-wrap: wrap;
             flex-direction: row;
             p {
                 border: 1px solid black;
                 border-radius: 10px;
+                height: 2rem;
+                line-height: 1.7;
+                padding: 0 0.5rem;
                 margin-right: 0.2rem;
             }
         }
@@ -140,12 +168,20 @@ const modal = styled.div`
     ${(props) => {
         if(props.show){
             return css`
-                width: 45rem;
+                width: 30rem;
+                height: 25rem;
+                ul {
+                    opacity: 1;
+                }
             `;
         } else {
             return css`
                 width: 0;
+                height: 0;
                 visibility: hidden;
+                ul {
+                    opacity: 0;
+                }
             `;
         }
     }}
@@ -153,29 +189,29 @@ const modal = styled.div`
         if (props.className === 'first') {
             return css`
                 background: #E1D6CD;
-                top: 0;
-                left: 0;
+                /* top: 0;
+                left: 0; */
             `;
         }
         if (props.className === 'second'){
             return css`
                 background: #F1D9AC;
-                top: 0;
-                right: 0;
+                /* top: 0;
+                right: 0; */
             `;
         }
         if (props.className === 'third'){
             return css`
                 background: #EABAAE;
-                bottom: 0;
-                left: 0;
+                /* bottom: 0;
+                left: 0; */
             `;
         }
         if (props.className === 'fourth'){
             return css`
                 background: #EFDFE5;
-                bottom: 0;
-                right: 0;
+                /* bottom: 0;
+                right: 0; */
             `;
         }
     }}

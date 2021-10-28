@@ -3,7 +3,7 @@
         {
             "id": "0",
             "name": "Travel-Here",
-            "skill": ["react", "styled component", "redux", "redux thunk", "firebase", "netlify"],
+            "skill": ["React", "Styled Component", "Redux", "Redux Thunk", "Firebase", "Netlify"],
             "num": "4인프로젝트",
             "roll": "트래블",
             "git": "https://github.com/LM-TeamProject/travel-here",
@@ -16,7 +16,7 @@
         {
             "id": "1",
             "name": "Mbti",
-            "skill": ["react", "postCss", "netlify"],
+            "skill": ["React", "PostCss", "Netlify"],
             "num": "개인프로젝트",
             "roll": "mbti",
             "git": "https://github.com/Park1016/MBTI",
@@ -29,7 +29,7 @@
         {
             "id": "2",
             "name": "Naver Movie Search",
-            "skill": ["react", "postCss", "netlify"],
+            "skill": ["React", "PostCss", "Netlify"],
             "num": "개인프로젝트",
             "roll": "네이버",
             "git": "https://github.com/Park1016/Search-Naver-Movie",
@@ -42,7 +42,7 @@
         {
             "id": "3",
             "name": "WatchaPedia Clone",
-            "skill": ["html", "css", "js"],
+            "skill": ["Html", "Css", "Vanilla Js"],
             "num": "개인프로젝트",
             "roll": "왓챠",
             "git": "https://github.com/Park1016/Watcha",

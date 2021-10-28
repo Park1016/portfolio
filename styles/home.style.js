@@ -112,7 +112,7 @@ const alert = styled.div`
     border-radius: 50%;
     background: transparent;
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.3rem;
     left: calc(50vw - 2rem);
     z-index: 13;
     flex-direction: column;
