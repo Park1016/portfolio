@@ -128,8 +128,8 @@ const Project = ({item}) => {
                     <ul>
                         <li>{item.name}</li>
                         <li>{item.num}</li>
-                        <li>{item.skill.map((i)=>(
-                            <p>{i}</p>
+                        <li>{item.skill.map((i, index)=>(
+                            <p key={index}>{i}</p>
                         ))}</li>
                         <li>
                             <a href={item.git} target="_blank" rel="noreferrer">
