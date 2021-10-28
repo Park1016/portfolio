@@ -1,7 +1,7 @@
 ﻿import React, { Component, useRef, useEffect } from "react";
 import * as S from '../../styles/detail.Style';
 import Slider from "react-slick";
-import ReactPlayer from 'react-player/youtube';
+import ReactPlayer from 'react-player/lazy';
 import Router from 'next/router';
 import * as Slide from '../../styles/slide.style';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
@@ -100,8 +100,8 @@ export default class Detail extends Component {
                                     loop={false} 
                                     muted={true}
                                     controls={true}
-                                    width="1152px"
-                                    height="648px"
+                                    width="921px"
+                                    height="518px"
                                 />
                                 <S.timeStamp>
                                     <span>{id ? p.project[id].time : p.project[this.state.num].time}</span>

@@ -63,13 +63,15 @@ export default class Home extends Component {
 
     componentDidUpdate(){
         if(this.state.scroll){
-            this.onScroll();
+            // setTimeout(()=>{
+                this.onScroll();
+            // }, 200)
             this.setState({ scroll: false });
         }
     }
 
     onScroll = () => {
-        this.slider.slickGoTo(2);
+        this.slider.slickGoTo(1);
         sessionStorage.clear();
     }
 
@@ -141,16 +143,16 @@ export default class Home extends Component {
                         <AboutMe />
                     </div>
                     <div>
-                        <Skills />
+                        <Projects />
                     </div>
                     <div>
-                        <Projects />
+                        <Skills />
                     </div>
                     <div>
                         <Contacts />
                     </div>
                 </Slider>
             </div>
-        );``
+        );
     }
 }

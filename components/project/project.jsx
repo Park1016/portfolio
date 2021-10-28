@@ -1,5 +1,5 @@
 ﻿import React, { useState, useRef, useEffect } from 'react';
-import ReactPlayer from 'react-player/youtube';
+import ReactPlayer from 'react-player/lazy';
 import Link from 'next/link';
 import * as S from '../../styles/project.Style';
 import P from '../../styles/projects.module.css';
@@ -56,6 +56,10 @@ const Project = ({item}) => {
             clearTimeout(timer);
         };
     },[]);
+
+    const onReady = () => {
+
+    }
 
 
     return (
@@ -118,30 +122,35 @@ const Project = ({item}) => {
                                 playing={start ? true : (show ? (qs ? false : true) : false)} 
                                 loop={true} 
                                 muted={true}
-                                width="24.75rem"
-                                height="13rem"
+                                width="29.7rem"
+                                height="15.6rem"
                                 position="relative"
                             />
+                            {/* <div /> */}
                         </li>
-                        <li></li>
+                        <li />
                     </ul>
                     <ul>
-                        <li>{item.name}</li>
-                        <li>{item.num}</li>
-                        <li>{item.skill.map((i, index)=>(
-                            <p key={index}>{i}</p>
-                        ))}</li>
+                        <li><span>이름</span><span>{item.name}</span></li>
+                        <li><span>참여인원</span><span>{item.num}</span></li>
+                        <li>
+                            <span>skill</span>
+                            <span>{item.skill.map((i, index)=>(
+                                <p key={index}>{i}</p>
+                            ))}</span>
+                        </li>
                         <li>
                             <a href={item.git} target="_blank" rel="noreferrer">
                                 <FontAwesomeIcon icon={["fab", "github"]} />
-                                깃허브
+                                <span>깃허브</span>
                             </a>
                             <a href={item.deploy} target="_blank" rel="noreferrer">
                                 <FontAwesomeIcon icon={faGlobe} />
-                                웹사이트
+                                <span>웹사이트</span>
                             </a>
+                            <button type="button" onClick={onDetail}>상세보기</button>
                         </li>
-                        <li><button type="button" onClick={onDetail}>상세보기</button></li>
+                        {/* <li><button type="button" onClick={onDetail}>상세보기</button></li> */}
                     </ul>
                 </S.modal>
             </S.box>
