@@ -170,7 +170,7 @@ const modal = styled.div`
             width: calc(27.5rem - 3.5rem);
             display: flex;
             flex-direction: row;
-            margin: 0.5rem 0 0.5rem 3.5rem;
+            margin: 0.5rem 0 0.5rem 2.8rem;
             /* background: red; */
             span:nth-child(1) {
                 width: 5rem;

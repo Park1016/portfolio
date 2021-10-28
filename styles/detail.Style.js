@@ -13,7 +13,6 @@ const box = styled.div`
     align-items: center;
     justify-content: center;
     z-index: 10;
-    background: lightblue;
 `;
 
 const container = styled.ul`
@@ -31,29 +30,79 @@ const container = styled.ul`
         }
     }
     button {
-        position: sticky;
-        top: 0;
-        left: 0;
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
         width: 5rem;
-        transform: translateX(calc(100vw - 5rem));
+        height: 2rem;
         z-index: 10;
     }
 `;
 
-const topContent = styled.li`
-    display: flex;
+const content = styled.li`
+    /* display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center; */
+    width: 100vw;
     height: calc(100vh - 4rem);
+    background: #E1B1B1;
+    ${(props) => {
+        if (props.className === 'detailFirst') {
+            return css`
+                background: #E1D6CD;
+            `;
+        }
+        if (props.className === 'detailSecond'){
+            return css`
+                background: #F1D9AC;
+            `;
+        }
+        if (props.className === 'detailThird'){
+            return css`
+                background: #EABAAE;
+            `;
+        }
+    }}
 `;
 
-const content = styled.li`
-    display: flex;
-    height: calc(100vh - 4rem);
-`
+const contentInner = styled.div`
+    height: calc(100vh - 8rem);
+    background: #fff;
+    ${(props) => {
+        if (props.className === 'detailFirst') {
+            return css`
+                width: 80rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translate(calc((100vw - 80rem)/2), 2rem);
+                /* span {
+                    width: 76rem;
+                } */
+            `;
+        }
+        if (props.className === 'detailSecond'){
+            return css`
+                width: 75rem;
+                transform: translate(calc((100vw - 75rem)/2), 2rem);
+            `;
+        }
+        if (props.className === 'detailThird'){
+            return css`
+                width: 1094px;
+                transform: translate(calc((100vw - 1094px)/2), 2rem);
+                background: transparent;
+            `;
+        }
+    }}
+`;
 
 const timeStamp = styled.span`
     display: flex;
     flex-direction: row;
+    align-items: center;
+    margin-left: 1rem;
     span {
         white-space: pre-wrap;
     }
@@ -102,7 +151,7 @@ const alert = styled.div`
     border-radius: 50%;
     background: transparent;
     position: absolute;
-    bottom: 1rem;
+    bottom: 2rem;
     /* left: calc(50vw - 1rem); */
     right: 1rem;
     z-index: 13;
@@ -138,8 +187,8 @@ const alert = styled.div`
 export {
     box,
     container,
-    topContent,
     content,
+    contentInner,
     timeStamp,
     alert
 };

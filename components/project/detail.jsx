@@ -92,43 +92,49 @@ export default class Detail extends Component {
                         <p><FontAwesomeIcon icon={faChevronDown} /></p>
                     </S.alert>
                     <Slide.Slider {...settings} ref={slider => this.slider = slider}>
-                        <S.content>
-                            <span>
-                                <ReactPlayer
-                                    url={id ? p.project[id].video : p.project[this.state.num].video}
-                                    playing={true} 
-                                    loop={false} 
-                                    muted={true}
-                                    controls={true}
-                                    width="921px"
-                                    height="518px"
-                                />
-                                <S.timeStamp>
-                                    <span>{id ? p.project[id].time : p.project[this.state.num].time}</span>
-                                    <span>{id ? p.project[id].timeStamp : p.project[this.state.num].timeStamp}</span>
-                                </S.timeStamp>
-                            </span>
+                        <S.content className="detailFirst">
+                            <S.contentInner className="detailFirst">
+                                <span>
+                                    <ReactPlayer
+                                        url={id ? p.project[id].video : p.project[this.state.num].video}
+                                        playing={true} 
+                                        loop={false} 
+                                        muted={true}
+                                        controls={true}
+                                        width="921px"
+                                        height="518px"
+                                    />
+                                    <S.timeStamp>
+                                        <span>{id ? p.project[id].time : p.project[this.state.num].time}</span>
+                                        <span>{id ? p.project[id].timeStamp : p.project[this.state.num].timeStamp}</span>
+                                    </S.timeStamp>
+                                </span>
+                            </S.contentInner>
                         </S.content>
-                        <S.content>
-                            <div>{id ? p.project[id].name : p.project[this.state.num].name}</div>
-                            <div>{id ? p.project[id].num : p.project[this.state.num].num}</div>
-                            <div>{id ? p.project[id].skill : p.project[this.state.num].skill}</div>
-                            <div>{id ? p.project[id].roll : p.project[this.state.num].roll}</div>
-                            <div>
-                                <a href={id ? p.project[id].git : p.project[this.state.num].git} target="_blank" rel="noreferrer">
-                                    <FontAwesomeIcon icon={["fab", "github"]} />
-                                    깃허브
-                                </a>
-                            </div>
-                            <div>
-                                <a href={id ? p.project[id].deploy : p.project[this.state.num].deploy} target="_blank" rel="noreferrer">
-                                    <FontAwesomeIcon icon={faGlobe} />
-                                    웹사이트
-                                </a>
-                            </div>
+                        <S.content className="detailSecond">
+                            <S.contentInner className="detailSecond">
+                                <div>{id ? p.project[id].name : p.project[this.state.num].name}</div>
+                                <div>{id ? p.project[id].num : p.project[this.state.num].num}</div>
+                                <div>{id ? p.project[id].skill : p.project[this.state.num].skill}</div>
+                                <div>{id ? p.project[id].roll : p.project[this.state.num].roll}</div>
+                                <div>
+                                    <a href={id ? p.project[id].git : p.project[this.state.num].git} target="_blank" rel="noreferrer">
+                                        <FontAwesomeIcon icon={["fab", "github"]} />
+                                        깃허브
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href={id ? p.project[id].deploy : p.project[this.state.num].deploy} target="_blank" rel="noreferrer">
+                                        <FontAwesomeIcon icon={faGlobe} />
+                                        웹사이트
+                                    </a>
+                                </div>
+                            </S.contentInner>
                         </S.content>
-                        <S.content>
-                            <iframe src={id ? p.project[id].deploy : p.project[this.state.num].deploy} width="1152px" height="648px"/>
+                        <S.content className="detailThird">
+                            <S.contentInner className="detailThird">
+                                <iframe src={id ? p.project[id].deploy : p.project[this.state.num].deploy} width="1094px" height="615px"/>
+                            </S.contentInner>
                         </S.content>
                     </Slide.Slider>
                 </S.container>
