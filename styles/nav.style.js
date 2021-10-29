@@ -16,10 +16,13 @@ const nav = styled.nav`
         justify-content: center;
         li {
             font-weight: bold;
-            margin: 0 1rem;
+            margin: 0 0.5rem;
+            width: 5rem;
+            text-align: center;
         }   
         li:nth-child(3){
             font-size: 2rem;
+            width: 6.5rem;
         }
     }
 `;

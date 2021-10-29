@@ -4,7 +4,8 @@ const modalWidth = '27.5rem';
 const modalHeight = '25rem';
 
 const text = styled.p`
-    color: #737373;
+    /* color: #737373; */
+    color: #fff;
     font-size: 2rem;
     font-weight: bold;
     z-index: 20;
@@ -12,6 +13,7 @@ const text = styled.p`
     left: 0;
     top: 0;
     transform: translateY(-3rem);
+    text-shadow: 2px 2px 2px black;
     /* transform: translateX(15rem);
     display: flex;
     flex-direction: column;
@@ -24,9 +26,9 @@ const text = styled.p`
 const section = styled.section`
     width: 100vw;
     height: calc(100vh - 4rem);
-    background: #E1B1B1;
-    /* background: #e3e3e3; */
-    /* overflow: hidden; */
+    /* background: #E1B1B1; */
+    background: rgb(225,177,177);
+    background: linear-gradient(90deg, rgba(225,177,177,1) 0%, rgba(193,152,167,1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +41,7 @@ const div = styled.div`
     /* width: 90%; */
     background: #fff;
     border-radius: 20px;
-    box-shadow: 0px 0px 5px #CA9F9F;
+    box-shadow: 3px 3px 5px #CA9F9F;
     padding: 2rem 0;
     /* max-height: 90%; */
     position: relative;
@@ -124,6 +126,7 @@ const show = keyframes`
 const modal = styled.div`
     position: absolute;
     /* width: 45rem; */
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -177,6 +180,7 @@ const modal = styled.div`
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
+                font-weight: bold;
             }
             span:nth-child(2) {
                 width: calc(26.5rem - 5rem - 2rem);
@@ -227,12 +231,13 @@ const modal = styled.div`
                 width: 7rem;
                 height: 2rem;
                 text-align: center;
-                line-height: 1;
+                line-height: 2;
                 padding: 0 0.5rem;
-                border: none;
+                border: 1px solid #fff;
                 border-radius: 10px;
                 font-size: 1rem;
                 color: #fff;
+                background: transparent;
             }
             button:hover {
                 cursor: pointer;
@@ -243,7 +248,6 @@ const modal = styled.div`
         if(props.show){
             return css`
                 width: ${modalWidth};
-                /* display: flex; */
                 opacity: 1;
                 ul {
                     width: ${modalWidth};
@@ -256,7 +260,6 @@ const modal = styled.div`
                 width: 0;
                 height: 0;
                 opacity: 0;
-                /* display: none; */
                 ul {
                     width: 0;
                     height: 0;
@@ -269,8 +272,11 @@ const modal = styled.div`
     ${(props) => {
         if (props.className === 'first') {
             return css`
-                background: #E1D6CD;
-                transform: translate(-2.6rem, 2rem);
+                /* background: #E1D6CD; */
+                background: #505B72;
+                box-shadow: 0 0 3px #505B72;
+                /* border: 1px solid #505B72; */
+                transform: translate(-1.6rem, 2rem);
                 height: 28.5rem;
                 ul:nth-child(1) {
                     li:nth-child(1) {
@@ -278,15 +284,19 @@ const modal = styled.div`
                     }
                 }
                 ul:nth-child(2) {
-                    background: #E1D6CD;
+                    /* background: #E1D6CD; */
+                    background: #505B72;
                     transform: translateY(-0.7rem);
                 }
             `;
         }
         if (props.className === 'second'){
             return css`
-                background: #F1D9AC;
-                transform: translate(-2.6rem, 2rem);
+                /* background: #F1D9AC; */
+                background: #766F88;
+                box-shadow: 0 0 3px #766F88;
+                /* border: 1px solid #766F88; */
+                transform: translate(-1.6rem, 2rem);
                 height: ${modalHeight};
                 ul:nth-child(1) {
                     li:nth-child(1) {
@@ -294,15 +304,19 @@ const modal = styled.div`
                     }
                 }
                 ul:nth-child(2) {
-                    background: #F1D9AC;
+                    /* background: #F1D9AC; */
+                    background: #766F88;
                     transform: translateY(-2.1rem);
                 }
             `;
         }
         if (props.className === 'third'){
             return css`
-                background: #EABAAE;
-                transform: translate(-2.6rem, -3.5rem);
+                /* background: #EABAAE; */
+                background: #766F88;
+                box-shadow: 0 0 3px #766F88;
+                /* border: 1px solid #766F88; */
+                transform: translate(-1.6rem, -3.5rem);
                 height: ${modalHeight};
                 ul:nth-child(1) {
                     li:nth-child(1) {
@@ -310,15 +324,19 @@ const modal = styled.div`
                     }
                 }
                 ul:nth-child(2) {
-                    background: #EABAAE;
+                    /* background: #EABAAE; */
+                    background: #766F88;
                     transform: translateY(-1.8rem);
                 }
             `;
         }
         if (props.className === 'fourth'){
             return css`
-                background: #EFDFE5;
-                transform: translate(-2.6rem, -3.5rem);
+                /* background: #EFDFE5; */
+                background: #505B72;
+                box-shadow: 0 0 3px #505B72;
+                /* border: 1px solid #505B72; */
+                transform: translate(-1.6rem, -3.5rem);
                 height: ${modalHeight};
                 ul:nth-child(1) {
                     li:nth-child(1) {
@@ -326,7 +344,8 @@ const modal = styled.div`
                     }
                 }
                 ul:nth-child(2) {
-                    background: #EFDFE5;
+                    /* background: #EFDFE5; */
+                    background: #505B72;
                     transform: translateY(-1rem);
                 }
             `;
@@ -386,6 +405,7 @@ const over = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 3px 3px 5px black;
     /* margin: 0 0.5rem 0 1rem; */
     /* ${(props) => {
         if (props.className === 'first') {

@@ -1,4 +1,5 @@
 ﻿import styled, { css, keyframes } from 'styled-components';
+import { None } from './project.Style';
 
 const box = styled.div`
     width: 100vw;
@@ -36,6 +37,17 @@ const container = styled.ul`
         width: 5rem;
         height: 2rem;
         z-index: 10;
+        background: #766f88;
+/* background: linear-gradient(90deg, rgba(225,177,177,1) 0%, rgba(118,111,136,1) 100%); */
+        /* border: 1px solid #fff; */
+        border: none;
+        border-radius: 20px;
+        color: #fff;
+        /* text-shadow: 1px 1px 5px #fff; */
+        box-shadow: 2px 2px 3px #363636;
+    }
+    button:hover {
+        cursor: pointer;
     }
 `;
 
@@ -50,7 +62,7 @@ const content = styled.li`
     ${(props) => {
         if (props.className === 'detailFirst') {
             return css`
-                background: #E1D6CD;
+                background: #2F4858;
             `;
         }
         if (props.className === 'detailSecond'){
@@ -60,7 +72,43 @@ const content = styled.li`
         }
         if (props.className === 'detailThird'){
             return css`
-                background: #EABAAE;
+                background: #2F4858;
+            `;
+        }
+    }}
+`;
+
+const Title = styled.p`
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 2.6rem;
+    border-bottom: 7px solid #FFC831;
+    text-align: center;
+    
+    ${(props) => {
+        if (props.className === 'video') {
+            return css`
+                transform: translate(calc(40rem - 6rem), -1rem);
+                width: 9rem;
+                color: #fff;
+                text-shadow: 3px 3px 5px black;
+            `;
+        }
+        if (props.className === 'info'){
+            return css`
+                width: 7rem;
+                transform: translateX(-8rem);
+            `;
+        }
+        if (props.className === 'view'){
+            return css`
+                width: 8rem;
+                color: #fff;
+                text-shadow: 3px 3px 5px black;
+                transform: translateX(-9rem);
             `;
         }
     }}
@@ -68,7 +116,8 @@ const content = styled.li`
 
 const contentInner = styled.div`
     height: calc(100vh - 8rem);
-    background: #fff;
+    background: transparent;
+    position: relative;
     ${(props) => {
         if (props.className === 'detailFirst') {
             return css`
@@ -77,9 +126,6 @@ const contentInner = styled.div`
                 align-items: center;
                 justify-content: center;
                 transform: translate(calc((100vw - 80rem)/2), 2rem);
-                /* span {
-                    width: 76rem;
-                } */
             `;
         }
         if (props.className === 'detailSecond'){
@@ -103,14 +149,57 @@ const timeStamp = styled.span`
     flex-direction: row;
     align-items: center;
     margin-left: 1rem;
+    background: rgb(255,255,255,0.1);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 3px 3px 5px #363636;
+    p {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 2rem;
+        left: 0;
+        color: #FFC831;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-shadow: 3px 3px 3px black;
+    }
     span {
         white-space: pre-wrap;
+        color: #fff;
+        line-height: 1.5;
     }
-    span:nth-child(1){
-        color: blue;
+    span:nth-child(2){
         margin-right: 0.5rem;
+        /* color: rgb(255,255,255,0.5); */
+        color: rgb(255, 200, 49, 0.9);
     }
+    ${(props)=>{
+        console.log(typeof(props.id));
+        if(props.id === '1' || props.id === '2'){
+            return css`
+                width: 0;
+                padding: 0;
+            `;
+        }
+        if(props.id === '0'){
+            return css`
+                width: 19rem;
+                padding: 0 1rem;
+                span {
+                    transform: translateY(1.5rem);
+                }
+            `;
+        }
+        if(props.id === '3'){
+            return css`
+                width: 19rem;
+                padding: 0 1rem;
+            `;
+        }
+    }}
 `;
+
 const text = keyframes`
     0% {
         color: #fff;
@@ -190,5 +279,6 @@ export {
     content,
     contentInner,
     timeStamp,
-    alert
+    alert,
+    Title,
 };

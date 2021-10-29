@@ -48,7 +48,7 @@ export default class Detail extends Component {
 
     render(){
 
-        const text = ['시연영상', '설명', 'view'];
+        const text = ['Video', 'Info', 'View'];
 
         const id = this.props.id;
 
@@ -94,6 +94,7 @@ export default class Detail extends Component {
                     <Slide.Slider {...settings} ref={slider => this.slider = slider}>
                         <S.content className="detailFirst">
                             <S.contentInner className="detailFirst">
+                                <S.Title className="video">🎞️ Video</S.Title>
                                 <span>
                                     <ReactPlayer
                                         url={id ? p.project[id].video : p.project[this.state.num].video}
@@ -104,7 +105,8 @@ export default class Detail extends Component {
                                         width="921px"
                                         height="518px"
                                     />
-                                    <S.timeStamp>
+                                    <S.timeStamp id={id || this.state.num}>
+                                        <p>{id ? p.project[id].timeText : p.project[this.state.num].timeText}</p>
                                         <span>{id ? p.project[id].time : p.project[this.state.num].time}</span>
                                         <span>{id ? p.project[id].timeStamp : p.project[this.state.num].timeStamp}</span>
                                     </S.timeStamp>
@@ -113,6 +115,7 @@ export default class Detail extends Component {
                         </S.content>
                         <S.content className="detailSecond">
                             <S.contentInner className="detailSecond">
+                                <S.Title className="info">📃Info</S.Title>
                                 <div>{id ? p.project[id].name : p.project[this.state.num].name}</div>
                                 <div>{id ? p.project[id].num : p.project[this.state.num].num}</div>
                                 <div>{id ? p.project[id].skill : p.project[this.state.num].skill}</div>
@@ -133,6 +136,7 @@ export default class Detail extends Component {
                         </S.content>
                         <S.content className="detailThird">
                             <S.contentInner className="detailThird">
+                                <S.Title className="view">💡 View</S.Title>
                                 <iframe src={id ? p.project[id].deploy : p.project[this.state.num].deploy} width="1094px" height="615px"/>
                             </S.contentInner>
                         </S.content>

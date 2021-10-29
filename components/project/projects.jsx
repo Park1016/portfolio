@@ -4,6 +4,7 @@ import * as S from '../../styles/project.Style';
 import ReactPlayer from 'react-player';
 import { v4 as uuid } from "uuid";
 import Project from './project';
+import Image from 'next/image';
 
 
 const Projects = (props) => {
@@ -17,7 +18,6 @@ const Projects = (props) => {
                         <Project key={uuid()} item={item} />
                         ))}
                 </S.div>
-                {/* <S.text><span>P</span><span>R</span><span>O</span><span>J</span><span>E</span><span>C</span><span>T</span></S.text> */}
             </S.section>
         </>
     )
