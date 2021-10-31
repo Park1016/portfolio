@@ -1,4 +1,4 @@
-﻿import Link from 'next/link'
+﻿import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Style from '../styles/Nav.module.css';
 import * as S from '../styles/nav.style';
@@ -6,6 +6,18 @@ import * as S from '../styles/nav.style';
 const Nav = (props) => {
 
     const router = useRouter();
+
+    const onHome = () => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('page', 'home');
+        }
+    }
+
+    const onProject = () => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('page', 'project');
+        }
+    }
 
     return (
         <S.nav>
@@ -15,12 +27,12 @@ const Nav = (props) => {
                         <a style={{color : '/aboutMe' === router.pathname ? '#E1B1B1' : '#2D3748'}}>About Me</a>
                     </Link>
                 </li>
-                <li>
+                <li onClick={onProject}>
                     <Link href="/project">
                         <a style={{color : '/project' === router.pathname ? '#E1B1B1' : '#2D3748'}}>Project</a>
                     </Link>
                 </li>
-                <li>
+                <li onClick={onHome}>
                     <Link href="/">
                         <a style={{color : '/' === router.pathname ? '#E1B1B1' : '#2D3748'}}>HOME</a>
                     </Link>

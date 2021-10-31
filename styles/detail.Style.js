@@ -133,10 +133,17 @@ const contentInner = styled.div`
             `;
         }
         if (props.className === 'detailSecond'){
-            return css`
-                width: 70rem;
-                transform: translate(calc((100vw - 60rem)/2), 2rem);
-            `;
+            if(props.id === '0'){
+                return css`
+                    width: 75rem;
+                    transform: translate(calc((100vw - 60rem)/2), 2rem);
+                `;
+            } else {
+                return css`
+                    width: 75rem;
+                    transform: translate(calc((100vw - 20rem)/2), 10rem);
+                `;
+            }
         }
         if (props.className === 'detailThird'){
             return css`
@@ -205,24 +212,29 @@ const timeStamp = styled.span`
 `;
 
 const detailUl = styled.ul`
+    border-left: 1px solid rgb(255, 200, 49, 0.8);
     li {
         display: flex;
         flex-direction: row;
         margin: 1rem 0;
         color: #fff;
         div:nth-child(1) {
-            width: 5rem;
-            margin-right: 1rem;
+            width: 5.5rem;
+            margin: 0 1rem;
             color: #FFC831;
             font-weight: bold;
+            text-align: end;
             /* text-shadow: 3px 3px 3px black; */
         }
         div:nth-child(2) {
-            width: 57rem;
+            width: 60rem;
             display: flex;
         }
     }
-    li:nth-child(3) {
+    li:nth-child(2) {
+        white-space: pre-wrap;
+    }
+    li:nth-child(4) {
         div:nth-child(1) {
             transform: translateY(0.2rem);
         }
@@ -237,7 +249,7 @@ const detailUl = styled.ul`
             }
         }
     }
-    li:nth-child(4) {
+    li:nth-child(5) {
         div:nth-child(2) {
             p {
                 span {
@@ -246,7 +258,7 @@ const detailUl = styled.ul`
             }
         }
     }
-    li:nth-child(5) {
+    li:nth-child(6) {
         a {
             border: 1px solid #fff;
             margin-right: 0.5rem;
@@ -266,7 +278,7 @@ const detailUl = styled.ul`
         console.log(props.id);
         if(props.id === '0'){
             return css`
-                li:nth-child(4) {
+                li:nth-child(5) {
                     margin-top: 1.5rem;
                     div:nth-child(2) { 
                         /* border: 1px solid rgb(255, 200, 49, 0.8); */
@@ -277,11 +289,11 @@ const detailUl = styled.ul`
                             flex-direction: row;
                             margin-bottom: 1rem;
                             span:nth-child(1){
-                                width: 4rem;
+                                width: 5.5rem;
                                 margin-right: 1rem;
                                 display: flex;
                                 align-items: flex-start;
-                                justify-content: center;
+                                justify-content: flex-end;
                                 color: rgb(255, 200, 49, 0.8);
                             }
                         }
@@ -301,7 +313,7 @@ const detailUl = styled.ul`
                         }
                     }
                 }
-                li:nth-child(5) {
+                li:nth-child(6) {
                     flex-direction: column;
                     position: absolute;
                     top: 0;
@@ -314,7 +326,7 @@ const detailUl = styled.ul`
             `;
         } else {
             return css`
-                li:nth-child(4) {
+                li:nth-child(5) {
                     div:nth-child(2) { 
                         display: flex;
                         flex-direction: column;
@@ -323,8 +335,8 @@ const detailUl = styled.ul`
                         }
                     }
                 }
-                li:nth-child(5) {
-
+                li:nth-child(6) {
+                    margin-left: 1.5rem;
                 }
             `;
         }

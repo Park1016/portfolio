@@ -5,7 +5,7 @@ const modalHeight = '25rem';
 
 const text = styled.p`
     /* color: #737373; */
-    color: #fff;
+    color: #FFF8E8;
     font-size: 2rem;
     font-weight: bold;
     z-index: 20;
@@ -14,10 +14,7 @@ const text = styled.p`
     top: 0;
     transform: translateY(-3rem);
     text-shadow: 2px 2px 2px black;
-    /* transform: translateX(15rem);
-    display: flex;
-    flex-direction: column;
-    text-align: center; */
+
     span:nth-child(1) {
         margin: 0 0.5rem 0 2rem;
     }
@@ -28,7 +25,7 @@ const section = styled.section`
     height: calc(100vh - 4rem);
     /* background: #E1B1B1; */
     background: rgb(225,177,177);
-    background: linear-gradient(90deg, rgba(225,177,177,1) 0%, rgba(193,152,167,1) 100%);
+    /* background: linear-gradient(45deg, rgba(225,177,177,1) 0%, rgba(193,152,167,1) 100%); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -306,7 +303,7 @@ const modal = styled.div`
                 ul:nth-child(2) {
                     /* background: #F1D9AC; */
                     background: #766F88;
-                    transform: translateY(-2.1rem);
+                    transform: translateY(-1.1rem);
                 }
             `;
         }
@@ -326,7 +323,7 @@ const modal = styled.div`
                 ul:nth-child(2) {
                     /* background: #EABAAE; */
                     background: #766F88;
-                    transform: translateY(-1.8rem);
+                    transform: translateY(-1rem);
                 }
             `;
         }

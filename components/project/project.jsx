@@ -44,10 +44,10 @@ const Project = ({item}) => {
     }
 
     useEffect(()=>{
-        if (typeof window !== 'undefined') {
-            localStorage.clear();
-            sessionStorage.clear();
-        }
+        // if (typeof window !== 'undefined') {
+        //     localStorage.clear();
+        //     sessionStorage.clear();
+        // }
         setStart(true);
         let timer = setTimeout(()=>{
             setStart(false);
@@ -71,26 +71,6 @@ const Project = ({item}) => {
                 onClick={onDetail}
                 className={item.id === '0' ? 'first' : item.id === '1' ? 'second' : item.id === '2' ? 'third' : item.id === '3' && 'fourth'}
             >
-                {/* <div>
-                    <ReactPlayer
-                        ref={video}
-                        url={item.video}
-                        playing={show ? (qs ? false : true) : false} 
-                        loop={true} 
-                        muted={true}
-                        width="24.75rem"
-                        height="13rem"
-                        position="relative"
-                    />
-                    <S.over ref={img}>
-                        <Image 
-                            src={item.img}
-                            width={388}
-                            height={210}
-                            onClick={onDetail}
-                        />
-                    </S.over>
-                </div> */}
                 <S.over
                     ref={img}
                     className={item.id === '0' ? 'first' : item.id === '1' ? 'second' : item.id === '2' ? 'third' : item.id === '3' && 'fourth'}
@@ -105,11 +85,6 @@ const Project = ({item}) => {
                         <p>{item.name}</p>
                     </div>
                 </S.over>
-                {/* <S.textArea>
-                    <li>{item.name}</li>
-                    <li>{item.num}</li>
-                    <li>{item.skill}</li>
-                </S.textArea> */}
                 <S.modal
                     show={show}
                     className={item.id === '0' ? 'first' : item.id === '1' ? 'second' : item.id === '2' ? 'third' : item.id === '3' && 'fourth'}
@@ -126,13 +101,12 @@ const Project = ({item}) => {
                                 height="15.6rem"
                                 position="relative"
                             />
-                            {/* <div /> */}
                         </li>
                         <li />
                     </ul>
                     <ul>
                         <li><span>이름</span><span>{item.name}</span></li>
-                        <li><span>참여인원</span><span>{item.num}</span></li>
+                        <li><span>개발인원</span><span>{item.num}</span></li>
                         <li>
                             <span>skill</span>
                             <span>{item.skill.map((i, index)=>(
@@ -150,7 +124,6 @@ const Project = ({item}) => {
                             </a>
                             <button type="button" onClick={onDetail}>상세보기</button>
                         </li>
-                        {/* <li><button type="button" onClick={onDetail}>상세보기</button></li> */}
                     </ul>
                 </S.modal>
             </S.box>

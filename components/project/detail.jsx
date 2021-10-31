@@ -76,7 +76,13 @@ export default class Detail extends Component {
 
         const goBack = () => {
             sessionStorage.setItem('scroll', true);
-            Router.back();
+            if (typeof window !== 'undefined') {
+                if(localStorage.getItem('page') === 'home'){
+                    Router.push('/');
+                } else {
+                    Router.push('/project');
+                } 
+            }
         }
 
         if(!id){
@@ -115,10 +121,11 @@ export default class Detail extends Component {
                             </S.contentInner>
                         </S.content>
                         <S.content className="detailSecond">
-                            <S.contentInner className="detailSecond">
+                            <S.contentInner className="detailSecond" id={id || this.state.num}>
                                 <S.Title className="info">📃Info</S.Title>
                                 <S.detailUl id={id || this.state.num}>
                                     <li><div>프로젝트명</div><div>{id ? p.project[id].name : p.project[this.state.num].name}</div></li>
+                                    <li><div>소개글</div>{id ? p.project[id].info.replace(/(?:\r\n|\r|\n)/g, '\n') : p.project[this.state.num].info.replace(/(?:\r\n|\r|\n)/g, '\n')}</li>
                                     <li><div>개발인원</div><div>{id ? p.project[id].num : p.project[this.state.num].num}</div></li>
                                     {id ? <li><div>기술스택</div><div>{p.project[id].skill.map((item, index)=>(<p key={index}>{item}</p>))}</div></li>
                                     : <li><div>기술스택</div><div>{p.project[this.state.num].skill.map((item, index)=>(<p key={index}>{item}</p>))}</div></li>}
