@@ -16,7 +16,7 @@ const Projects = (props) => {
                     <S.text><span>🚀</span><span>PROJECT</span></S.text>
                     {project.project.map((item)=>(
                         <Project key={uuid()} item={item} />
-                        ))}
+                    ))}
                 </S.div>
             </S.section>
         </>

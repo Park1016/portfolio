@@ -97,6 +97,7 @@ export default class Detail extends Component {
                                 <S.Title className="video">🎞️ Video</S.Title>
                                 <span>
                                     <ReactPlayer
+                                        className="datailPlayer"
                                         url={id ? p.project[id].video : p.project[this.state.num].video}
                                         playing={true} 
                                         loop={false} 
@@ -116,22 +117,24 @@ export default class Detail extends Component {
                         <S.content className="detailSecond">
                             <S.contentInner className="detailSecond">
                                 <S.Title className="info">📃Info</S.Title>
-                                <div>{id ? p.project[id].name : p.project[this.state.num].name}</div>
-                                <div>{id ? p.project[id].num : p.project[this.state.num].num}</div>
-                                <div>{id ? p.project[id].skill : p.project[this.state.num].skill}</div>
-                                <div>{id ? p.project[id].roll : p.project[this.state.num].roll}</div>
-                                <div>
-                                    <a href={id ? p.project[id].git : p.project[this.state.num].git} target="_blank" rel="noreferrer">
-                                        <FontAwesomeIcon icon={["fab", "github"]} />
-                                        깃허브
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href={id ? p.project[id].deploy : p.project[this.state.num].deploy} target="_blank" rel="noreferrer">
-                                        <FontAwesomeIcon icon={faGlobe} />
-                                        웹사이트
-                                    </a>
-                                </div>
+                                <S.detailUl id={id || this.state.num}>
+                                    <li><div>프로젝트명</div><div>{id ? p.project[id].name : p.project[this.state.num].name}</div></li>
+                                    <li><div>개발인원</div><div>{id ? p.project[id].num : p.project[this.state.num].num}</div></li>
+                                    {id ? <li><div>기술스택</div><div>{p.project[id].skill.map((item, index)=>(<p key={index}>{item}</p>))}</div></li>
+                                    : <li><div>기술스택</div><div>{p.project[this.state.num].skill.map((item, index)=>(<p key={index}>{item}</p>))}</div></li>}
+                                    {id ? <li><div>담당업무</div><div>{p.project[id].roll.map((item, index)=>(<p key={index}>{item.map((i, index)=>(<span key={index}>{i.replace(/(?:\r\n|\r|\n)/g, '\n')}</span>))}</p>))}</div></li> :
+                                    <li><div>담당업무</div><div>{p.project[this.state.num].roll.map((item, index)=>(<p key={index}>{item.map((i, index)=>(<span key={index}>{i.replace(/(?:\r\n|\r|\n)/g, '\n')}</span>))}</p>))}</div></li>}
+                                    <li>
+                                        <a href={id ? p.project[id].git : p.project[this.state.num].git} target="_blank" rel="noreferrer">
+                                            <FontAwesomeIcon icon={["fab", "github"]} />
+                                            <span>깃허브</span>
+                                        </a>
+                                        <a href={id ? p.project[id].deploy : p.project[this.state.num].deploy} target="_blank" rel="noreferrer">
+                                            <FontAwesomeIcon icon={faGlobe} />
+                                            <span>웹사이트</span>
+                                        </a>
+                                    </li>
+                                </S.detailUl>
                             </S.contentInner>
                         </S.content>
                         <S.content className="detailThird">
