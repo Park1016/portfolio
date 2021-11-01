@@ -24,27 +24,27 @@ const Nav = (props) => {
             <ul>
                 <li>
                     <Link href="/aboutMe">
-                        <a style={{color : '/aboutMe' === router.pathname ? '#E1B1B1' : '#2D3748'}}>About Me</a>
+                        <a style={{color : '/aboutMe' === router.pathname ? '#e2b646' : '#2D3748'}}>About Me</a>
                     </Link>
                 </li>
                 <li onClick={onProject}>
                     <Link href="/project">
-                        <a style={{color : '/project' === router.pathname ? '#E1B1B1' : '#2D3748'}}>Project</a>
+                        <a style={{color : '/project' === router.pathname ? '#e3a8a8' : '#2D3748'}}>Project</a>
                     </Link>
                 </li>
                 <li onClick={onHome}>
                     <Link href="/">
-                        <a style={{color : '/' === router.pathname ? '#E1B1B1' : '#2D3748'}}>HOME</a>
+                        <a style={{color : '/' === router.pathname ? '#e2b646' : '#2D3748'}}>HOME</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/skill">
-                        <a style={{color : '/skill' === router.pathname ? '#E1B1B1' : '#2D3748'}}>Skill</a>
+                        <a style={{color : '/skill' === router.pathname ? '#e2b646' : '#2D3748'}}>Skill</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/contact">
-                        <a style={{color : '/contact' === router.pathname ? '#E1B1B1' : '#2D3748'}}>Contact</a>
+                        <a style={{color : '/contact' === router.pathname ? '#e2b646' : '#2D3748'}}>Contact</a>
                     </Link>
                 </li>
             </ul>

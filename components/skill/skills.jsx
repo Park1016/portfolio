@@ -6,16 +6,31 @@ const Skills = (props) => {
     return (
         <S.section>
             <ul className={P.images}>
-                <li id={P.html}></li>
-                <li id={P.css}></li>
-                <li id={P.js}></li>
-                <li id={P.react}></li>
-                <li id={P.redux}></li>
-                <li id={P.next}></li>
-                <li id={P.firebase}></li>
-                <li id={P.git}></li>
-                <li id={P.github}></li>
-                <li id={P.vercel}></li>
+                <li>
+                    <div id={P.html} />
+                    <div id={P.css} />
+                    <div id={P.js} />
+                </li>
+                <li>
+                    <div id={P.postCss} />
+                    <div id={P.styledCp} />
+                </li>
+                <li>
+                    <div id={P.react} />
+                    <div id={P.redux} />
+                </li>
+                <li>
+                    <div id={P.firebase} />
+                </li>
+                <li>
+                    <div id={P.git} />
+                    <div id={P.github} />
+                </li>
+                <li>
+                    <div id={P.netlify} />
+                    <div id={P.vercel} />
+                </li>
+                {/* <li id={P.next}></li> */}
             </ul>
         </S.section>
     )

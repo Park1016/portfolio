@@ -217,6 +217,7 @@ const detailUl = styled.ul`
         display: flex;
         flex-direction: row;
         margin: 1rem 0;
+        width: 70rem;
         color: #fff;
         div:nth-child(1) {
             width: 5.5rem;
@@ -279,7 +280,9 @@ const detailUl = styled.ul`
         if(props.id === '0'){
             return css`
                 li:nth-child(5) {
-                    margin-top: 1.5rem;
+                    margin-top: 1rem;
+                    padding-top: 1rem;
+                    border-top: 1px dashed rgb(255, 200, 49, 0.8);
                     div:nth-child(2) { 
                         /* border: 1px solid rgb(255, 200, 49, 0.8); */
                         display: flex;
@@ -309,7 +312,6 @@ const detailUl = styled.ul`
                         p:nth-child(3) {
                             /* width: 57rem; */
                             padding-top: 1rem;
-                            /* border-top: 1px solid rgb(255, 200, 49, 0.8); */
                         }
                     }
                 }

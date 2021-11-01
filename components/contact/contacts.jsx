@@ -51,39 +51,51 @@ const Contacts = (props) => {
         });
     };
 
+    useEffect(() => {
+        setTimeout(() => {
+            name.current.focus();
+        }, 1000)
+    }, []);
+
 
     return (
         <S.section>
-            <S.link>
-                <a href="mailto:guohjp@gmail.com">
-                    <FontAwesomeIcon icon={faEnvelope} />
-                    <span>Gmail</span>
-                </a>
-                <a href="https://github.com/Park1016" target="_blank" rel="noreferrer">
-                    <FontAwesomeIcon icon={["fab", "github"]} />
-                    <span>Github</span>
-                </a>
-            </S.link>
-            <S.contents>
-                {/* <div>
-                    <Image
-                        src={'/photo5.png'}
-                        width={450}
-                        height={500}
-                    />
-                </div> */}
-                <form ref={form} onSubmit={sendEmail}>
-                    <label>Name</label>
-                    <input ref={name} type="text" name="name" />
-                    <label>Email</label>
-                    <input ref={email} type="email" name="email" />
-                    <label>Phone</label>
-                    <input ref={phone} type="text" name="phone" />
-                    <label>Message</label>
-                    <textarea ref={content} name="content" />
-                    <input type="submit" value="Send" />
-                </form>
-            </S.contents>
+            <S.box>
+                <S.left>
+                    <p>Contact</p>
+                    <S.link>
+                        <a href="mailto:guohjp@gmail.com">
+                            <FontAwesomeIcon icon={faEnvelope} />
+                            <span>Gmail</span>
+                        </a>
+                        <a href="https://github.com/Park1016" target="_blank" rel="noreferrer">
+                            <FontAwesomeIcon icon={["fab", "github"]} />
+                            <span>Github</span>
+                        </a>
+                    </S.link>
+                </S.left>
+                <S.contents>
+                    <form ref={form} onSubmit={sendEmail}>
+                        <S.input>
+                            <label>Name</label>
+                            <input ref={name} type="text" name="name" />
+                        </S.input>
+                        <S.input>
+                            <label>Email</label>
+                            <input ref={email} type="email" name="email" />
+                        </S.input>
+                        <S.input>
+                            <label>Phone</label>
+                            <input ref={phone} type="text" name="phone" />
+                        </S.input>
+                        <S.input>
+                            <label>Message</label>
+                            <textarea ref={content} name="content" />
+                        </S.input>
+                        <S.send type="submit" value="Send" />
+                    </form>
+                </S.contents>
+            </S.box>
         </S.section>
     );
 };

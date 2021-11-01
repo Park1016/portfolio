@@ -2,11 +2,9 @@
   list-style: none;
 }
 
-.images li {
-  width: 64px;
-  height: 64px;
-  /* background: url(../assets/sprites.png) no-repeat;
-  display: inline-block; */
+.images li div {
+  width: 96px;
+  height: 96px;
 }
 
 #html {
@@ -21,7 +19,15 @@
 
 #js {
   /* background-position: -128px 0; */
-  background: url(../assets/js.png);
+  background: url(../assets/javascript.png);
+}
+
+#postCss {
+  background: url(../assets/PostCss.png);
+}
+
+#styledCp {
+  background: url(../assets/styledCp.png);
 }
 
 #react {
@@ -52,6 +58,10 @@
 #github {
   /* background-position: 0 0; */
   background: url(../assets/github.png);
+}
+
+#netlify {
+  background: url(../assets/netlify.png);
 }
 
 #vercel {

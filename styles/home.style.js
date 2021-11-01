@@ -20,7 +20,7 @@ const up = styled.div`
     ${(props) => {
         if (props.up === 0) {
             return css`
-                background: rgb(255,255,255,0.9);
+                background: rgb(255,255,255,0.95);
                 :hover {
                     cursor: not-allowed;
                 }
@@ -57,7 +57,7 @@ const down = styled.div`
     ${(props) => {
         if (props.down === 3) {
             return css`
-                background: rgb(255,255,255,0.9);
+                background: rgb(47, 72, 88, 0.7);
                 :hover {
                     cursor: not-allowed;
                 }
