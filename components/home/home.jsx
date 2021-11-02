@@ -5,6 +5,7 @@ import { faArrowCircleUp, faArrowCircleDown, faChevronDown } from '@fortawesome/
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import * as S from '../../styles/home.style';
+import Loading from '../Loading';
 // import P from '../../styles/Home.module.css';
 
 const AboutMe = dynamic(() => import('../aboutMe/aboutMe'));
@@ -36,7 +37,8 @@ export default class Home extends Component {
             scroll: false,
             slideIndex: 0,
             upText: false,
-            downText: false
+            downText: false,
+            loading: true,
         }
     }
     slide(y){
@@ -59,14 +61,29 @@ export default class Home extends Component {
                 this.slide(e.wheelDelta);
             })
         }
+        setTimeout(()=>{
+            this.slider.slickGoTo(1);
+        }, 100);
+        setTimeout(()=>{
+            this.slider.slickGoTo(2);
+        }, 200);
+        setTimeout(()=>{
+            this.slider.slickGoTo(3);
+        }, 300);
+        setTimeout(()=>{
+            this.slider.slickGoTo(0);
+        }, 1000);
+        setTimeout(()=>{
+            this.setState({ loading: false }); 
+        }, 2500);
     }
 
     componentDidUpdate(){
         if(this.state.scroll){
-            // setTimeout(()=>{
+            setTimeout(()=>{
                 this.onScroll();
-            // }, 200)
-            this.setState({ scroll: false });
+                this.setState({ scroll: false });
+            }, 1100);
         }
     }
 
@@ -101,7 +118,7 @@ export default class Home extends Component {
 
     render() {
 
-        const text = ['aboutMe', 'skill', 'project', 'contact'];
+        const text = ['aboutMe', 'project', 'skill', 'contact'];
 
         const settings = {
             dots: true,
@@ -123,36 +140,39 @@ export default class Home extends Component {
 
 
         return (
-            <div ref={this.box}>
-                <S.up onClick={this.scrollUp} up={this.state.slideIndex} onMouseEnter={this.upEnter} onMouseLeave={this.upLeave}>
-                    {this.state.upText && <p>맨위로</p>}
-                    {/* <p>맨위로</p> */}
-                </S.up>
-                <FontAwesomeIcon icon={faArrowCircleUp} />
-                <S.down onClick={this.scrollDown} down={this.state.slideIndex} onMouseEnter={this.downEnter} onMouseLeave={this.downLeave}>
-                    {this.state.downText && <p>맨아래로</p>}
-                    {/* <p>맨아래로</p> */}
-                </S.down>
-                <S.alert page={this.state.slideIndex}>
-                    <p>Scroll</p>
-                    <p><FontAwesomeIcon icon={faChevronDown} /></p>
-                </S.alert>
-                <FontAwesomeIcon icon={faArrowCircleDown} />
-                <Slider {...settings} ref={slider => this.slider = slider}>
-                    <div>
-                        <AboutMe />
-                    </div>
-                    <div>
-                        <Projects />
-                    </div>
-                    <div>
-                        <Skills />
-                    </div>
-                    <div>
-                        <Contacts />
-                    </div>
-                </Slider>
-            </div>
+            <>
+                {this.state.loading && <Loading />}
+                <div ref={this.box}>
+                    <S.up onClick={this.scrollUp} up={this.state.slideIndex} onMouseEnter={this.upEnter} onMouseLeave={this.upLeave}>
+                        {this.state.upText && <p>맨위로</p>}
+                        {/* <p>맨위로</p> */}
+                    </S.up>
+                    <FontAwesomeIcon icon={faArrowCircleUp} />
+                    <S.down onClick={this.scrollDown} down={this.state.slideIndex} onMouseEnter={this.downEnter} onMouseLeave={this.downLeave}>
+                        {this.state.downText && <p>맨아래로</p>}
+                        {/* <p>맨아래로</p> */}
+                    </S.down>
+                    <S.alert page={this.state.slideIndex}>
+                        <p>Scroll</p>
+                        <p><FontAwesomeIcon icon={faChevronDown} /></p>
+                    </S.alert>
+                    <FontAwesomeIcon icon={faArrowCircleDown} />
+                    <Slider {...settings} ref={slider => this.slider = slider}>
+                        <div>
+                            <AboutMe />
+                        </div>
+                        <div>
+                            <Projects />
+                        </div>
+                        <div>
+                            <Skills />
+                        </div>
+                        <div>
+                            <Contacts />
+                        </div>
+                    </Slider>
+                </div>
+            </>
         );
     }
 }

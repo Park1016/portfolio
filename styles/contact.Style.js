@@ -114,11 +114,14 @@ const input = styled.div`
         height: 7rem;
         padding: 0.5rem;
         resize: none;
+        /* overflow: hidden; */
         ::-webkit-scrollbar {
             width: 10px;
+            border-radius: 20px;
         }
             ::-webkit-scrollbar-track {
             background-color: lightgray;
+            border-radius: 20px;
         }
             ::-webkit-scrollbar-thumb {
             border-radius: 3px;

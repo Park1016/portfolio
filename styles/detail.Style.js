@@ -186,7 +186,6 @@ const timeStamp = styled.span`
         color: rgb(255, 200, 49, 0.9);
     }
     ${(props)=>{
-        console.log(typeof(props.id));
         if(props.id === '1' || props.id === '2'){
             return css`
                 width: 0;

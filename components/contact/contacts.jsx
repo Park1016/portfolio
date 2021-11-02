@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useRef } from 'react';
 import emailjs from 'emailjs-com';
-import Image from 'next/image'
+import Image from 'next/image';
 import * as S from '../../styles/contact.Style';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -90,7 +90,7 @@ const Contacts = (props) => {
                         </S.input>
                         <S.input>
                             <label>Message *</label>
-                            <textarea ref={content} name="content" />
+                            <textarea ref={content} name="content"/>
                         </S.input>
                         <S.send type="submit" value="Send" />
                     </form>

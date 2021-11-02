@@ -263,6 +263,15 @@ const modal = styled.div`
                     display: none;
                 }
             `;
+            // return css`
+            //     width: ${modalWidth};
+            //     opacity: 1;
+            //     ul {
+            //         width: ${modalWidth};
+            //         display: block;
+            //         opacity: 1;
+            //     }
+            // `;
         }
     }}
     ${(props) => {

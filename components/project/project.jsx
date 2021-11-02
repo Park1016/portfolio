@@ -43,6 +43,10 @@ const Project = ({item}) => {
         });
     }
 
+    const onPlayerReady = () => {
+        // console.log(video.current);
+    }
+
     useEffect(()=>{
         // if (typeof window !== 'undefined') {
         //     localStorage.clear();
@@ -56,10 +60,6 @@ const Project = ({item}) => {
             clearTimeout(timer);
         };
     },[]);
-
-    const onReady = () => {
-
-    }
 
 
     return (
@@ -92,14 +92,17 @@ const Project = ({item}) => {
                     <ul>
                         <li>
                             <ReactPlayer
+                                className="player"
                                 ref={video}
                                 url={item.video}
                                 playing={start ? true : (show ? (qs ? false : true) : false)} 
                                 loop={true} 
                                 muted={true}
+                                controls={false}
                                 width="29.7rem"
                                 height="15.6rem"
                                 position="relative"
+                                onReady={onPlayerReady}
                             />
                         </li>
                         <li />
