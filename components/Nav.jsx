@@ -39,7 +39,7 @@ const Nav = (props) => {
                 </li>
                 <li>
                     <Link href="/skill">
-                        <a style={{color : '/skill' === router.pathname ? '#e2b646' : '#2D3748'}}>Skill</a>
+                        <a style={{color : '/skill' === router.pathname ? '#4CC1D1' : '#2D3748'}}>Skill</a>
                     </Link>
                 </li>
                 <li>

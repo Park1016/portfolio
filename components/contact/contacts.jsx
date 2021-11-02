@@ -77,11 +77,11 @@ const Contacts = (props) => {
                 <S.contents>
                     <form ref={form} onSubmit={sendEmail}>
                         <S.input>
-                            <label>Name</label>
+                            <label>Name *</label>
                             <input ref={name} type="text" name="name" />
                         </S.input>
                         <S.input>
-                            <label>Email</label>
+                            <label>Email *</label>
                             <input ref={email} type="email" name="email" />
                         </S.input>
                         <S.input>
@@ -89,7 +89,7 @@ const Contacts = (props) => {
                             <input ref={phone} type="text" name="phone" />
                         </S.input>
                         <S.input>
-                            <label>Message</label>
+                            <label>Message *</label>
                             <textarea ref={content} name="content" />
                         </S.input>
                         <S.send type="submit" value="Send" />

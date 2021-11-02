@@ -13,7 +13,7 @@
 }
 
 .dots li {
-  background: lightgray;
+  background: #fff9ea;
   box-shadow: 1px 1px 3px black;
   width: 1rem;
   height: 1rem;
@@ -66,5 +66,5 @@
 }
 
 .dots > .slick-active {
-  background: gray;
+  background: #ffc831;
 }

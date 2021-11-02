@@ -131,7 +131,7 @@ const input = styled.div`
     }
     input:hover,
     textarea:hover {
-        border: 1px solid black;
+        border: 2.5px solid black;
     }
 `;
 
@@ -145,6 +145,9 @@ const send = styled.input`
     color: #fff;
     font-weight: bold;
     font-size: 1.2rem;
+    :hover {
+        cursor: pointer;
+    }
 `;
 
 export {

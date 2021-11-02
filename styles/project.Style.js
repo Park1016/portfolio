@@ -4,7 +4,7 @@ const modalWidth = '27.5rem';
 const modalHeight = '25rem';
 
 const text = styled.p`
-    /* color: #737373; */
+    /* color: #FFCA28; */
     color: #FFF8E8;
     font-size: 2rem;
     font-weight: bold;
@@ -13,8 +13,7 @@ const text = styled.p`
     left: 0;
     top: 0;
     transform: translateY(-3rem);
-    text-shadow: 2px 2px 2px black;
-
+    text-shadow: 1.5px 1.5px 2px black;
     span:nth-child(1) {
         margin: 0 0.5rem 0 2rem;
     }
@@ -303,7 +302,10 @@ const modal = styled.div`
                 ul:nth-child(2) {
                     /* background: #F1D9AC; */
                     background: #766F88;
-                    transform: translateY(-1.1rem);
+                    transform: translateY(-1.9rem);
+                    li:nth-child(1) {
+                        padding-top: 0.5rem;
+                    }
                 }
             `;
         }
@@ -323,7 +325,10 @@ const modal = styled.div`
                 ul:nth-child(2) {
                     /* background: #EABAAE; */
                     background: #766F88;
-                    transform: translateY(-1rem);
+                    transform: translateY(-1.75rem);
+                    li:nth-child(1) {
+                        padding-top: 0.5rem;
+                    }
                 }
             `;
         }
