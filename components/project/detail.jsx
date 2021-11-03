@@ -3,6 +3,7 @@ import * as S from '../../styles/detail.Style';
 import Slider from "react-slick";
 import ReactPlayer from 'react-player/lazy';
 import Router from 'next/router';
+import Image from 'next/image';
 import * as Slide from '../../styles/slide.style';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faGlobe, faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -24,6 +25,7 @@ export default class Detail extends Component {
         this.state = {
             num: 0,
             slideIndex: 0,
+            loading: true,
         }
     }
     slide(y){
@@ -83,6 +85,10 @@ export default class Detail extends Component {
                     Router.push('/project');
                 } 
             }
+        }
+
+        const onLoading = () => {
+            this.setState({ loading: false });
         }
 
         if(!id){
@@ -147,7 +153,15 @@ export default class Detail extends Component {
                         <S.content className="detailThird">
                             <S.contentInner className="detailThird">
                                 <S.Title className="view">💡 View</S.Title>
-                                <iframe src={id ? p.project[id].deploy : p.project[this.state.num].deploy} width="1094px" height="615px"/>
+                                {this.state.loading && <S.loading>
+                                    <Image 
+                                        src="/loading2.svg"
+                                        alt="loading"
+                                        width={200}
+                                        height={200}
+                                    />
+                                </S.loading>}
+                                <iframe src={id ? p.project[id].deploy : p.project[this.state.num].deploy} width="1094px" height="615px" onLoad={onLoading}/>
                             </S.contentInner>
                         </S.content>
                     </Slide.Slider>

@@ -27,8 +27,19 @@ const content = styled.div`
     ul {
         margin-top: 1rem;
         li {
+            margin: 0.5rem 0;
+            p {
+                color: rgb(226,182,70);
+                /* font-weight: bold; */
+            }
+            p:hover {
+                cursor: pointer;
+            }
             div {
                 margin: 0.5rem 0;
+                background: rgb(255,255,255,0.1);
+                border-radius: 10px;
+                padding: 0.5rem 0.7rem;
             }
         }
     }
@@ -47,6 +58,7 @@ const img = styled.div`
     overflow: hidden;
     border-radius: 50%;
     margin-right: 2rem;
+    /* box-shadow: 3px 3px 10px black; */
 `;
 
 

@@ -53,29 +53,33 @@ export default class Home extends Component {
 
     componentDidMount(){
         const check = sessionStorage.getItem('scroll');
+        setTimeout(()=>{
+            this.slider.slickGoTo(1);
+        }, 100);
+        setTimeout(()=>{
+            this.slider.slickGoTo(2);
+        }, 300);
+        setTimeout(()=>{
+            this.slider.slickGoTo(3);
+        }, 500);
+        setTimeout(()=>{
+            this.slider.slickGoTo(0);
+        }, 1000);
         if(check){
             this.setState({ scroll: true });
+            setTimeout(()=>{
+                this.setState({ loading: false }); 
+            }, 2500);
+        } else {
+            setTimeout(()=>{
+                this.setState({ loading: false }); 
+            }, 1500);
         }
         if (typeof window !== "undefined") {
             window.addEventListener('wheel', (e) => {
                 this.slide(e.wheelDelta);
             })
         }
-        setTimeout(()=>{
-            this.slider.slickGoTo(1);
-        }, 100);
-        setTimeout(()=>{
-            this.slider.slickGoTo(2);
-        }, 200);
-        setTimeout(()=>{
-            this.slider.slickGoTo(3);
-        }, 300);
-        setTimeout(()=>{
-            this.slider.slickGoTo(0);
-        }, 1000);
-        setTimeout(()=>{
-            this.setState({ loading: false }); 
-        }, 2500);
     }
 
     componentDidUpdate(){
@@ -83,12 +87,15 @@ export default class Home extends Component {
             setTimeout(()=>{
                 this.onScroll();
                 this.setState({ scroll: false });
-            }, 1100);
+                sessionStorage.clear();
+            }, 1000);
         }
     }
 
     onScroll = () => {
-        this.slider.slickGoTo(1);
+        if(this.slider){
+            this.slider.slickGoTo(1);
+        }
         sessionStorage.clear();
     }
 

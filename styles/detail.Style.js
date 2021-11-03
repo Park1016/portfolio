@@ -275,7 +275,6 @@ const detailUl = styled.ul`
         }
     }
     ${(props) => {
-        console.log(props.id);
         if(props.id === '0'){
             return css`
                 li:nth-child(5) {
@@ -417,6 +416,18 @@ const alert = styled.div`
     }}
 `;
 
+const loading = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1094px;
+    height: 615px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2F4858;
+`;
+
 export {
     box,
     container,
@@ -426,4 +437,5 @@ export {
     timeStamp,
     alert,
     Title,
+    loading
 };
