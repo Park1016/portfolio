@@ -15,7 +15,8 @@
             "time": "0:00\n2:20\n3:13\n3:34\n3:45\n4:06\n4:53\n5:07\n5:34\n6:54\n7:17\n7:37\n7:43\n7:52\n8:04",
             "timeStamp": "로그인/회원가입\n게시글 쓰기\n카테고리-게시글\n좋아요, 북마크\n본인일 경우에만 수정/삭제 가능\n게시글,댓글 수정/삭제\n마이페이지\n마이페이지에서 게시글 이동\n닉네임, 사진 수정\n비밀번호 변경 유무\n비밀번호 변경\n탈퇴\n404오류\n비회원\n반응형",
             "video": "https://www.youtube-nocookie.com/embed/E1qkUKJi3Ho",
-            "img" : "/travel.png"
+            "img" : "/travel.png",
+            "gif" : "/travel.gif"
         },
         {
             "id": "1",
@@ -29,7 +30,8 @@
             "time": "",
             "timeStamp": "",
             "video": "https://www.youtube-nocookie.com/embed/zHvnPIbFr-k",
-            "img": "/mbti.png"
+            "img": "/mbti.png",
+            "gif" : "/mbti.gif"
         },
         {
             "id": "2",
@@ -43,7 +45,8 @@
             "time": "",
             "timeStamp": "",
             "video": "https://www.youtube-nocookie.com/embed/tpHGeJiywH0",
-            "img" : "/movie.png"
+            "img" : "/movie.png",
+            "gif" : "/movie.gif"
         },
         {
             "id": "3",
@@ -58,7 +61,8 @@
             "time": "00:00\n00:16\n00:34\n00:55\n01:10\n01:51\n02:31\n02:54\n03:32\n03:44\n03:53\n04:14\n04:58",
             "timeStamp": "전체적인 화면, header\n'보고싶어요'버튼\n별점\npicsum랜덤 이미지\n댓글 작성하기\n댓글 수정하기\n댓글 삭제하기\n슬라이더\n줄 수 제한(...처리)\n좋아요\n더보기\n반응형\nheader 검색창 blur처리",
             "video": "https://www.youtube-nocookie.com/embed/1O_ha26ba_8",
-            "img" : "/watcha.png"
+            "img" : "/watcha.png",
+            "gif" : "/watcha.gif"
         }
     ]
 }

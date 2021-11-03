@@ -18,7 +18,7 @@ const Skills = (props) => {
                 </li>
                 <li>
                     <S.top>Css</S.top>
-                    <div id={P.postCss} />
+                    <div id={P.postCSS} />
                     <p>PostCss</p>
                     <div id={P.styledCp} />
                     <p>Styled<br />Component</p>

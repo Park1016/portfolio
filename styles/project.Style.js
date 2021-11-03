@@ -138,15 +138,8 @@ const modal = styled.div`
         transform: translateX(-0.95rem);
         transition: opacity 500ms ease-in-out;
         li:nth-child(1) {
+            width: ${modalWidth};
             position: relative;
-            /* div {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 24.75rem;
-                height: 13rem;
-                background: red;
-            } */
         }
         li:nth-child(2){
             position: absolute;
@@ -263,20 +256,28 @@ const modal = styled.div`
                     display: none;
                 }
             `;
+            // return css`
+            //     width: ${modalWidth};
+            //     opacity: 1;
+            //     ul {
+            //         width: ${modalWidth};
+            //         display: block;
+            //         opacity: 1;
+            //     }
+            // `;
         }
     }}
     ${(props) => {
         if (props.className === 'first') {
             return css`
-                /* background: #E1D6CD; */
                 background: #505B72;
                 box-shadow: 0 0 3px #505B72;
-                /* border: 1px solid #505B72; */
                 transform: translate(-1.6rem, 2rem);
+                /* transform: translateY(2rem); */
                 height: 28.5rem;
                 ul:nth-child(1) {
                     li:nth-child(1) {
-                        transform: translateY(-0.8rem);
+                        transform: translate(0.95rem, -0.8rem);
                     }
                 }
                 ul:nth-child(2) {
@@ -288,15 +289,14 @@ const modal = styled.div`
         }
         if (props.className === 'second'){
             return css`
-                /* background: #F1D9AC; */
                 background: #766F88;
                 box-shadow: 0 0 3px #766F88;
-                /* border: 1px solid #766F88; */
                 transform: translate(-1.6rem, 2rem);
+                /* transform: translateY(2rem); */
                 height: ${modalHeight};
                 ul:nth-child(1) {
                     li:nth-child(1) {
-                        transform: translateY(-1rem);
+                        transform: translate(0.95rem, -1rem);
                     }
                 }
                 ul:nth-child(2) {
@@ -311,19 +311,17 @@ const modal = styled.div`
         }
         if (props.className === 'third'){
             return css`
-                /* background: #EABAAE; */
                 background: #766F88;
                 box-shadow: 0 0 3px #766F88;
-                /* border: 1px solid #766F88; */
                 transform: translate(-1.6rem, -3.5rem);
+                /* transform: translateY(-3.5rem); */
                 height: ${modalHeight};
                 ul:nth-child(1) {
                     li:nth-child(1) {
-                        transform: translateY(-0.8rem);
+                        transform: translate(0.95rem, -0.8rem);
                     }
                 }
                 ul:nth-child(2) {
-                    /* background: #EABAAE; */
                     background: #766F88;
                     transform: translateY(-1.75rem);
                     li:nth-child(1) {
@@ -334,19 +332,17 @@ const modal = styled.div`
         }
         if (props.className === 'fourth'){
             return css`
-                /* background: #EFDFE5; */
                 background: #505B72;
                 box-shadow: 0 0 3px #505B72;
-                /* border: 1px solid #505B72; */
                 transform: translate(-1.6rem, -3.5rem);
+                /* transform: translateY(-3.5rem); */
                 height: ${modalHeight};
                 ul:nth-child(1) {
                     li:nth-child(1) {
-                        transform: translateY(-0.4rem);
+                        transform: translate(0.95rem, -0.4rem);
                     }
                 }
                 ul:nth-child(2) {
-                    /* background: #EFDFE5; */
                     background: #505B72;
                     transform: translateY(-1rem);
                 }

@@ -1,5 +1,6 @@
 ﻿import React, { useState, useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player/lazy';
+// import GifPlayer from 'react-gif-player';
 import Link from 'next/link';
 import * as S from '../../styles/project.Style';
 import P from '../../styles/projects.module.css';
@@ -16,7 +17,6 @@ library.add(faGithub);
 
 const Project = ({item}) => {
 
-    const video = useRef();
     const img = useRef();
 
     let [lender, setLender] = useState(false);
@@ -43,9 +43,6 @@ const Project = ({item}) => {
         });
     }
 
-    const onPlayerReady = () => {
-        // console.log(video.current);
-    }
 
     useEffect(()=>{
         // if (typeof window !== 'undefined') {
@@ -91,10 +88,9 @@ const Project = ({item}) => {
                 >
                     <ul>
                         <li>
-                            <ReactPlayer
+                            {/* <ReactPlayer
                                 className="player"
-                                ref={video}
-                                url={item.video}
+                                url={item.gif}
                                 playing={start ? true : (show ? (qs ? false : true) : false)} 
                                 loop={true} 
                                 muted={true}
@@ -102,10 +98,17 @@ const Project = ({item}) => {
                                 width="29.7rem"
                                 height="15.6rem"
                                 position="relative"
-                                onReady={onPlayerReady}
+                            /> */}
+                            <Image 
+                                src={item.gif}
+                                alt="gif"
+                                className="player"
+                                width="475.2"
+                                height="250"
+                                position="relative"
                             />
                         </li>
-                        <li />
+                        {/* <li /> */}
                     </ul>
                     <ul>
                         <li><span>이름</span><span>{item.name}</span></li>
