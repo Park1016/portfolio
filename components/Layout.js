@@ -14,7 +14,6 @@ const Layout = ({ children }) => {
 
     const top = useRef();
     const scrollUp = () => {
-        console.log(top.current);
         top.current.scrollTo({
             top: 0,
             behavior: "smooth"
@@ -22,7 +21,6 @@ const Layout = ({ children }) => {
     }
 
     const scrollDown = () => {
-        console.log('!');
         top.current.scrollTo({
             bottom: 0,
             behavior: "smooth"

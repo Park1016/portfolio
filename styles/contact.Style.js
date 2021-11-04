@@ -119,15 +119,15 @@ const input = styled.div`
             width: 10px;
             border-radius: 20px;
         }
-            ::-webkit-scrollbar-track {
+        ::-webkit-scrollbar-track {
             background-color: lightgray;
             border-radius: 20px;
         }
-            ::-webkit-scrollbar-thumb {
+        ::-webkit-scrollbar-thumb {
             border-radius: 3px;
             background-color: darkgray;
         }
-            ::-webkit-scrollbar-button {
+        ::-webkit-scrollbar-button {
             width: 0;
             height: 0;
         }

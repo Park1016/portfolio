@@ -26,12 +26,12 @@ const Project = ({item}) => {
 
     const onShow = () => {
         setShow(true);
-        img.current.style.display = 'none';
+        // img.current.style.display = 'none';
     }
 
     const onHidden = () => {
         setShow(false);
-        img.current.style.display = 'block';
+        // img.current.style.display = 'block';
     }
 
     const onDetail = () => {
@@ -77,6 +77,7 @@ const Project = ({item}) => {
                         width={388}
                         height={210}
                         onClick={onDetail}
+                        className="projectImg"
                     />
                     <div>
                         <p>{item.name}</p>
@@ -88,21 +89,10 @@ const Project = ({item}) => {
                 >
                     <ul>
                         <li>
-                            {/* <ReactPlayer
-                                className="player"
-                                url={item.gif}
-                                playing={start ? true : (show ? (qs ? false : true) : false)} 
-                                loop={true} 
-                                muted={true}
-                                controls={false}
-                                width="29.7rem"
-                                height="15.6rem"
-                                position="relative"
-                            /> */}
                             <Image 
                                 src={item.gif}
                                 alt="gif"
-                                className="player"
+                                className="gif"
                                 width="475.2"
                                 height="250"
                                 position="relative"

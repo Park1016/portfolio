@@ -15,7 +15,7 @@ const Contacts = (props) => {
     const name = useRef();
     const email = useRef();
     const phone = useRef();
-    const content = useRef();
+    const message = useRef();
 
     const emailCheck = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
@@ -34,8 +34,8 @@ const Contacts = (props) => {
             alert('이메일형식이 올바르지 않습니다');
             return;
         }
-        if(content.current.value.length === 0){
-            alert('content를 입력해주세요');
+        if(message.current.value.length === 0){
+            alert('message를 입력해주세요');
             return;
         }
         emailjs.sendForm('service_h7k97e2', 'template_pc5ne6r', form.current, 'user_hAmOTdBCsaXezAKKeLx5a')
@@ -44,12 +44,19 @@ const Contacts = (props) => {
             name.current.value = '';
             email.current.value = '';
             phone.current.value = '';
-            content.current.value = '';
-            console.log(result.text);
+            message.current.value = '';
         }, (error) => {
             console.log(error.text);
         });
     };
+
+    const onTextareaEnter = () => {
+        localStorage.setItem('contact', 'textarea');
+    }
+
+    const onTextareaLeave = () => {
+        localStorage.setItem('contact', 'leave');
+    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -77,20 +84,20 @@ const Contacts = (props) => {
                 <S.contents>
                     <form ref={form} onSubmit={sendEmail}>
                         <S.input>
-                            <label>Name *</label>
-                            <input ref={name} type="text" name="name" />
+                            <label htmlFor="name">Name *</label>
+                            <input ref={name} type="text" name="name" id="name" />
                         </S.input>
                         <S.input>
-                            <label>Email *</label>
-                            <input ref={email} type="email" name="email" />
+                            <label htmlFor="email">Email *</label>
+                            <input ref={email} type="email" name="email" id="email" />
                         </S.input>
                         <S.input>
-                            <label>Phone</label>
-                            <input ref={phone} type="text" name="phone" />
+                            <label htmlFor="phone">Phone</label>
+                            <input ref={phone} type="text" name="phone" id="phone" />
                         </S.input>
                         <S.input>
-                            <label>Message *</label>
-                            <textarea ref={content} name="content"/>
+                            <label htmlFor="message">Message *</label>
+                            <textarea ref={message} name="message" id="message" onMouseEnter={onTextareaEnter} onMouseLeave={onTextareaLeave}/>
                         </S.input>
                         <S.send type="submit" value="Send" />
                     </form>
