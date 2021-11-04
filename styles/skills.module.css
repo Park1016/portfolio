@@ -2,9 +2,31 @@
   list-style: none;
 }
 
-.images li div {
+.images > li > div > div {
   width: 96px;
   height: 96px;
+}
+
+@media screen and (max-width: 680px) {
+  /* .images > li > div > div {
+    width: 70px;
+    height: 70px;
+  } */
+  /* #html,
+  #css,
+  #js,
+  #react,
+  #redux,
+  #firebase,
+  #postCSS,
+  #styledCp,
+  #git,
+  #github,
+  #netlify,
+  #vercel {
+    width: 70px;
+    height: 70px;
+  } */
 }
 
 #html {

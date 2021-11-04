@@ -28,13 +28,29 @@ const section = styled.section`
             overflow: hidden;
             margin: 0 1rem;
             box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.5);
-            div {
+            /* div {
                 margin-top: 1rem;
             }
             p {
                 margin-bottom: 1rem;
                 text-align: center;
                 font-weight: bold;
+            } */
+        }
+    }
+    @media screen and (max-width: 950px) {
+        ul {
+            width: 100%;
+            height: 70%;
+            flex-wrap: wrap;
+            flex-direction: row;
+            transform: translate(-3.5rem, -1rem);
+            li {
+                flex-direction: row;
+                width: auto;
+                height: 10rem;
+                padding-right: 0.5rem;
+                margin: 0.5rem;
             }
         }
     }
@@ -50,6 +66,28 @@ const title = styled.p`
     /* transform: translate(34.8rem, -18rem); */
     transform: translate(2rem, -14rem);
     border-bottom: 8px solid #FFC831;
+    @media screen and (max-width: 1200px) {
+        transform: translate(calc(50vw - 3.5rem), -18.5rem);
+    }
+`;
+
+const item = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    div {
+        margin-top: 1rem;
+        height: 5rem;
+    }
+    p {
+        margin-bottom: 1rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    @media screen and (max-width: 950px) {
+        margin-right: 0.5rem;
+    }
 `;
 
 const top = styled.span`
@@ -63,10 +101,21 @@ const top = styled.span`
     width: 100%;
     height: 3rem;
     font-size: 1.2rem;
+    @media screen and (max-width: 950px) {
+        width: 3rem;
+        height: 10rem;
+        margin-right: 0.5rem;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: -7px;
+        text-shadow: none;
+        /* text-shadow: 1px 1px 1px black; */
+    }
 `;
 
 export {
     section,
     title,
-    top
+    top,
+    item
 }

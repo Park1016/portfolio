@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import Image from 'next/image';
 import * as S from '../../styles/contact.Style';
@@ -19,6 +19,7 @@ const Contacts = (props) => {
 
     const emailCheck = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
+    let [load, setLoad] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -38,9 +39,11 @@ const Contacts = (props) => {
             alert('message를 입력해주세요');
             return;
         }
-        emailjs.sendForm('service_h7k97e2', 'template_pc5ne6r', form.current, 'user_hAmOTdBCsaXezAKKeLx5a')
+        setLoad(true);
+        emailjs.sendForm('service_acfpkqb', 'template_6kik8tg', form.current, 'user_6f39CUXGHakLOxSbAXejn')
         .then((result) => {
             alert('메일이 전송되었습니다.');
+            setLoad(false);
             name.current.value = '';
             email.current.value = '';
             phone.current.value = '';
@@ -101,6 +104,14 @@ const Contacts = (props) => {
                         </S.input>
                         <S.send type="submit" value="Send" />
                     </form>
+                    {load && <S.loading>
+                        <Image 
+                            src="/loading3.svg"
+                            alt="loading"
+                            width={200}
+                            height={200}
+                        />
+                    </S.loading>}
                 </S.contents>
             </S.box>
         </S.section>
