@@ -26,6 +26,10 @@ export default class Detail extends Component {
             num: 0,
             slideIndex: 0,
             loading: true,
+            time: false,
+            one: false,
+            two: true,
+            zero: false
         }
     }
     slide(y){
@@ -44,6 +48,7 @@ export default class Detail extends Component {
             })
             const lsId = localStorage.getItem('num');
             this.setState({ num: lsId});
+            localStorage.setItem('projectScroll', 'leave');
         }
     }
 
@@ -76,6 +81,10 @@ export default class Detail extends Component {
             beforeChange: (current, next) => this.setState({ slideIndex: next })
         };
 
+        const onTimeClick = () => {
+            this.setState({ time: !this.state.time })
+        }
+
         const goBack = () => {
             sessionStorage.setItem('scroll', true);
             if (typeof window !== 'undefined') {
@@ -89,6 +98,27 @@ export default class Detail extends Component {
 
         const onLoading = () => {
             this.setState({ loading: false });
+        }
+
+        const onToggleReset = () => {
+            this.setState({ one: false });
+            this.setState({ two: false });
+            this.setState({ zero: false });
+        }
+
+        const onRoll = (e) => {
+            // console.log(e.target.parentElement);
+            const target = e.target.parentElement;
+            if(target.classList.contains('1')){
+                onToggleReset();
+                this.setState({ one: !this.state.one });
+            } else if(target.classList.contains('2')){
+                onToggleReset();
+                this.setState({ two: !this.state.two });
+            } else {
+                onToggleReset();
+                this.setState({ zero: !this.state.zero });
+            }
         }
 
         if(!id){
@@ -107,36 +137,44 @@ export default class Detail extends Component {
                         <S.content className="detailFirst">
                             <S.contentInner className="detailFirst">
                                 <S.Title className="video">🎞️ Video</S.Title>
-                                <span>
-                                    <ReactPlayer
-                                        className="datailPlayer"
-                                        url={id ? p.project[id].video : p.project[this.state.num].video}
-                                        playing={true} 
-                                        loop={false} 
-                                        muted={true}
-                                        controls={true}
-                                        width="921px"
-                                        height="518px"
-                                    />
-                                    <S.timeStamp id={id || this.state.num}>
+                                <S.contentBox>
+                                    <S.videoBox>
+                                        <ReactPlayer
+                                            className="datailPlayer"
+                                            url={id ? p.project[id].video : p.project[this.state.num].video}
+                                            playing={true} 
+                                            loop={false} 
+                                            muted={true}
+                                            controls={true}
+                                            width="100%"
+                                            height="100%"
+                                            position="absolute"
+                                        />
+                                    </S.videoBox>
+                                    <S.timeText onClick={onTimeClick} id={id || this.state.num}>TimeStamp &nbsp; &nbsp;▼</S.timeText>
+                                    <S.timeStamp id={id || this.state.num} time={this.state.time}>
                                         <p>{id ? p.project[id].timeText : p.project[this.state.num].timeText}</p>
                                         <span>{id ? p.project[id].time : p.project[this.state.num].time}</span>
                                         <span>{id ? p.project[id].timeStamp : p.project[this.state.num].timeStamp}</span>
                                     </S.timeStamp>
-                                </span>
+                                </S.contentBox>
                             </S.contentInner>
                         </S.content>
                         <S.content className="detailSecond">
                             <S.contentInner className="detailSecond" id={id || this.state.num}>
-                                <S.Title className="info">📃Info</S.Title>
+                                <S.Title className="info" id={id || this.state.num}>📃Info</S.Title>
                                 <S.detailUl id={id || this.state.num}>
                                     <li><div>프로젝트명</div><div>{id ? p.project[id].name : p.project[this.state.num].name}</div></li>
-                                    <li><div>소개글</div>{id ? p.project[id].info.replace(/(?:\r\n|\r|\n)/g, '\n') : p.project[this.state.num].info.replace(/(?:\r\n|\r|\n)/g, '\n')}</li>
+                                    <li><div>소개글</div><div>{id ? p.project[id].info.replace(/(?:\r\n|\r|\n)/g, '\n') : p.project[this.state.num].info.replace(/(?:\r\n|\r|\n)/g, '\n')}</div></li>
                                     <li><div>개발인원</div><div>{id ? p.project[id].num : p.project[this.state.num].num}</div></li>
                                     {id ? <li><div>기술스택</div><div>{p.project[id].skill.map((item, index)=>(<p key={index}>{item}</p>))}</div></li>
                                     : <li><div>기술스택</div><div>{p.project[this.state.num].skill.map((item, index)=>(<p key={index}>{item}</p>))}</div></li>}
-                                    {id ? <li><div>담당업무</div><div>{p.project[id].roll.map((item, index)=>(<p key={index}>{item.map((i, index)=>(<span key={index}>{i.replace(/(?:\r\n|\r|\n)/g, '\n')}</span>))}</p>))}</div></li> :
-                                    <li><div>담당업무</div><div>{p.project[this.state.num].roll.map((item, index)=>(<p key={index}>{item.map((i, index)=>(<span key={index}>{i.replace(/(?:\r\n|\r|\n)/g, '\n')}</span>))}</p>))}</div></li>}
+                                    {id ? <li><div>담당업무</div><S.toggle one={this.state.one} two={this.state.two} zero={this.state.zero} id={id ? p.project[id].id : p.project[this.state.num].id}>{p.project[id].roll.map((item, index)=>(
+                                    <p key={index} className={index}>
+                                        {item.map((i, index)=>(<span key={index} className={index} onClick={e=>onRoll(e)}>{i.replace(/(?:\r\n|\r|\n)/g, '\n')}</span>))}</p>))}</S.toggle></li> :
+                                    <li><div>담당업무</div><S.toggle one={this.state.one} two={this.state.two} zero={this.state.zero}>{p.project[this.state.num].roll.map((item, index)=>(
+                                    <p key={index} className={index}>
+                                        {item.map((i, index)=>(<span key={index} className={index} onClick={e=>onRoll(e)}>{i.replace(/(?:\r\n|\r|\n)/g, '\n')}</span>))}</p>))}</S.toggle></li>}
                                     <li>
                                         <a href={id ? p.project[id].git : p.project[this.state.num].git} target="_blank" rel="noreferrer">
                                             <FontAwesomeIcon icon={["fab", "github"]} />
@@ -161,7 +199,16 @@ export default class Detail extends Component {
                                         height={200}
                                     />
                                 </S.loading>}
-                                <iframe src={id ? p.project[id].deploy : p.project[this.state.num].deploy} width="1094px" height="615px" onLoad={onLoading}/>
+                                <S.view>
+                                    <iframe
+                                        src={id ? p.project[id].deploy : p.project[this.state.num].deploy}
+                                        width="100%"
+                                        height="100%"
+                                        margin="0"
+                                        position="absolute"
+                                        onLoad={onLoading}
+                                    />
+                                </S.view>
                             </S.contentInner>
                         </S.content>
                     </Slide.Slider>

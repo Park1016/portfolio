@@ -24,7 +24,7 @@ const box = styled.div`
         flex-direction: column;
     }
     @media screen and (max-width: 750px) {
-        width: 70vw;
+        width: 90vw;
     }
 `;
 
@@ -115,7 +115,7 @@ const link = styled.div`
         }
     }
     @media screen and (max-width: 750px) {
-        transform: translate(calc(35vw), -7.8rem);
+        transform: translate(calc(45vw), -7.8rem);
     }
 `;
 
@@ -140,9 +140,9 @@ const contents = styled.div`
         transform: translateY(1.5rem);
     }
     @media screen and (max-width: 750px) {
-        width: 70vw;
+        width: 90vw;
         form {
-            width: 70vw;
+            width: 90vw;
         }
     }
 `;
@@ -222,7 +222,7 @@ const send = styled.input`
         background: rgb(226, 182, 70, 1);
     }
     @media screen and (max-width: 750px) {
-        width: 66vw;
+        width: 86vw;
         transform: translate(2vw, 0.5rem);
     }
 `;

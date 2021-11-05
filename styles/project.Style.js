@@ -312,6 +312,9 @@ const modal = styled.div`
                     ul:nth-child(1) {
                         display: none;
                     }
+                    ul:nth-child(2) {
+                        transform: translateY(-0.5rem);
+                    }
                     height: 14rem;
                     transform: translate(-1.5rem, 0rem);
                 }

@@ -73,6 +73,8 @@ export default class Home extends Component {
         } else {
             setTimeout(()=>{
                 this.setState({ loading: false }); 
+                localStorage.setItem('projectScroll', 'leave');
+                localStorage.setItem('contact', 'leave');
             }, 1500);
         }
         if (typeof window !== "undefined") {
