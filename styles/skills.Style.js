@@ -53,15 +53,18 @@ const section = styled.section`
                 font-weight: bold;
             } */
         }
+        li:hover {
+            transform: scale(1.01);
+        }
     }
     @media screen and (max-width: 950px) {
         ul {
             width: 100%;
-            height: 90%;
-            /* height: 30rem; */
+            /* height: 90%; */
+            height: 33rem;
             flex-wrap: wrap;
             flex-direction: row;
-            transform: translate(-3.5rem, 2.5rem);
+            transform: translate(-3.5rem, 1rem);
             li {
                 flex-direction: row;
                 width: auto;
@@ -87,6 +90,7 @@ const section = styled.section`
             transform: translate(-3.5rem, 0rem);
             overflow-x: hidden;
             overflow-y: auto;
+            height: 90%;
             background: rgb(255,255,255,0.3);
             ::-webkit-scrollbar {
                 width: 5px;
