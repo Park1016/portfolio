@@ -11,13 +11,28 @@ const section = styled.section`
     overflow: hidden;
     ul {
         width: 70rem;
-        height: 30rem;
+        height: 32rem;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-        /* border: 1px solid black; */
-        transform: translateX(-3.5rem);
+        overflow-x: hidden;
+        transform: translate(-3.5rem, 1rem);
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: lightgray;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #FFC831;
+        }
+        ::-webkit-scrollbar-button {
+            width: 0;
+            height: 0;
+        }
         li {
             background: #fff;
             border-radius: 20px;
@@ -43,6 +58,7 @@ const section = styled.section`
         ul {
             width: 100%;
             height: 90%;
+            /* height: 30rem; */
             flex-wrap: wrap;
             flex-direction: row;
             transform: translate(-3.5rem, 2.5rem);
@@ -57,38 +73,19 @@ const section = styled.section`
     }
     @media screen and (max-height: 710px) {
         ul {
+            overflow-x: hidden;
             overflow-y: auto;
-            /* background: rgb(255,255,255,0.3); */
-            ::-webkit-scrollbar {
-                width: 5px;
-            }
-            ::-webkit-scrollbar-track {
-                background-color: lightgray;
-                border-radius: 10px;
-            }
-            ::-webkit-scrollbar-thumb {
-                border-radius: 10px;
-                background-color: #FFC831;
-            }
-            ::-webkit-scrollbar-button {
-                width: 0;
-                height: 0;
-            }
         }
         @media screen and (max-width: 950px) {
             ul {
                 transform: translate(-3.5rem, 0rem);
             }
         }
-        /* @media screen and (max-width: 672px) {
-            ul {
-                transform: translate(-3.5rem, 2.5rem);
-            }
-        } */
     }
     @media screen and (max-width: 672px) {
         ul {
             transform: translate(-3.5rem, 0rem);
+            overflow-x: hidden;
             overflow-y: auto;
             background: rgb(255,255,255,0.3);
             ::-webkit-scrollbar {
@@ -116,7 +113,7 @@ const section = styled.section`
             }
         }  
     }
-    @media screen and (max-height: 956px) {
+    @media screen and (max-height: 710px) {
         @media screen and (min-width: 950px) {
             ul {
                 height: 80vh;

@@ -616,6 +616,9 @@ const detailUl = styled.ul`
                         div:nth-child(1) {
                             display: none;
                         }
+                        div:nth-child(2) {
+                            transform: translateX(3rem);
+                        }
                     }
                     li:nth-child(6) {
                         transform: translate(10rem, -4.4rem);
@@ -1140,9 +1143,30 @@ const toggle = styled.div`
             if(props.id === '0') {
                 if(props.two){
                     return css`
+                        /* p {
+                            span:nth-child(2) {
+                                height: 13rem;
+                                overflow-x: hidden;
+                                overflow-y: auto;
+                                ::-webkit-scrollbar {
+                                    width: 10px;
+                                }
+                                ::-webkit-scrollbar-track {
+                                    background-color: lightgray;
+                                }
+                                ::-webkit-scrollbar-thumb {
+                                    border-radius: 3px;
+                                    background-color: darkgray;
+                                }
+                                ::-webkit-scrollbar-button {
+                                    width: 0;
+                                    height: 0;
+                                }
+                            }
+                        } */
                         p:nth-child(3) {
                             span:nth-child(2){
-                                transform: translate(-14rem, 2.5rem);
+                                transform: translate(-16rem, 2.5rem);
                             }
                         }
                     `;
