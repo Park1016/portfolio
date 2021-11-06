@@ -8,6 +8,7 @@ const section = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 `;
 
 const content = styled.div`

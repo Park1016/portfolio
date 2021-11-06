@@ -7,7 +7,7 @@ const section = styled.section`
     width: 100vw;
     height: calc(100vh - 4rem);
     background: #2F4858;
-    /* scroll-snap-align: center; */
+    overflow: hidden;
 `;
 
 const box = styled.div`
@@ -25,6 +25,9 @@ const box = styled.div`
     }
     @media screen and (max-width: 750px) {
         width: 90vw;
+    }
+    @media screen and (max-height: 580px) {
+        height: 80vh;
     }
 `;
 
@@ -61,6 +64,15 @@ const left = styled.div`
         p {
             transform: translate(2rem, -4.5rem);
         }
+    }
+    @media screen and (max-height: 580px) {
+        display: none;
+        /* p {
+            display: none;
+        }
+        div {
+            transform: translate(calc(50vw - 10.5rem), -2.4rem);
+        } */
     }
 `;
 
@@ -144,6 +156,9 @@ const contents = styled.div`
         form {
             width: 90vw;
         }
+    }
+    @media screen and (max-height: 580px) {
+        transform: translateY(-3vh);
     }
 `;
 

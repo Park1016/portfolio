@@ -8,6 +8,7 @@ const section = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     ul {
         width: 70rem;
         height: 30rem;
@@ -41,16 +42,91 @@ const section = styled.section`
     @media screen and (max-width: 950px) {
         ul {
             width: 100%;
-            height: 70%;
+            height: 90%;
             flex-wrap: wrap;
             flex-direction: row;
-            transform: translate(-3.5rem, -1rem);
+            transform: translate(-3.5rem, 2.5rem);
             li {
                 flex-direction: row;
                 width: auto;
                 height: 10rem;
                 padding-right: 0.5rem;
                 margin: 0.5rem;
+            }
+        }
+    }
+    @media screen and (max-height: 710px) {
+        ul {
+            overflow-y: auto;
+            /* background: rgb(255,255,255,0.3); */
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+            ::-webkit-scrollbar-track {
+                background-color: lightgray;
+                border-radius: 10px;
+            }
+            ::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: #FFC831;
+            }
+            ::-webkit-scrollbar-button {
+                width: 0;
+                height: 0;
+            }
+        }
+        @media screen and (max-width: 950px) {
+            ul {
+                transform: translate(-3.5rem, 0rem);
+            }
+        }
+        /* @media screen and (max-width: 672px) {
+            ul {
+                transform: translate(-3.5rem, 2.5rem);
+            }
+        } */
+    }
+    @media screen and (max-width: 672px) {
+        ul {
+            transform: translate(-3.5rem, 0rem);
+            overflow-y: auto;
+            background: rgb(255,255,255,0.3);
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+            ::-webkit-scrollbar-track {
+                background-color: lightgray;
+                border-radius: 10px;
+            }
+            ::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: rgb(255,200,49,0.8);
+            }
+            ::-webkit-scrollbar-button {
+                width: 0;
+                height: 0;
+            }
+        }
+    }
+    @media screen and (max-height: 651px) {
+        @media screen and (max-width: 950px) {
+            ul {
+                background: rgb(255,255,255,0.3);
+                height: 80vh;
+            }
+        }  
+    }
+    @media screen and (max-height: 956px) {
+        @media screen and (min-width: 950px) {
+            ul {
+                height: 80vh;
+            }
+        }
+    }
+    @media screen and (min-width: 950px) {
+        @media screen and (max-height: 620px) {
+            ul {
+                background: rgb(255,255,255,0.3);
             }
         }
     }
@@ -68,6 +144,16 @@ const title = styled.p`
     border-bottom: 8px solid #FFC831;
     @media screen and (max-width: 1200px) {
         transform: translate(calc(50vw - 3.5rem), -18.5rem);
+    }
+    @media screen and (max-height: 710px) {
+        /* @media screen and (min-width: 672px) { */
+            visibility: hidden;
+            height: 80vh;
+        /* } */
+    }
+    @media screen and (max-width: 672px) {
+        visibility: hidden;
+        height: 80vh;
     }
 `;
 

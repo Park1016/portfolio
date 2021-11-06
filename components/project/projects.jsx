@@ -12,14 +12,14 @@ const Projects = (props) => {
     const section = useRef();
 
     const onMouseEnter = () => {
-        if(section.current.clientWidth > 1000){
+        if(section.current.clientWidth > 920 && section.current.clientHeight > 646){
             return;
         }
         localStorage.setItem('projectScroll', 'project');
     }
 
     const onMouseLeave = () => {
-        if(section.current.clientWidth > 1000){
+        if(section.current.clientWidth > 920 && section.current.clientHeight > 646){
             return;
         }
         localStorage.setItem('projectScroll', 'leave');

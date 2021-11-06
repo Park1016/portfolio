@@ -1,12 +1,31 @@
-﻿import React from 'react';
+﻿import React, { useRef } from 'react';
 import * as S from '../../styles/skills.Style';
 import P from '../../styles/skills.module.css';
 
+
 const Skills = (props) => {
+
+    const section = useRef();
+
+    const onMouseEnter = () => {
+        console.log(section.current.clientHeight);
+        if(section.current.clientWidth > 674 && section.current.clientHeight > 557){
+            return;
+        }
+        localStorage.setItem('skillScroll', 'skill');
+    }
+
+    const onMouseLeave = () => {
+        if(section.current.clientWidth > 674 && section.current.clientHeight > 557){
+            return;
+        }
+        localStorage.setItem('skillScroll', 'leave');
+    }
+
     return (
-        <S.section>
+        <S.section ref={section}>
             <S.title>Skill</S.title>
-            <ul className={P.images}>
+            <ul className={P.images} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                 <li>
                     <S.top>Basic</S.top>
                     <S.item>

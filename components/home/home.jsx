@@ -80,7 +80,8 @@ export default class Home extends Component {
         if (typeof window !== "undefined") {
             window.addEventListener('wheel', (e) => {
                 if(localStorage.getItem('contact') === 'textarea'
-                || localStorage.getItem('projectScroll') === 'project'){
+                || localStorage.getItem('projectScroll') === 'project'
+                || localStorage.getItem('skillScroll') === 'skill'){
                     return;
                 }
                 this.slide(e.wheelDelta);
