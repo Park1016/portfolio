@@ -14,10 +14,10 @@ const resHome = styled.div`
     }
     ::-webkit-scrollbar-track {
         background-color: lightgray;
-        border-radius: 10px;
+        /* border-radius: 10px; */
     }
     ::-webkit-scrollbar-thumb {
-        border-radius: 10px;
+        /* border-radius: 10px; */
         background-color: #E2B646;
     }
     ::-webkit-scrollbar-button {

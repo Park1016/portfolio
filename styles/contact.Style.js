@@ -239,6 +239,11 @@ const input = styled.div`
             color: #fff;
             box-shadow: 2px 2px 3px black;
         }
+        textarea {
+            ::-webkit-scrollbar-track {
+                background-color: #fff;
+            }
+        }
         label {
             color: #fff;
             text-shadow: 2px 2px 3px black;

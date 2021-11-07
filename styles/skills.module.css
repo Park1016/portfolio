@@ -7,6 +7,11 @@
   height: 96px;
 }
 
+.resImages > div > div {
+  width: 96px;
+  height: 96px;
+}
+
 @media screen and (max-width: 680px) {
   /* .images > li > div > div {
     width: 70px;

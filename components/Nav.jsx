@@ -19,32 +19,53 @@ const Nav = (props) => {
         }
     }
 
+    const onClick = (e) => {
+        const target = e.target.textContent;
+        switch (target) {
+            case 'HOME' :
+                localStorage.setItem('nav', 'home');
+                break;
+            case 'About Me':
+                localStorage.setItem('nav', 'aboutMe');
+                break;
+            case 'Project' :
+                localStorage.setItem('nav', 'project');
+                break;
+            case 'Skill':
+                localStorage.setItem('nav', 'skill');
+                break;
+            case 'Contact':
+                localStorage.setItem('nav', 'contact');
+                break;
+        }
+    }
+
     return (
         <S.nav>
             <ul>
                 <li>
                     <Link href="/aboutMe">
-                        <a style={{color : '/aboutMe' === router.pathname ? '#e2b646' : '#2D3748'}}>About Me</a>
+                        <a style={{color : '/aboutMe' === router.pathname ? '#e2b646' : '#2D3748'}} onClick={e=>onClick(e)}>About Me</a>
                     </Link>
                 </li>
                 <li onClick={onProject}>
                     <Link href="/project">
-                        <a style={{color : '/project' === router.pathname ? '#e2b646' : '#2D3748'}}>Project</a>
+                        <a style={{color : '/project' === router.pathname ? '#e2b646 onClick={e=>onClick(e)}' : '#2D3748'}} onClick={e=>onClick(e)}>Project</a>
                     </Link>
                 </li>
                 <li onClick={onHome}>
                     <Link href="/">
-                        <a style={{color : '/' === router.pathname ? '#e2b646' : '#2D3748'}}>HOME</a>
+                        <a style={{color : '/' === router.pathname ? '#e2b646' : '#2D3748'}} onClick={e=>onClick(e)}>HOME</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/skill">
-                        <a style={{color : '/skill' === router.pathname ? '#e2b646' : '#2D3748'}}>Skill</a>
+                        <a style={{color : '/skill' === router.pathname ? '#e2b646' : '#2D3748'}} onClick={e=>onClick(e)}>Skill</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/contact">
-                        <a style={{color : '/contact' === router.pathname ? '#e2b646' : '#2D3748'}}>Contact</a>
+                        <a style={{color : '/contact' === router.pathname ? '#e2b646' : '#2D3748'}} onClick={e=>onClick(e)}>Contact</a>
                     </Link>
                 </li>
             </ul>
