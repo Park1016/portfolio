@@ -9,6 +9,21 @@ const home = styled.div`
 const resHome = styled.div`
     height: 100vh;
     overflow-y: scroll;
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: lightgray;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #E2B646;
+    }
+    ::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+    }
     @media screen and (min-width: 921px) {
         display: none;
     }   

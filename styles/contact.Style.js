@@ -25,6 +25,8 @@ const box = styled.div`
     }
     @media screen and (max-width: 750px) {
         width: 90vw;
+        background: #2F4858;
+        box-shadow: none;
     }
     @media screen and (max-height: 580px) {
         height: 80vh;
@@ -53,6 +55,11 @@ const left = styled.div`
             transform: translate(5rem, -4.5rem);
             color: #E2B646;
             text-shadow: 1px 1px 1px black;
+        }
+    }
+    @media screen and (max-width: 750px) {
+        p {
+            text-shadow: 2px 2px 3px black;
         }
     }
     @media screen and (max-width: 600px) {
@@ -127,7 +134,16 @@ const link = styled.div`
         }
     }
     @media screen and (max-width: 750px) {
-        transform: translate(calc(45vw), -7.8rem);
+        transform: translate(calc(45vw - 1rem), -7.8rem);
+        a {
+            width: 3rem;
+            border-radius: 10px;
+            line-height: 1.5;
+            margin-left: 0.5rem;
+            background: rgb(255, 255, 255, 0.1);
+            color: #fff;
+            box-shadow: 1px 1px 3px black;
+        }
     }
 `;
 
@@ -153,6 +169,8 @@ const contents = styled.div`
     }
     @media screen and (max-width: 750px) {
         width: 90vw;
+        background: #2F4858;
+        /* transform: translateY(-1rem); */
         form {
             width: 90vw;
         }
@@ -217,6 +235,17 @@ const input = styled.div`
         width: 100%;
         input, textarea {
             width: calc(100% - 8rem);
+            background: rgb(255, 255, 255, 0.1);
+            color: #fff;
+            box-shadow: 2px 2px 3px black;
+        }
+        label {
+            color: #fff;
+            text-shadow: 2px 2px 3px black;
+        }
+        input:hover,
+        textarea:hover {
+            border: 2px solid #fff;
         }
     }
 `;
@@ -239,6 +268,7 @@ const send = styled.input`
     @media screen and (max-width: 750px) {
         width: 86vw;
         transform: translate(2vw, 0.5rem);
+        box-shadow: 2px 2px 3px black;
     }
 `;
 
