@@ -25,6 +25,7 @@ export default class Home extends Component {
         super(props);
         this.slide = this.slide.bind(this);
         this.box = React.createRef();
+        this.project = React.createRef();
         this.onScroll = this.onScroll.bind(this);
         this.scrollUp = this.scrollUp.bind(this);
         this.scrollDown = this.scrollDown.bind(this);
@@ -91,6 +92,9 @@ export default class Home extends Component {
 
     componentDidUpdate(){
         if(this.state.scroll){
+            if(this.project){
+                this.project.current.scrollIntoView({behavior: "smooth"});
+            }
             setTimeout(()=>{
                 this.onScroll();
                 this.setState({ scroll: false });
@@ -187,14 +191,14 @@ export default class Home extends Component {
                     </Slider>
                 </S.home>
                 <S.resHome>
-                    <AboutMe />
+                    {/* <AboutMe />
                     <Projects />
                     <Skills />
-                    <Contacts />
-                    {/* <div>
+                    <Contacts /> */}
+                    <div>
                         <AboutMe />
                     </div>
-                    <div>
+                    <div ref={this.project}>
                         <Projects />
                     </div>
                     <div>
@@ -202,7 +206,7 @@ export default class Home extends Component {
                     </div>
                     <div>
                         <Contacts />
-                    </div> */}
+                    </div>
                 </S.resHome>
             </>
         );

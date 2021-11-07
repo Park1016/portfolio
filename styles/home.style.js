@@ -171,6 +171,9 @@ const alert = styled.div`
             `;
         }
     }}
+    @media screen and (max-width: 920px) {
+        display: none;
+    }
 `;
 
 

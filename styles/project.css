@@ -1,6 +1,21 @@
-﻿@media screen and (max-width: 1150px) {
-  .html5-main-video {
-    width: 645px;
-    height: 363px;
-  }
+﻿.html5-video-player:not(.ytp-transparent),
+.html5-video-player .unstarted-mode,
+.html5-video-player .ad-showing,
+.html5-video-player .ended-mode,
+.html5-video-player .ytp-fullscreen {
+  background-color: #2f4858;
+}
+
+/* .html5-video-player:not(.ytp-transparent) {
+  background-color: #2f4858;
+} */
+
+.date-20211106,
+.ko_KR,
+.ltr,
+.site-center-aligned,
+.site-as-giant-card,
+.webkit,
+.webkit-537 {
+  background-color: transparent;
 }

@@ -50,7 +50,7 @@ const Nav = (props) => {
                 </li>
                 <li onClick={onProject}>
                     <Link href="/project">
-                        <a style={{color : '/project' === router.pathname ? '#e2b646 onClick={e=>onClick(e)}' : '#2D3748'}} onClick={e=>onClick(e)}>Project</a>
+                        <a style={{color : '/project' === router.pathname ? '#e2b646' : '#2D3748'}} onClick={e=>onClick(e)}>Project</a>
                     </Link>
                 </li>
                 <li onClick={onHome}>

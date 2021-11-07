@@ -25,6 +25,9 @@ const nav = styled.nav`
             width: 6.5rem;
         }
     }
+    @media screen and (max-width: 920px) {
+        border-bottom: 1px solid #e3e3e3;
+    }
 `;
 
 export {

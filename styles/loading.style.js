@@ -11,6 +11,9 @@ const section = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 920px) {
+        display: none;
+    }
 `;
 
 export {

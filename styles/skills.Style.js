@@ -9,7 +9,7 @@ const section = styled.section`
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 920px) {
         flex-direction: column;
         /* align-items: flex-end; */
         justify-content: flex-start;
@@ -96,7 +96,7 @@ const ul = styled.ul`
             margin: 0.5rem;
         }
     }
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 920px) {
         display: none;
     }
     @media screen and (max-height: 710px) {
@@ -156,10 +156,10 @@ const resDiv = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     border-radius: 0 0 20px 20px;
     /* box-shadow: 2px 2px 5px black; */
-    @media screen and (min-width: 751px) {
+    @media screen and (min-width: 921px) {
         display: none;
     }
 `;
@@ -177,13 +177,13 @@ const title = styled.p`
     @media screen and (max-width: 1200px) {
         transform: translate(calc(50vw - 3.5rem), -18.5rem);
     }
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 920px) {
         transform: translate(0);
         width: 90vw;
         border-bottom: none;
         border-radius: 20px 20px 0 0;
         background: #FFC831;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         /* text-shadow: none; */
         text-shadow: 1px 1px 1px black;
         height: 4rem;
@@ -216,7 +216,7 @@ const item = styled.div`
     @media screen and (max-width: 950px) {
         margin-right: 0.5rem;
     }
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 920px) {
         margin: 1rem 2rem;
     }
 `;
