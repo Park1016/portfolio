@@ -4,6 +4,11 @@ const home = styled.div`
     @media screen and (max-width: 920px) {
         display: none;
     }
+    @media screen and (min-width: 921px) {
+        @media screen and (max-height: 650px) {
+            display: none;
+        }
+    }
 `;
 
 const resHome = styled.div`
@@ -25,7 +30,13 @@ const resHome = styled.div`
         height: 0;
     }
     @media screen and (min-width: 921px) {
-        display: none;
+        /* display: none; */
+        @media screen and (max-height: 650px) {
+            display: block;
+        }
+        @media screen and (min-height: 651px) {
+            display: none;
+        }
     }   
 `;
 

@@ -29,7 +29,9 @@ const box = styled.div`
         box-shadow: none;
     }
     @media screen and (max-height: 580px) {
-        height: 80vh;
+        @media screen and (min-width: 921px) {
+            height: 80vh;
+        }
     }
 `;
 
@@ -73,7 +75,7 @@ const left = styled.div`
         }
     }
     @media screen and (max-height: 580px) {
-        @media screen and (min-width: 920px) {
+        @media screen and (min-width: 921px) {
             display: none;
         }
     }
@@ -166,7 +168,7 @@ const contents = styled.div`
         }
     }
     @media screen and (max-height: 580px) {
-        @media screen and (min-width: 920px) {
+        @media screen and (min-width: 921px) {
             transform: translateY(-3vh);
         }
     }

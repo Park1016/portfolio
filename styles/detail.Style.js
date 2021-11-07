@@ -15,7 +15,12 @@ const box = styled.div`
     justify-content: center;
     z-index: 10;
     @media screen and (max-width: 920px) {
-        display: none;
+        @media screen and (max-height: 721px) {
+            display: none;
+        }
+        @media screen and (min-height: 720px) {
+            display: block;
+        }
     }
 `;
 
@@ -34,8 +39,18 @@ const resBox = styled.div`
     justify-content: center;
     z-index: 10;
     @media screen and (min-width: 921px) {
-        display: none;
+        @media screen and (max-height: 721px) {
+            display: block;
+        }
+        @media screen and (min-height: 720px) {
+            display: none;
+        }
     }
+    /* @media screen and (max-width: 920px) {
+        @media screen and (min-height: 721px) {
+            display: none;
+        }
+    } */
 `;
 
 const container = styled.div`
@@ -62,7 +77,7 @@ const container = styled.div`
     @media screen and (max-width: 920px) {
         button {
             top: 0rem;
-            right: 10px;
+            right: 5px;
             border-radius: 0;
             box-shadow: none;
         }
@@ -79,6 +94,30 @@ const container = styled.div`
         ::-webkit-scrollbar-button {
             width: 0;
             height: 0;
+        }
+    }
+    @media screen and (min-width: 921px) {
+        @media screen and (max-height: 721px) {
+            button {
+            top: 0rem;
+            right: 5px;
+            border-radius: 0;
+            box-shadow: none;
+            }
+            overflow-y: auto;
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+            ::-webkit-scrollbar-track {
+                background-color: lightgray;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: #E7B52D;
+            }
+            ::-webkit-scrollbar-button {
+                width: 0;
+                height: 0;
+            }
         }
     }
 `;
@@ -168,7 +207,9 @@ const content = styled.div`
                     padding-bottom: 5.1rem;
                 }
                 @media screen and (max-height: 720px) {
-                    display: none;
+                    @media screen and (min-width: 921px) {
+                        display: none;
+                    }
                 }
             `;
         }
@@ -196,7 +237,9 @@ const Title = styled.p`
                     transform: translate(calc(40rem - 4.5rem), -1rem);
                 }
                 @media screen and (max-height: 650px) {
-                    display: none;
+                    @media screen and (min-width: 921px) {
+                        display: none;
+                    }
                 }
             `;
         }
@@ -209,7 +252,7 @@ const Title = styled.p`
                 @media screen and (max-width: 1400px) {
                     transform: translate(0, -4rem);
                     @media screen and (max-height: 710px) {
-                        @media screen and (min-width: 920px) {
+                        @media screen and (min-width: 921px) {
                             display: none;
                         }
                     }
@@ -218,7 +261,9 @@ const Title = styled.p`
                     transform: translate(calc(50vw - 4rem), -4rem);
                     /* transform: translateX(-9rem); */
                     @media screen and (max-height: 710px) {
-                        display: block;
+                        @media screen and (min-width: 921px) {
+                            display: block;
+                        }
                     }
                 }
             `;
@@ -242,8 +287,8 @@ const Title = styled.p`
                     display: none;
                 }
                 @media screen and (max-height: 710px) {
-                    @media screen and (min-width: 920px) {
-                        display: none;
+                    @media screen and (min-width: 921px) {
+                        
                     }
                 }
             `;
@@ -259,8 +304,8 @@ const Title = styled.p`
                 /* @media screen and (max-width: 880px) {
                 } */
                 @media screen and (max-height: 710px) {
-                    @media screen and (min-width: 920px) {
-                        display: none;
+                    @media screen and (min-width: 921px) {
+                        transform: translate(-10rem, -13vh);
                     }
                 }
             `;
@@ -423,6 +468,18 @@ const timeStamp = styled.span`
         }
         span {
             transform: translateY(-0.3rem);
+        }
+    }
+    @media screen and (max-height: 710px) {
+        @media screen and (min-width: 921px) {
+            p {
+                transform: translateY(-2vh);
+            }
+            @media screen and (max-height: 630px) {
+                p {
+                    display: none;
+                }
+            }
         }
     }
 `;
@@ -803,9 +860,9 @@ const detailUl = styled.ul`
                     }
                 } */
                 @media screen and (max-height: 710px) {
-                    @media screen and (min-width: 920px) {
-                        transform: translate(-14vw, -12vh);
-                        border: none;
+                    @media screen and (min-width: 921px) {
+                        transform: translate(0, -12vh);
+                        /* border: none; */
                     }
                     /* @media screen and (max-width: 720px) {
                         transform: translateX(12rem);
@@ -941,7 +998,9 @@ const videoBox = styled.div`
         width: calc(921px * 0.9);
         height: calc(70vh * 0.9);
         @media screen and (min-height: 750px) {
-            max-height: 30rem;
+            @media screen and (min-width: 921px) {
+                max-height: 30rem;
+            }
         }
     }
     @media screen and (max-width: 950px) {
@@ -975,8 +1034,10 @@ const view = styled.div`
         width: calc(1094px * 0.9);
         height: calc(615px * 0.9);
         @media screen and (max-height: 710px) {
-            height: 70vh;
-            transform: translateY(-1rem);
+            @media screen and (min-width: 921px) {
+                height: 70vh;
+                transform: translateY(-1rem);
+            }
         }
     }
     @media screen and (max-width: 1200px) {
@@ -1256,14 +1317,14 @@ const toggle = styled.div`
             ${(props)=>{
                 if(props.id === '0') {
                     if(props.two){
-                        return css`
-                            p:nth-child(3) {
-                                span:nth-child(2){
-                                    width: 50vw;
-                                    transform: translate(-14rem, 2.5rem);
-                                }
-                            }
-                        `;
+                        // return css`
+                        //     p:nth-child(3) {
+                        //         span:nth-child(2){
+                        //             width: 50vw;
+                        //             transform: translate(-14rem, 2.5rem);
+                        //         }
+                        //     }
+                        // `;
                     }
                 }
             }}

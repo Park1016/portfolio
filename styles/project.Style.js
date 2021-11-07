@@ -35,7 +35,7 @@ const text = styled.p`
         }
     }
     @media screen and (max-height: 710px) {
-        @media screen and (min-width: 920px) {
+        @media screen and (min-width: 821px) {
             display: none;
         }
     }
@@ -131,10 +131,10 @@ const div = styled.div`
         transform: translateY(2rem);
         box-shadow: none;
     }
-    @media screen and (max-height: 710px) {
-        @media screen and (min-width: 921px) {
-            transform: translateY(0.5rem);
-            height: 70vh;
+    @media screen and (max-height: 600px) {
+        @media screen and (min-width: 821px) {
+            transform: translateY(1rem);
+            height: 80vh;
             overflow-y: auto;
         }
     }
@@ -684,17 +684,19 @@ const modal = styled.div`
     }}
     @media screen and (max-height: 710px) {
         /* width: 85vw; */
-        ul:nth-child(1) {
-            display: none;
-        }
-        ul:nth-child(2) {
-            /* height: 13rem;
-            margin: 0.5rem 0 0.5rem 4.7rem; */
-            li:nth-child(1),li:nth-child(2),li:nth-child(3) {
+        @media screen and (min-width: 921px) {
+            ul:nth-child(1) {
                 display: none;
             }
-            li:nth-child(4) {
-                /* transform: translateY(1rem); */
+            ul:nth-child(2) {
+                /* height: 13rem;
+                margin: 0.5rem 0 0.5rem 4.7rem; */
+                li:nth-child(1),li:nth-child(2),li:nth-child(3) {
+                    display: none;
+                }
+                li:nth-child(4) {
+                    /* transform: translateY(1rem); */
+                }
             }
         }
     }
