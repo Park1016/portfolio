@@ -1,5 +1,19 @@
 ﻿import styled, { css, keyframes } from 'styled-components';
 
+const home = styled.div`
+    @media screen and (max-width: 920px) {
+        display: none;
+    }
+`;
+
+const resHome = styled.div`
+    height: 100vh;
+    overflow-y: scroll;
+    @media screen and (min-width: 921px) {
+        display: none;
+    }   
+`;
+
 const up = styled.div`
     width: 2rem;
     height: 2rem;
@@ -147,6 +161,8 @@ const alert = styled.div`
 
 
 export {
+    home,
+    resHome,
     up,
     down,
     alert

@@ -155,8 +155,8 @@ export default class Home extends Component {
 
         return (
             <>
-                {this.state.loading && <Loading />}
-                <div ref={this.box}>
+                <S.home ref={this.box}>
+                    {this.state.loading && <Loading />}
                     <S.up onClick={this.scrollUp} up={this.state.slideIndex} onMouseEnter={this.upEnter} onMouseLeave={this.upLeave}>
                         {this.state.upText && <p>맨위로</p>}
                         {/* <p>맨위로</p> */}
@@ -185,7 +185,25 @@ export default class Home extends Component {
                             <Contacts />
                         </div>
                     </Slider>
-                </div>
+                </S.home>
+                <S.resHome>
+                    <AboutMe />
+                    <Projects />
+                    <Skills />
+                    <Contacts />
+                    {/* <div>
+                        <AboutMe />
+                    </div>
+                    <div>
+                        <Projects />
+                    </div>
+                    <div>
+                        <Skills />
+                    </div>
+                    <div>
+                        <Contacts />
+                    </div> */}
+                </S.resHome>
             </>
         );
     }

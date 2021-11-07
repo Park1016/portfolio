@@ -61,11 +61,11 @@ const Contacts = (props) => {
         localStorage.setItem('contact', 'leave');
     }
 
-    useEffect(() => {
-        setTimeout(() => {
-            name.current.focus();
-        }, 1000)
-    }, []);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         name.current.focus();
+    //     }, 1000)
+    // }, []);
 
 
     return (
