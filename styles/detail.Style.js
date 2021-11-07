@@ -68,7 +68,7 @@ const container = styled.div`
         }
         overflow-y: auto;
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 5px;
         }
         ::-webkit-scrollbar-track {
             background-color: lightgray;

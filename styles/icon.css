@@ -19,3 +19,13 @@
 .fa-arrow-circle-down:hover {
   cursor: pointer;
 }
+
+.fa-bars {
+  font-size: 2rem;
+  color: #2f4858;
+  /* color: #fff; */
+  /* background: #2f4858; */
+  /* border-radius: 10px; */
+  /* padding: 0.5rem; */
+  /* box-shadow: 1px 1px 3px black; */
+}

@@ -10,7 +10,7 @@ const resHome = styled.div`
     height: 100vh;
     overflow-y: scroll;
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 5px;
     }
     ::-webkit-scrollbar-track {
         background-color: lightgray;

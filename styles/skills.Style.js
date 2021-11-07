@@ -157,8 +157,8 @@ const resDiv = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    border-radius: 0 0 20px 20px;
-    /* box-shadow: 2px 2px 5px black; */
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px black;
     @media screen and (min-width: 921px) {
         display: none;
     }
@@ -179,15 +179,15 @@ const title = styled.p`
     }
     @media screen and (max-width: 920px) {
         transform: translate(0);
-        width: 90vw;
+        margin: 1rem 0;
+        /* width: 90vw;
         border-bottom: none;
         border-radius: 20px 20px 0 0;
         background: #FFC831;
         margin-top: 1.5rem;
-        /* text-shadow: none; */
         text-shadow: 1px 1px 1px black;
         height: 4rem;
-        line-height: 1.2;
+        line-height: 1.2; */
     }
     /* @media screen and (max-height: 710px) {
             visibility: hidden;
