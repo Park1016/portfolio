@@ -8,6 +8,10 @@ const section = styled.section`
     height: calc(100vh - 4rem);
     background: #2F4858;
     overflow: hidden;
+    @media screen and (max-height: 650px) {
+        height: auto;
+        padding-bottom: 3rem;
+    }
 `;
 
 const box = styled.div`
@@ -32,6 +36,9 @@ const box = styled.div`
         @media screen and (min-width: 921px) {
             height: 80vh;
         }
+    }
+    @media screen and (max-height: 650px) {
+        margin: 3rem 0;
     }
 `;
 

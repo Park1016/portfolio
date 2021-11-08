@@ -8,6 +8,7 @@ const section = styled.section`
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    /* padding-bottom: 2rem; */
     @media screen and (max-width: 920px) {
         flex-direction: column;
         justify-content: flex-start;
@@ -41,11 +42,11 @@ const section = styled.section`
     @media screen and (max-height: 650px) {
         flex-direction: column;
         justify-content: flex-start;
+        padding-bottom: 2rem;
         @media screen and (min-width: 951px) {
             height: 42rem;
         }
         @media screen and (max-width: 950px) {
-            padding-bottom: 2rem;
             height: auto;
         }
     }
@@ -167,6 +168,9 @@ const item = styled.div`
     }
     @media screen and (max-width: 920px) {
         margin: 1rem 2rem;
+    }
+    @media screen and (max-height: 640px) {
+        margin: 0 0.5rem;
     }
 `;
 
