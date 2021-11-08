@@ -7,6 +7,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
+import { useSelector, useDispatch } from 'react-redux';
+import * as reducerActions from '../../store/reducer/reducerSlice';
+
 
 library.add(faGithub, faEnvelope);
 
@@ -16,6 +19,9 @@ const Contacts = (props) => {
     const email = useRef();
     const phone = useRef();
     const message = useRef();
+
+    const dispatch = useDispatch();
+    const contact = useSelector(({ reducerSlice }) => reducerSlice.contact);
 
     const emailCheck = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
@@ -55,10 +61,12 @@ const Contacts = (props) => {
 
     const onTextareaEnter = () => {
         localStorage.setItem('contact', 'textarea');
+        dispatch(reducerActions.tTextarea({ contact }));
     }
 
     const onTextareaLeave = () => {
         localStorage.setItem('contact', 'leave');
+        dispatch(reducerActions.tLeave({ contact }));
     }
 
     // useEffect(() => {

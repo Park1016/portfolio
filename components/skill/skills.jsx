@@ -13,20 +13,20 @@ const Skills = (props) => {
         if(section.current.clientWidth > 674 && section.current.clientHeight > 557){
             return;
         }
-        localStorage.setItem('skillScroll', 'skill');
     }
 
     const onMouseLeave = () => {
         if(section.current.clientWidth > 674 && section.current.clientHeight > 557){
             return;
         }
-        localStorage.setItem('skillScroll', 'leave');
     }
 
     useEffect(() => {
         if(typeof window !== 'undefined') {
-            if(localStorage.getItem('nav')) {
-                setNav(localStorage.getItem('nav'));
+            if(window.location.pathname === '/skill'){
+                setNav('skill');
+            } else {
+                setNav('home');
             }
         }
     }, [nav]);

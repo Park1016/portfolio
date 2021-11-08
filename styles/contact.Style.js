@@ -213,11 +213,11 @@ const input = styled.div`
         /* overflow: hidden; */
         ::-webkit-scrollbar {
             width: 10px;
-            border-radius: 20px;
+            border-radius: 50px;
         }
         ::-webkit-scrollbar-track {
-            background-color: lightgray;
-            border-radius: 20px;
+            background-color: transparent;
+            border-radius: 50px;
         }
         ::-webkit-scrollbar-thumb {
             border-radius: 3px;
@@ -242,7 +242,8 @@ const input = styled.div`
         }
         textarea {
             ::-webkit-scrollbar-track {
-                background-color: #fff;
+                /* background-color: #fff; */
+                background-color: transparent;
             }
         }
         label {

@@ -1,11 +1,14 @@
 ﻿import React, { Component } from "react";
 import Slider from "react-slick";
+import { useSelector, useDispatch } from 'react-redux';
+import * as reducerActions from '../../store/reducer/reducerSlice';
 import dynamic from 'next/dynamic';
 import { faArrowCircleUp, faArrowCircleDown, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import * as S from '../../styles/home.style';
 import Loading from '../Loading';
+import { connect } from 'react-redux';
 // import P from '../../styles/Home.module.css';
 
 const AboutMe = dynamic(() => import('../aboutMe/aboutMe'));
@@ -20,7 +23,7 @@ library.add(
 );
 
 
-export default class Home extends Component {
+class Home extends Component {
     constructor(props){
         super(props);
         this.slide = this.slide.bind(this);
@@ -43,7 +46,7 @@ export default class Home extends Component {
         }
     }
     slide(y){
-        if(this.slider){
+        if(this.slider !== null){
             y > 0 ? (
                 this.slider.slickPrev()
             ) : (
@@ -53,20 +56,32 @@ export default class Home extends Component {
     }
 
     componentDidMount(){
-        const check = sessionStorage.getItem('scroll');
-        setTimeout(()=>{
-            this.slider.slickGoTo(1);
-        }, 100);
-        setTimeout(()=>{
-            this.slider.slickGoTo(2);
-        }, 300);
-        setTimeout(()=>{
-            this.slider.slickGoTo(3);
-        }, 500);
-        setTimeout(()=>{
-            this.slider.slickGoTo(0);
-        }, 1000);
-        if(check){
+
+        let {
+            storeNav,
+            storePage,
+            storeNum,
+            storeContact,
+            storeDetail
+        } = this.props;
+
+        // const check = sessionStorage.getItem('scroll');
+        let check = this.props.storeDetail;
+        if(this.slider !== null) {
+            setTimeout(()=>{
+                this.slider.slickGoTo(1);
+            }, 100);
+            setTimeout(()=>{
+                this.slider.slickGoTo(2);
+            }, 300);
+            setTimeout(()=>{
+                this.slider.slickGoTo(3);
+            }, 500);
+            setTimeout(()=>{
+                this.slider.slickGoTo(0);
+            }, 1000);
+        }
+        if(check === 'true'){
             this.setState({ scroll: true });
             setTimeout(()=>{
                 this.setState({ loading: false }); 
@@ -74,15 +89,12 @@ export default class Home extends Component {
         } else {
             setTimeout(()=>{
                 this.setState({ loading: false }); 
-                localStorage.setItem('projectScroll', 'leave');
-                localStorage.setItem('contact', 'leave');
+                this.props.sLeave();
             }, 1500);
         }
         if (typeof window !== "undefined") {
             window.addEventListener('wheel', (e) => {
-                if(localStorage.getItem('contact') === 'textarea'
-                || localStorage.getItem('projectScroll') === 'project'
-                || localStorage.getItem('skillScroll') === 'skill'){
+                if(this.props.storeContact === 'textarea') {
                     return;
                 }
                 this.slide(e.wheelDelta);
@@ -98,16 +110,18 @@ export default class Home extends Component {
             setTimeout(()=>{
                 this.onScroll();
                 this.setState({ scroll: false });
-                sessionStorage.clear();
+                // sessionStorage.clear();
+                this.props.storeDfalse();
             }, 1000);
         }
     }
 
     onScroll = () => {
-        if(this.slider){
+        if(this.slider !== null){
             this.slider.slickGoTo(1);
         }
-        sessionStorage.clear();
+        // sessionStorage.clear();
+        this.props.storeDfalse();
     }
 
     scrollUp = () => {
@@ -156,6 +170,19 @@ export default class Home extends Component {
             beforeChange: (current, next) => this.setState({ slideIndex: next })
         };
 
+        let {
+            storeSkill,
+            storeProject,
+            storeAboutMe,
+            storeContact,
+            storeTrue,
+            storeFalse,
+            storeOne,
+            storeTwo,
+            storeThree,
+            storeZero
+        } = this.props;
+
 
         return (
             <>
@@ -191,10 +218,6 @@ export default class Home extends Component {
                     </Slider>
                 </S.home>
                 <S.resHome>
-                    {/* <AboutMe />
-                    <Projects />
-                    <Skills />
-                    <Contacts /> */}
                     <div>
                         <AboutMe />
                     </div>
@@ -212,3 +235,35 @@ export default class Home extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    storeNav: state.reducerSlice.nav,
+    storePage: state.reducerSlice.page,
+    storeNum: state.reducerSlice.num,
+    storeContact: state.reducerSlice.contact,
+    storeDetail: state.reducerSlice.detail
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    storeHome: () => dispatch(reducerActions.pHome()),
+    storeSkill: () => dispatch(reducerActions.pSkill()),
+    storeProject: () => dispatch(reducerActions.pProject()),
+    storeAboutMe: () => dispatch(reducerActions.pAboutMe()),
+    storeContact: () => dispatch(reducerActions.pContact()),
+
+    storeTrue: () => dispatch(reducerActions.sTrue()),
+    storeFalse: () => dispatch(reducerActions.sFalse()),
+
+    storeOne: () => dispatch(reducerActions.nOne()),
+    storeTwo: () => dispatch(reducerActions.nTwo()),
+    storeThree: () => dispatch(reducerActions.nThree()),
+    storeZero: () => dispatch(reducerActions.nZero()),
+
+    sTextarea: () => dispatch(reducerActions.tTextarea()),
+    sLeave: () => dispatch(reducerActions.tLeave()),
+
+    storeDtrue: () => dispatch(reducerActions.dTrue()),
+    storeDfalse: () => dispatch(reducerActions.dFalse())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

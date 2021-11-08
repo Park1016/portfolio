@@ -1,6 +1,4 @@
-﻿import React, {useEffect} from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+﻿import React from 'react';
 import { useRouter } from "next/router"
 import Detail from '../../../components/project/detail';
 
@@ -10,7 +8,6 @@ const Index = (props) => {
 
     return (
         <Detail id={id} />
-        // <h1>asdf</h1>
     )
 }
 

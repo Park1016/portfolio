@@ -2,6 +2,9 @@
 import ReactPlayer from 'react-player/lazy';
 // import GifPlayer from 'react-gif-player';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import * as reducerActions from '../../store/reducer/reducerSlice';
+
 import * as S from '../../styles/project.Style';
 import P from '../../styles/projects.module.css';
 import Router from 'next/router';

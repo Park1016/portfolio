@@ -1,3 +1,4 @@
+import { wrapper } from "../store";
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 import '../styles/slide.css';
@@ -13,4 +14,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp);

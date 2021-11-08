@@ -43,6 +43,20 @@ const ul = styled.ul`
             color: #E2B646;
         }
     }
+    li:nth-child(7){
+        p {
+            background: #fff;
+            span {
+                background: rgb(69,104,220);
+                background: linear-gradient(90deg, rgba(69,104,220,1) 0%, rgba(176,106,179,1) 100%);
+                /* background: rgb(47,72,88);
+                background: linear-gradient(90deg, rgba(47,72,88,1) 0%, rgba(176,106,179,1) 100%); */
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
     @media screen and (min-width: 701px) {
         li:nth-child(7) {
             display: none;

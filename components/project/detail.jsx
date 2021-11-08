@@ -12,13 +12,18 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import p from '../../src/project.json';
 import Loading from '../detailLoading';
 
+import { connect } from 'react-redux';
+
+import * as reducerActions from '../../store/reducer/reducerSlice';
+
 library.add(
     faGithub,
     faGlobe,
     faChevronDown
 );
 
-export default class Detail extends Component {
+
+class Detail extends Component {
 
     constructor(props){
         super(props);
@@ -35,7 +40,7 @@ export default class Detail extends Component {
         }
     }
     slide(y){
-        if (typeof window !== "undefined") {
+        if (typeof window !== "undefined" && this.slider !== null) {
             y > 0 ? (
                 this.slider.slickPrev()
             ) : (
@@ -43,28 +48,36 @@ export default class Detail extends Component {
             )
         }
     }
+
     UNSAFE_componentWillMount(){
         this.setState({ scroll: true });
 
+        let {
+            storeNav,
+            storePage,
+            storeNum,
+        } = this.props;
+
         if (typeof window !== "undefined") {
-            // console.log(window.innerWidth);
             window.addEventListener('wheel', (e) => {
                 this.slide(e.wheelDelta);
             })
 
-            const lsId = localStorage.getItem('num');
-            this.setState({ num: lsId });
-            localStorage.setItem('projectScroll', 'leave');
+            setTimeout(()=> {
+                this.setState({ num: this.props.storeNum });
+            }, 1000)
 
-            setTimeout(()=>{
-                this.slider.slickGoTo(1);
-            }, 100);
-            setTimeout(()=>{
-                this.slider.slickGoTo(2);
-            }, 300);
-            setTimeout(()=>{
-                this.slider.slickGoTo(0);
-            }, 800);
+            if(this.slider !== null) {
+                setTimeout(()=>{
+                    this.slider.slickGoTo(1);
+                }, 100);
+                setTimeout(()=>{
+                    this.slider.slickGoTo(2);
+                }, 300);
+                setTimeout(()=>{
+                    this.slider.slickGoTo(0);
+                }, 800);
+            }
             setTimeout(()=>{
                 this.setState({ loading: false }); 
             }, 2000);
@@ -80,7 +93,25 @@ export default class Detail extends Component {
 
         if (typeof window !== 'undefined' && id) {
             localStorage.setItem('num', id);
+
+            switch(id){
+                case '0':
+                    this.props.storeZero();
+                    break;
+                case '1':
+                    this.props.storeOne();
+                    break;
+                case '2':
+                    this.props.storeTwo();
+                    break;
+                case '3':
+                    this.props.storeThree();
+                    break;
+                default:
+                    break;
+            }
         }
+
 
         const settings = {
             dots: true,
@@ -111,9 +142,11 @@ export default class Detail extends Component {
         }
 
         const goBack = () => {
-            sessionStorage.setItem('scroll', true);
+            // sessionStorage.setItem('scroll', true);
+            this.props.storeDtrue();
+            this.props
             if (typeof window !== 'undefined') {
-                if(localStorage.getItem('page') === 'home'){
+                if(this.props.storePage === 'home') {
                     Router.push('/');
                 } else {
                     Router.push('/project');
@@ -148,6 +181,21 @@ export default class Detail extends Component {
         if(!id){
             return <h1>no post</h1>
         }
+
+        let {
+            storeSkill,
+            storeProject,
+            storeAboutMe,
+            storeContact,
+            storeTrue,
+            storeFalse,
+            storeOne,
+            storeTwo,
+            storeThree,
+            storeZero,
+            storeDtrue,
+            storeDfalse
+        } = this.props;
 
         return (
             <>
@@ -333,3 +381,29 @@ export default class Detail extends Component {
     }
 };
 
+const mapStateToProps = (state) => ({
+    storeNav: state.reducerSlice.nav,
+    storePage: state.reducerSlice.page,
+    storeNum: state.reducerSlice.num
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    storeHome: () => dispatch(reducerActions.pHome()),
+    storeSkill: () => dispatch(reducerActions.pSkill()),
+    storeProject: () => dispatch(reducerActions.pProject()),
+    storeAboutMe: () => dispatch(reducerActions.pAboutMe()),
+    storeContact: () => dispatch(reducerActions.pContact()),
+
+    storeTrue: () => dispatch(reducerActions.sTrue()),
+    storeFalse: () => dispatch(reducerActions.sFalse()),
+
+    storeOne: () => dispatch(reducerActions.nOne()),
+    storeTwo: () => dispatch(reducerActions.nTwo()),
+    storeThree: () => dispatch(reducerActions.nThree()),
+    storeZero: () => dispatch(reducerActions.nZero()),
+
+    storeDtrue: () => dispatch(reducerActions.dTrue()),
+    storeDfalse: () => dispatch(reducerActions.dFalse())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);

@@ -1,6 +1,9 @@
 ﻿import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useSelector, useDispatch } from 'react-redux';
+import * as reducerActions from '../store/reducer/reducerSlice';
+
 import Style from '../styles/Nav.module.css';
 import * as S from '../styles/nav.style';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -22,15 +25,21 @@ const Nav = (props) => {
 
     const [toggle, setToggle] = useState(false);
 
+    const dispatch = useDispatch();
+    const nav = useSelector(({ reducerSlice }) => reducerSlice.nav);
+    const page = useSelector(({ reducerSlice }) => reducerSlice.page);
+
     const onHome = () => {
         if (typeof window !== 'undefined') {
             localStorage.setItem('page', 'home');
+            dispatch(reducerActions.pHome({ page }));
         }
     }
 
     const onProject = () => {
         if (typeof window !== 'undefined') {
             localStorage.setItem('page', 'project');
+            dispatch(reducerActions.pProject({ page }));
         }
     }
 
@@ -40,24 +49,53 @@ const Nav = (props) => {
 
     const onClick = (e) => {
         const target = e.target.textContent;
+        setToggle(false);
         switch (target) {
             case 'HOME' :
                 localStorage.setItem('nav', 'home');
+                dispatch(reducerActions.home({ nav }));
                 break;
             case 'About Me':
                 localStorage.setItem('nav', 'aboutMe');
+                dispatch(reducerActions.aboutMe({ nav }));
                 break;
             case 'Project' :
                 localStorage.setItem('nav', 'project');
+                dispatch(reducerActions.project({ nav }));
                 break;
             case 'Skill':
                 localStorage.setItem('nav', 'skill');
+                dispatch(reducerActions.skill({ nav }));
                 break;
             case 'Contact':
                 localStorage.setItem('nav', 'contact');
+                dispatch(reducerActions.contact({ nav }));
                 break;
         }
+        // console.log(nav);
     }
+
+
+    // const navHome = useCallback(({ nav }) => {
+    //     dispatch(reducerActions.home({ nav }));
+    // }, [dispatch]);
+
+    // const navSkill = useCallback(({ nav }) => {
+    //     dispatch(reducerActions.skill({ nav }));
+    // }, [dispatch]);
+
+    // const navProject = useCallback(({ nav }) => {
+    //     dispatch(reducerActions.project({ nav }));
+    // }, [dispatch]);
+
+    // const navAboutMe = useCallback(({ nav }) => {
+    //     dispatch(reducerActions.aboutMe({ nav }));
+    // }, [dispatch]);
+
+    // const navContact = useCallback(({ nav }) => {
+    //     dispatch(reducerActions.contact({ nav }));
+    // }, [dispatch]);
+
 
     return (
         <S.nav>
@@ -96,7 +134,7 @@ const Nav = (props) => {
                     </a>
                 </li>
                 <li onClick={onToggle}>
-                    <p>HJ Park&apos;s Portfolio</p>
+                    <p><span>HJ Park&apos;s Portfolio</span></p>
                     <FontAwesomeIcon icon={faBars} />
                 </li>
             </S.ul>

@@ -67,7 +67,7 @@ const section = styled.section`
                     height: calc(100vh - 4rem);
                     overflow-y: auto;
                     ::-webkit-scrollbar {
-                        width: 10px;
+                        width: 5px;
                     }
                     ::-webkit-scrollbar-track {
                         background-color: lightgray;

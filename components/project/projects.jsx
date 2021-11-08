@@ -4,12 +4,18 @@ import * as S from '../../styles/project.Style';
 import { v4 as uuid } from "uuid";
 import Project from './project';
 
+import { useSelector, useDispatch } from 'react-redux';
+import * as reducerActions from '../../store/reducer/reducerSlice';
+
 
 const Projects = (props) => {
 
     const section = useRef();
 
     const [nav, setNav] = useState('home');
+
+    const dispatch = useDispatch();
+    const reducerSlice = useSelector(({ reducerSlice }) => reducerSlice.nav);
 
     const onMouseEnter = () => {
         if(section.current.clientWidth > 920 && section.current.clientHeight > 646){
@@ -27,8 +33,10 @@ const Projects = (props) => {
 
     useEffect(() => {
         if(typeof window !== 'undefined') {
-            if(localStorage.getItem('nav')) {
-                setNav(localStorage.getItem('nav'));
+            if(window.location.pathname === '/'){
+                setNav('home');
+            } else {
+                setNav('project');
             }
         }
     }, [nav]);
