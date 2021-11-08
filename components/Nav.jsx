@@ -96,7 +96,7 @@ const Nav = (props) => {
                     </a>
                 </li>
                 <li onClick={onToggle}>
-                    <p>HJ Park's Portfolio</p>
+                    <p>HJ Park&apos;s Portfolio</p>
                     <FontAwesomeIcon icon={faBars} />
                 </li>
             </S.ul>
