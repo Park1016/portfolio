@@ -3,10 +3,11 @@ import Slider from "react-slick";
 import { useSelector, useDispatch } from 'react-redux';
 import * as reducerActions from '../../store/reducer/reducerSlice';
 import dynamic from 'next/dynamic';
-import { faArrowCircleUp, faArrowCircleDown, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleUp, faArrowCircleUp, faArrowCircleDown, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import * as S from '../../styles/home.style';
+import P from '../../styles/Home.module.css';
 import Loading from '../Loading';
 import { connect } from 'react-redux';
 // import P from '../../styles/Home.module.css';
@@ -17,6 +18,7 @@ const Projects = dynamic(() => import('../project/projects'));
 const Contacts = dynamic(() => import('../contact/contacts'));
 
 library.add(
+    faArrowAltCircleUp,
     faArrowCircleUp,
     faArrowCircleDown,
     faChevronDown
@@ -29,6 +31,7 @@ class Home extends Component {
         this.slide = this.slide.bind(this);
         this.box = React.createRef();
         this.project = React.createRef();
+        this.top = React.createRef();
         this.onScroll = this.onScroll.bind(this);
         this.scrollUp = this.scrollUp.bind(this);
         this.scrollDown = this.scrollDown.bind(this);
@@ -36,6 +39,7 @@ class Home extends Component {
         this.upLeave = this.upLeave.bind(this);
         this.downEnter = this.downEnter.bind(this);
         this.downLeave = this.downLeave.bind(this);
+        this.onTop = this.onTop.bind(this);
 
         this.state = {
             scroll: false,
@@ -43,6 +47,7 @@ class Home extends Component {
             upText: false,
             downText: false,
             loading: true,
+            scrollY: false
         }
     }
     slide(y){
@@ -94,6 +99,15 @@ class Home extends Component {
         }
         if (typeof window !== "undefined") {
             window.addEventListener('wheel', (e) => {
+                if(this.top.current !== null){
+                    if(this.top.current.scrollTop >= 300){
+                        this.setState({ scrollY: true });
+                        return;
+                    }
+                    if(this.top.current.scrollTop < 300){
+                        this.setState({ scrollY: false });
+                    }
+                }
                 if(this.props.storeContact === 'textarea') {
                     return;
                 }
@@ -146,6 +160,10 @@ class Home extends Component {
 
     downLeave = () => {
         this.setState({ downText: false }); 
+    }
+
+    onTop = () => {
+        this.top.current.scrollIntoView({behavior: "smooth"});
     }
 
     render() {
@@ -217,7 +235,7 @@ class Home extends Component {
                         </div>
                     </Slider>
                 </S.home>
-                <S.resHome>
+                <div className={P.resHome} ref={this.top}>
                     <div>
                         <AboutMe />
                     </div>
@@ -230,7 +248,10 @@ class Home extends Component {
                     <div>
                         <Contacts />
                     </div>
-                </S.resHome>
+                    <S.Top onClick={this.onTop} scrollY={this.state.scrollY}>
+                        <FontAwesomeIcon icon={faArrowAltCircleUp} />
+                    </S.Top>
+                </div>
             </>
         );
     }

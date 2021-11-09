@@ -29,3 +29,16 @@
   /* padding: 0.5rem; */
   /* box-shadow: 1px 1px 3px black; */
 }
+
+.fa-arrow-alt-circle-up {
+  font-size: 3rem;
+  color: #fff;
+  background: #2f4858;
+  border-radius: 50%;
+  transition: all 200ms ease-in-out;
+}
+
+.fa-arrow-alt-circle-up:hover {
+  color: rgb(255, 255, 255, 0.9);
+  cursor: pointer;
+}

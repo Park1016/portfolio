@@ -6,7 +6,7 @@ const nav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
+    background: #fff;
     @media screen and (max-width: 920px) {
         border-bottom: 1px solid #e3e3e3;
     }
@@ -15,10 +15,13 @@ const nav = styled.nav`
 const ul = styled.ul`
     position: relative;
     width: 100vw;
+    height: 4rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background: #fff;
+    z-index: 100;
     li {
         font-weight: bold;
         margin: 0 0.5rem;
@@ -34,7 +37,7 @@ const ul = styled.ul`
         top: 0;
         right: 0;
         font-size: 1.8rem;
-        transform: translateY(0.2rem);
+        transform: translateY(0.7rem);
         a {
             margin: 0 0.3rem;
             color: #2F4858;

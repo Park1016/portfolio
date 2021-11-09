@@ -46,11 +46,6 @@ const resBox = styled.div`
             display: none;
         }
     }
-    /* @media screen and (max-width: 920px) {
-        @media screen and (min-height: 721px) {
-            display: none;
-        }
-    } */
 `;
 
 const container = styled.div`
@@ -191,6 +186,11 @@ const content = styled.div`
                 background: #2D3748;
                 @media screen and (max-width: 920px) {
                     height: auto;
+                }
+                @media screen and (max-height: 600px) {
+                    @media screen and (min-width: 950px) {
+                        min-height: 630px;
+                    }
                 }
             `;
         }

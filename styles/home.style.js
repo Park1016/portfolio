@@ -18,11 +18,14 @@ const resHome = styled.div`
         width: 5px;
     }
     ::-webkit-scrollbar-track {
+        width: 0;
         background-color: lightgray;
+        /* background-color: rgb(0, 0, 0, 0); */
         /* border-radius: 10px; */
     }
     ::-webkit-scrollbar-thumb {
         /* border-radius: 10px; */
+        width: 5px;
         background-color: #E2B646;
     }
     ::-webkit-scrollbar-button {
@@ -49,6 +52,7 @@ const up = styled.div`
     /* left: calc(50vw - 1rem); */
     right: 1rem;
     z-index: 13;
+    transition: all 500ms ease-in-out;
     p {
         width: 4rem;
         padding: 0.2rem 0.5rem;
@@ -86,6 +90,7 @@ const down = styled.div`
     /* left: calc(50vw - 1rem); */
     right: 1rem;
     z-index: 13;
+    transition: all 500ms ease-in-out;
     p {
         width: 5rem;
         padding: 0.2rem 0.5rem;
@@ -187,6 +192,38 @@ const alert = styled.div`
     }
 `;
 
+const Top = styled.div`
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 2.7rem;
+    /* height: 2.7rem; */
+    background: #fff;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #2f4858;
+    transition: all 500ms ease-in-out;
+    :hover {
+        cursor: pointer;
+    }
+    ${(props)=>{
+        if(props.scrollY){
+            return css`
+                transform: translateY(0);
+                height: 2.7rem;
+            `;
+        } else {
+            return css`
+                transform: translateY(2rem);
+                height: 0;
+            `;
+        }
+    }}
+`;
 
 
 export {
@@ -194,5 +231,6 @@ export {
     resHome,
     up,
     down,
-    alert
+    alert,
+    Top
 }

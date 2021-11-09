@@ -86,7 +86,7 @@ const section = styled.section`
         width: 5px;
     }
     ::-webkit-scrollbar-track {
-        background-color: lightgray;
+        background-color: transparent;
     }
     ::-webkit-scrollbar-thumb {
         background-color: darkgray;
@@ -98,7 +98,6 @@ const section = styled.section`
     @media screen and (max-width: 815px) {
         justify-content: flex-start;
         ${(props) => {
-            console.log(props.nav);
             if(props.nav === 'home') {
                 return css`
                     height: auto;

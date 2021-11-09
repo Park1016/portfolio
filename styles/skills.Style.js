@@ -12,7 +12,7 @@ const section = styled.section`
         width: 5px;
     }
     ::-webkit-scrollbar-track {
-        background-color: lightgray;
+        background-color: transparent;
     }
     ::-webkit-scrollbar-thumb {
         background-color: #FFC831;
