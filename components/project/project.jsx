@@ -18,7 +18,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 library.add(faGithub);
 
-const Project = ({item}) => {
+const Project = ({item, nav}) => {
 
     const img = useRef();
 
@@ -48,10 +48,6 @@ const Project = ({item}) => {
 
 
     useEffect(()=>{
-        // if (typeof window !== 'undefined') {
-        //     localStorage.clear();
-        //     sessionStorage.clear();
-        // }
         setStart(true);
         let timer = setTimeout(()=>{
             setStart(false);
@@ -65,6 +61,7 @@ const Project = ({item}) => {
     return (
         <>
             <S.box
+                nav={nav}
                 onMouseEnter={onShow}
                 onMouseLeave={onHidden}
                 show={show}

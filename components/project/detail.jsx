@@ -92,7 +92,7 @@ class Detail extends Component {
         const id = this.props.id;
 
         if (typeof window !== 'undefined' && id) {
-            localStorage.setItem('num', id);
+            // localStorage.setItem('num', id);
 
             switch(id){
                 case '0':

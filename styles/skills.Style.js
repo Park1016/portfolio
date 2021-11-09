@@ -8,6 +8,19 @@ const section = styled.section`
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: lightgray;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #FFC831;
+    }
+    ::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+    }
     /* padding-bottom: 2rem; */
     @media screen and (max-width: 920px) {
         flex-direction: column;
@@ -22,19 +35,6 @@ const section = styled.section`
                 return css`
                     height: calc(100vh - 4rem);
                     overflow-y: auto;
-                    ::-webkit-scrollbar {
-                        width: 5px;
-                    }
-                    ::-webkit-scrollbar-track {
-                        background-color: lightgray;
-                    }
-                    ::-webkit-scrollbar-thumb {
-                        background-color: #FFC831;
-                    }
-                    ::-webkit-scrollbar-button {
-                        width: 0;
-                        height: 0;
-                    }
                 `;
             }
         }}
@@ -50,6 +50,16 @@ const section = styled.section`
             height: auto;
         }
     }
+    ${(props) => {
+        if(props.nav === 'skill') {
+            return css`
+                @media screen and (max-height: 650px) {
+                    height: calc(100vh - 4rem);
+                    overflow-y: auto;
+                }
+            `;
+        }
+    }}
 `;
 
 const ul = styled.ul`

@@ -26,6 +26,7 @@ const Contacts = (props) => {
     const emailCheck = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
     let [load, setLoad] = useState(false);
+    const [nav, setNav] = useState('home');
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -60,25 +61,29 @@ const Contacts = (props) => {
     };
 
     const onTextareaEnter = () => {
-        localStorage.setItem('contact', 'textarea');
+        // localStorage.setItem('contact', 'textarea');
         dispatch(reducerActions.tTextarea({ contact }));
     }
 
     const onTextareaLeave = () => {
-        localStorage.setItem('contact', 'leave');
+        // localStorage.setItem('contact', 'leave');
         dispatch(reducerActions.tLeave({ contact }));
     }
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         name.current.focus();
-    //     }, 1000)
-    // }, []);
+    useEffect(() => {
+        setTimeout(() => {
+            if(window.location.pathname === '/'){
+                setNav('home');
+            } else {
+                setNav('contact');
+            }
+        }, 500)
+    }, []);
 
 
     return (
-        <S.section>
-            <S.box>
+        <S.section nav={nav}>
+            <S.box nav={nav}>
                 <S.left>
                     <p>Contact</p>
                     <S.link>

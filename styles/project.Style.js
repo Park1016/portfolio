@@ -40,9 +40,36 @@ const text = styled.p`
         }
         @media screen and (max-height: 650px) {
             display: block;
-            transform: translate(-1.5rem, -3.5rem);
+            /* transform: translate(-1.5rem, -3.5rem); */
         }
     }
+    @media screen and (max-height: 650px) {
+        @media screen and (max-width: 816px) {
+            display: block;
+            /* transform: translate(-1.5rem, -3.5rem); */
+        }
+        @media screen and (min-width: 816px) {
+            display: none;
+        }
+    }
+    ${(props) => {
+        if(props.nav === 'project') {    
+            return css`
+                @media screen and (max-height: 550px) {
+                    position: relative;
+                    @media screen and (min-width: 815px) {
+                        display: block;
+                        margin-top: 7rem;
+                    }
+                    @media screen and (min-width: 921px) {
+                        transform: translate(-1.5rem, 1.5rem);
+                        margin-top: 7rem;
+                        margin-bottom: 4rem;
+                    }
+                }
+            `;
+        }
+    }}
 `;
 
 const section = styled.section`
@@ -55,9 +82,23 @@ const section = styled.section`
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    @media screen and (max-width: 920px) {
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: lightgray;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: darkgray;
+    }
+    ::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+    }
+    @media screen and (max-width: 815px) {
         justify-content: flex-start;
         ${(props) => {
+            console.log(props.nav);
             if(props.nav === 'home') {
                 return css`
                     height: auto;
@@ -66,32 +107,46 @@ const section = styled.section`
                 return css`
                     height: calc(100vh - 4rem);
                     overflow-y: auto;
-                    ::-webkit-scrollbar {
-                        width: 5px;
-                    }
-                    ::-webkit-scrollbar-track {
-                        background-color: lightgray;
-                    }
-                    ::-webkit-scrollbar-thumb {
-                        background-color: darkgray;
-                    }
-                    ::-webkit-scrollbar-button {
-                        width: 0;
-                        height: 0;
-                    }
                 `;
             }
         }}
     }
     @media screen and (max-height: 650px) {
-        height: auto;
         @media screen and (max-width: 920px) {
             padding: 4rem 0 4rem 0;
+            height: calc(100vh - 4rem);
+        }
+        @media screen and (max-width: 816px) {
+            padding: 0rem 0 4rem 0;
+            height: calc(100vh - 4rem);
         }
         @media screen and (min-width: 921px) {
-            padding: 6rem 0 4rem 0;
+            padding: 3rem 0 4rem 0;
+            height: calc(100vh - 4rem);
+            /* height: auto; */
         }
     }
+    ${(props) => {
+        if(props.nav === 'project') {    
+            return css`
+                @media screen and (max-height: 550px) {
+                    @media screen and (min-width: 815px) {
+                        height: calc(100vh - 4rem);
+                        overflow-y: auto;
+                    }
+                }
+            `;
+        } else {
+            return css`
+            @media screen and (max-width: 816px) {
+                min-height: 65rem;
+            }
+            @media screen and (min-width: 816px) {
+                min-height: calc(650px - 4rem);
+            }
+            `;
+        }
+    }}
 `;
 
 const div = styled.div`
@@ -130,7 +185,7 @@ const div = styled.div`
         }
     }
     @media screen and (max-height: 600px) {
-        @media screen and (min-width: 821px) {
+        @media screen and (min-width: 816px) {
             transform: translateY(1rem);
             height: 80vh;
         }
@@ -138,6 +193,34 @@ const div = styled.div`
     @media screen and (max-height: 650px) {
         min-height: 32rem;
     }
+    ${(props) => {
+        if(props.nav === 'project') {    
+            return css`
+                @media screen and (max-height: 550px) {
+                    @media screen and (min-width: 921px) {
+                        background: transparent;
+                        box-shadow: none;
+                        transform: translateY(-1rem);
+                    }
+                    @media screen and (min-width: 815px) {
+                        width: 40rem;
+                    }
+                }
+                /* @media screen and (max-height: 550px) {
+                    position: relative;
+                    @media screen and (min-width: 815px) {
+                        display: block;
+                        margin-top: 7rem;
+                    }
+                    @media screen and (min-width: 921px) {
+                        transform: translate(-1.5rem, 1.5rem);
+                        margin-top: 7rem;
+                        margin-bottom: 4rem;
+                    }
+                } */
+            `;
+        }
+    }}
 `;
 
 const box = styled.div`

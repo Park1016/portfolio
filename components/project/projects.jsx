@@ -21,33 +21,35 @@ const Projects = (props) => {
         if(section.current.clientWidth > 920 && section.current.clientHeight > 646){
             return;
         }
-        localStorage.setItem('projectScroll', 'project');
+        // localStorage.setItem('projectScroll', 'project');
     }
 
     const onMouseLeave = () => {
         if(section.current.clientWidth > 920 && section.current.clientHeight > 646){
             return;
         }
-        localStorage.setItem('projectScroll', 'leave');
+        // localStorage.setItem('projectScroll', 'leave');
     }
 
     useEffect(() => {
         if(typeof window !== 'undefined') {
-            if(window.location.pathname === '/'){
-                setNav('home');
-            } else {
-                setNav('project');
-            }
+            setTimeout(() => {
+                if(window.location.pathname === '/'){
+                    setNav('home');
+                } else {
+                    setNav('project');
+                }
+            }, 500)
         }
     }, [nav]);
 
     return (
         <>
             <S.section ref={section} nav={nav}>
-                <S.text><span>🚀</span><span>PROJECT</span></S.text>
-                <S.div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+                <S.text nav={nav}><span>🚀</span><span>PROJECT</span></S.text>
+                <S.div nav={nav} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                     {project.project.map((item)=>(
-                        <Project key={uuid()} item={item} />
+                        <Project key={uuid()} item={item} nav={nav}/>
                     ))}
                 </S.div>
             </S.section>

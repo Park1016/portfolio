@@ -31,14 +31,14 @@ const Nav = (props) => {
 
     const onHome = () => {
         if (typeof window !== 'undefined') {
-            localStorage.setItem('page', 'home');
+            // localStorage.setItem('page', 'home');
             dispatch(reducerActions.pHome({ page }));
         }
     }
 
     const onProject = () => {
         if (typeof window !== 'undefined') {
-            localStorage.setItem('page', 'project');
+            // localStorage.setItem('page', 'project');
             dispatch(reducerActions.pProject({ page }));
         }
     }
@@ -52,23 +52,23 @@ const Nav = (props) => {
         setToggle(false);
         switch (target) {
             case 'HOME' :
-                localStorage.setItem('nav', 'home');
+                // localStorage.setItem('nav', 'home');
                 dispatch(reducerActions.home({ nav }));
                 break;
             case 'About Me':
-                localStorage.setItem('nav', 'aboutMe');
+                // localStorage.setItem('nav', 'aboutMe');
                 dispatch(reducerActions.aboutMe({ nav }));
                 break;
             case 'Project' :
-                localStorage.setItem('nav', 'project');
+                // localStorage.setItem('nav', 'project');
                 dispatch(reducerActions.project({ nav }));
                 break;
             case 'Skill':
-                localStorage.setItem('nav', 'skill');
+                // localStorage.setItem('nav', 'skill');
                 dispatch(reducerActions.skill({ nav }));
                 break;
             case 'Contact':
-                localStorage.setItem('nav', 'contact');
+                // localStorage.setItem('nav', 'contact');
                 dispatch(reducerActions.contact({ nav }));
                 break;
         }

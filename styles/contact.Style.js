@@ -1,4 +1,4 @@
-﻿import styled from 'styled-components';
+﻿import styled, { css } from 'styled-components';
 
 const section = styled.section`
     display: flex;
@@ -8,10 +8,22 @@ const section = styled.section`
     height: calc(100vh - 4rem);
     background: #2F4858;
     overflow: hidden;
+    min-height: calc(650px - 4rem);
     @media screen and (max-height: 650px) {
         height: auto;
         padding-bottom: 3rem;
     }
+    ${(props) => {
+        if(props.nav === 'contact') {    
+            return css`
+                @media screen and (max-height: 580px) {
+                    height: calc(100vh - 4rem);
+                    padding-bottom: 3rem;
+                    overflow-y: auto;
+                }
+            `;
+        }
+    }}
 `;
 
 const box = styled.div`
@@ -22,6 +34,7 @@ const box = styled.div`
     background: #fff;
     width: 60rem;
     height: 30rem;
+    min-height: 30rem;
     box-shadow: 3px 3px 5px black;
     @media screen and (max-width: 1100px) {
         width: 40rem;
@@ -32,14 +45,24 @@ const box = styled.div`
         background: #2F4858;
         box-shadow: none;
     }
-    @media screen and (max-height: 580px) {
-        @media screen and (min-width: 921px) {
-            height: 80vh;
-        }
-    }
     @media screen and (max-height: 650px) {
         margin: 3rem 0;
     }
+    ${(props) => {
+        if(props.nav === 'contact') {    
+            return css`
+                @media screen and (max-height: 580px){
+                    height: 45rem;
+                }
+                @media screen and (max-height: 450px){
+                    height: 50rem;
+                }
+                @media screen and (max-height: 380px){
+                    height: 55rem;
+                }
+            `;
+        }
+    }}
 `;
 
 const left = styled.div`
