@@ -30,6 +30,7 @@ class Home extends Component {
         super(props);
         this.slide = this.slide.bind(this);
         this.box = React.createRef();
+        this.aboutMe = React.createRef();
         this.project = React.createRef();
         this.top = React.createRef();
         this.onScroll = this.onScroll.bind(this);
@@ -163,7 +164,7 @@ class Home extends Component {
     }
 
     onTop = () => {
-        this.top.current.scrollIntoView({behavior: "smooth"});
+        this.aboutMe.current.scrollIntoView({behavior: "smooth"});
     }
 
     render() {
@@ -236,7 +237,7 @@ class Home extends Component {
                     </Slider>
                 </S.home>
                 <div className={P.resHome} ref={this.top}>
-                    <div>
+                    <div ref={this.aboutMe}>
                         <AboutMe />
                     </div>
                     <div ref={this.project}>
@@ -249,7 +250,7 @@ class Home extends Component {
                         <Contacts />
                     </div>
                     <S.Top onClick={this.onTop} scrollY={this.state.scrollY}>
-                        <FontAwesomeIcon icon={faArrowAltCircleUp} />
+                        <FontAwesomeIcon icon={faArrowAltCircleUp} onClick={this.onTop}/>
                     </S.Top>
                 </div>
             </>
