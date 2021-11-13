@@ -15,13 +15,19 @@ const nav = styled.nav`
 const ul = styled.ul`
     position: relative;
     width: 100vw;
+    /* width: auto; */
     height: 4rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    /* background: #fff; */
     z-index: 100;
+
+    /* clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%); */
+    /* background: rgb(225,177,177);
+    background: linear-gradient(135deg, rgba(225,177,177,1) 0%, rgba(47,72,88,1) 100%); */
+    /* background: #E2B646; */
     li {
         font-weight: bold;
         margin: 0 0.5rem;

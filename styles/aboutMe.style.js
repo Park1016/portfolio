@@ -21,6 +21,31 @@ const quot = styled.span`
     font-family: 'Space Grotesk', sans-serif;
 `;
 
+const introKey = keyframes`
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
+
+const contentKey = keyframes`
+    0% {
+        transform: translateY(30rem);
+    }
+    80% {
+        transform: translateY(30rem);
+    }
+    100% {
+        transform: translateY(0rem);
+    }
+`;
+
+
 const intro = styled.div`
     position: relative;
     width: 70rem;
@@ -30,6 +55,9 @@ const intro = styled.div`
     justify-content: center;
     margin-bottom: 1.5rem;
     z-index: 10;
+    animation: ${introKey} 500ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
     p {
         color: #fff;
         font-size: 3rem;
@@ -69,10 +97,12 @@ const content = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    animation: ${contentKey} 1500ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
     p, ul {
         color: #fff;
         font-size: 1.1rem;
-        white-space: pre-wrap;
     }
     ul {
         margin-top: 1rem;
@@ -106,14 +136,6 @@ const name = styled.span`
     font-weight: bold;
     font-size: 3.5rem;
     text-align: center;
-    /* color: #fff;
-    border-bottom: 7px solid #E2B646;
-    height: 4.2rem;
-    transform: translateY(-0.5rem); */
-    /* color: #fff;
-    background: #E2B646;
-    padding: 0 0.5rem;
-    border-radius: 10px; */
     color: #E2B646;
     @media screen and (max-width: 430px) {
         font-size: 2.5rem;
@@ -128,8 +150,7 @@ const text = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background: red; */
-    /* width: 70rem; */
+    white-space: pre-wrap;
     p {
         text-align: center;
         background: rgb(255, 255, 255, 0.1);
@@ -138,9 +159,24 @@ const text = styled.div`
         width: 50rem;
     }
     @media screen and (max-width: 850px) {
-        p {
-            width: 90vw;
-        }
+        display: none;
+    }
+`;
+
+const resText = styled.div`
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+        text-align: center;
+        background: rgb(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 1.5rem 0.5rem;
+        width: 90vw;
+    }
+    @media screen and (max-width: 850px) {
+        display: flex;
     }
     @media screen and (max-width: 430px) {
         p {
@@ -186,6 +222,7 @@ export {
     content,
     name,
     text,
+    resText,
     img,
     quot,
     light,

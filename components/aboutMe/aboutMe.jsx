@@ -80,25 +80,10 @@ const AboutMe = (props) => {
                 </S.img>
                 <S.text>
                     <p>{aboutMe.aboutMe[0].text.replace(/(?:\r\n|\r|\n)/g, '\n')}</p>
-                    {/* <ul>
-                        <li>
-                            <p onClick={onP1}>{aboutMe.QandA[0].q}</p>
-                            {a1 && <div>{aboutMe.QandA[0].a}</div>}
-                        </li>
-                        <li>
-                            <p onClick={onP2}>{aboutMe.QandA[1].q}</p>
-                            {a2 && <div>{aboutMe.QandA[1].a}</div>}
-                        </li>
-                        <li>
-                            <p onClick={onP3}>{aboutMe.QandA[2].q}</p>
-                            {a3 && <div>{aboutMe.QandA[2].a}</div>}
-                        </li>
-                        <li>
-                            <p onClick={onP4}>{aboutMe.QandA[3].q}</p>
-                            {a4 && <div>{aboutMe.QandA[3].a}</div>}
-                        </li>
-                    </ul> */}
                 </S.text>
+                <S.resText>
+                    <p>{aboutMe.aboutMe[0].text}</p>
+                </S.resText>
             </S.content>
         </S.section>
     )
