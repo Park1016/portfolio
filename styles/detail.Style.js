@@ -65,9 +65,11 @@ const container = styled.div`
         border-radius: 20px;
         color: #fff;
         box-shadow: 2px 2px 3px #363636;
+        transition: all 200ms ease-in-out;
     }
     button:hover {
         cursor: pointer;
+        background: rgb(118,111,136,0.7);
     }
     @media screen and (max-width: 920px) {
         button {
@@ -534,7 +536,8 @@ const detailUl = styled.ul`
     }
     li:nth-child(6) {
         a {
-            border: 1px solid #fff;
+            /* border: 1px solid #fff; */
+            box-shadow: 1px 1px 2px black;
             margin-right: 0.5rem;
             border-radius: 10px;
             width: 6.5rem;
@@ -543,10 +546,17 @@ const detailUl = styled.ul`
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            transition: all 200ms ease-in-out;
+            background: rgb(255,255,255,0.2);
             span {
                 margin-left: 0.3rem;
             }
         }
+    }
+    li:nth-child(6) > a:hover {
+        background: #fff;
+        color: #2D3748;
+        font-weight: bold;
     }
     ${(props) => {
         if(props.id === '0'){

@@ -40,6 +40,7 @@ const ul = styled.ul`
         transform: translateY(0.7rem);
         a {
             margin: 0 0.3rem;
+            transition: color 200ms ease-in-out;
             color: #2F4858;
         }
         a:hover {

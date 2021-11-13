@@ -275,7 +275,7 @@ const modal = styled.div`
     color: #fff;
     ul:nth-child(1) {
         transform: translateX(-0.95rem);
-        transition: opacity 500ms ease-in-out;
+        transition: all 500ms ease-in-out;
         li:nth-child(1) {
             width: ${modalWidth};
             position: relative;
@@ -331,14 +331,21 @@ const modal = styled.div`
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            a, button {
+                transition: all 200ms ease-in-out;
+                background: rgb(0,0,0,0.1);
+                border: none;
+                box-shadow: 1px 1px 2px black;
+            }
             a {
-                border: 1px solid #fff;
+                /* border: 1px solid rgb(0,0,0,0.2); */
                 border-radius: 10px;
                 width: 7rem;
                 height: 2rem;
                 text-align: center;
                 line-height: 2;
                 padding: 0 0.5rem;
+                /* background: rgb(0,0,0,0.1); */
                 span {
                     font-size: 1rem;
                     margin-left: 0.3rem;
@@ -347,20 +354,29 @@ const modal = styled.div`
             a:nth-child(2) {
                 margin: 0 0.5rem;
             }
+            a:hover {
+                background: #fff;
+                color: #505B72;
+                font-weight: bold;
+            }
             button {
                 width: 7rem;
                 height: 2rem;
                 text-align: center;
                 line-height: 2;
                 padding: 0 0.5rem;
-                border: 1px solid #fff;
+                /* border: 1px solid #fff; */
                 border-radius: 10px;
                 font-size: 1rem;
                 color: #fff;
-                background: transparent;
+                /* background: transparent; */
             }
             button:hover {
                 cursor: pointer;
+                /* background: rgb(255, 255, 255, 0.8); */
+                background: #fff;
+                color: #505B72;
+                font-weight: bold;
             }
         }
     }

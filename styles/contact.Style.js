@@ -133,6 +133,8 @@ const link = styled.div`
     }
     a:hover {
         cursor: pointer;
+        background: #2F4858;
+        color: #fff;
     }
     @media screen and (max-width: 1100px) {
         width: 7rem;

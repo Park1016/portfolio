@@ -4,6 +4,16 @@ import Image from 'next/image';
 import * as S from '../../styles/aboutMe.style';
 import QandA from './QandA';
 import { v4 as uuid } from "uuid";
+import { project } from '../../store/reducer/reducerSlice';
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+library.add(
+    faLightbulb
+);
+
+
 
 const AboutMe = (props) => {
 
@@ -42,22 +52,35 @@ const AboutMe = (props) => {
 
     return (
         <S.section>
+            <S.intro>
+                {/* <p>안녕하세요.</p> */}
+                {/* <div> */}
+                    <div>
+                        <S.quot>&ldquo;</S.quot>
+                        <p>프론트엔드 개발자</p>
+                    </div>
+                    <div>
+                        <S.name>박현정</S.name>
+                        <p>입니다.</p>
+                        <S.quot>&rdquo;</S.quot>
+                    </div>
+                {/* </div> */}
+                {/* <S.light><FontAwesomeIcon icon={faLightbulb} /></S.light>
+                <S.back></S.back> */}
+            </S.intro>
             <S.content>
                 <S.img>
                     <Image
+                        // src="/p6.png"
                         src="/p3.jpg"
                         alt="사진"
-                        width={320}
-                        height={320}
+                        width={150}
+                        height={150}
                     />
                 </S.img>
                 <S.text>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, blanditiis commodi. Veniam expedita consequatur, laudantium accusamus unde ab, rem repellat laborum modi nostrum pariatur molestiae voluptatum libero sed soluta adipisci?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, blanditiis commodi. Veniam expedita consequatur, laudantium accusamus unde ab, rem repellat laborum modi nostrum pariatur molestiae voluptatum libero sed soluta adipisci?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, blanditiis commodi. Veniam expedita consequatur, laudantium accusamus unde ab, rem repellat laborum modi nostrum pariatur molestiae voluptatum libero sed soluta adipisci?
-                    </p>
-                    <ul>
+                    <p>{aboutMe.aboutMe[0].text.replace(/(?:\r\n|\r|\n)/g, '\n')}</p>
+                    {/* <ul>
                         <li>
                             <p onClick={onP1}>{aboutMe.QandA[0].q}</p>
                             {a1 && <div>{aboutMe.QandA[0].a}</div>}
@@ -74,7 +97,7 @@ const AboutMe = (props) => {
                             <p onClick={onP4}>{aboutMe.QandA[3].q}</p>
                             {a4 && <div>{aboutMe.QandA[3].a}</div>}
                         </li>
-                    </ul>
+                    </ul> */}
                 </S.text>
             </S.content>
         </S.section>

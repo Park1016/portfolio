@@ -1,4 +1,5 @@
-﻿import styled, { css } from 'styled-components';
+﻿import styled, { css, keyframes } from 'styled-components';
+
 
 const section = styled.section`
     width: 100vw;
@@ -6,24 +7,72 @@ const section = styled.section`
     /* background: #FFC75F; */
     background: #2F4858;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 `;
 
-const content = styled.div`
+const quot = styled.span`
+    font-size: 3rem;
+    color: #E2B646;
+    text-align: center;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+`;
+
+const intro = styled.div`
+    position: relative;
     width: 70rem;
-    /* height: 30rem; */
-    height: 100vh;
-    /* background: #fff; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    z-index: 10;
+    p {
+        color: #fff;
+        font-size: 3rem;
+    }
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    @media screen and (max-width: 850px) {
+        flex-direction: column;
+    }
+    @media screen and (max-width: 430px) {
+        p {
+            font-size: 2rem;
+        }
+    }
+    @media screen and (max-height: 700px) {
+        margin-bottom: 0.5rem;
+    }
+    @media screen and (max-height: 600px) {
+        margin-bottom: 0;
+        p {
+            font-size: 1.5rem;
+        }
+        div {
+            height: 2.5rem;
+        }
+    }
+`;
+
+const content = styled.div`
+    margin-top: 1.5rem;
+    width: 70vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     p, ul {
-        width: 45rem;
         color: #fff;
         font-size: 1.1rem;
+        white-space: pre-wrap;
     }
     ul {
         margin-top: 1rem;
@@ -44,6 +93,34 @@ const content = styled.div`
             }
         }
     }
+    @media screen and (max-height: 700px) {
+        margin-top: 1rem;
+    }
+    @media screen and (max-height: 600px) {
+        margin-top: 0.5rem;
+    }
+`;
+
+const name = styled.span`
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: 3.5rem;
+    text-align: center;
+    /* color: #fff;
+    border-bottom: 7px solid #E2B646;
+    height: 4.2rem;
+    transform: translateY(-0.5rem); */
+    /* color: #fff;
+    background: #E2B646;
+    padding: 0 0.5rem;
+    border-radius: 10px; */
+    color: #E2B646;
+    @media screen and (max-width: 430px) {
+        font-size: 2.5rem;
+    }
+    @media screen and (max-height: 600px) {
+        font-size: 2rem;
+    }
 `;
 
 const text = styled.div`
@@ -51,21 +128,66 @@ const text = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* background: red; */
+    /* width: 70rem; */
+    p {
+        text-align: center;
+        background: rgb(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 1.5rem 0.5rem;
+        width: 50rem;
+    }
+    @media screen and (max-width: 850px) {
+        p {
+            width: 90vw;
+        }
+    }
+    @media screen and (max-width: 430px) {
+        p {
+            font-size: 0.9rem;
+        }
+    }
 `;
 
 const img = styled.div`
-    width: 20rem;
-    height: 20rem;
+    display: none;
+    /* width: 20rem;
+    height: 20rem; */
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     border-radius: 50%;
     margin-right: 2rem;
     /* box-shadow: 3px 3px 10px black; */
 `;
 
+const light = styled.div`
+    position: absolute;
+    top: -9rem;
+    left: 33.2rem;
+`;
+
+const back = styled.div`
+    position: absolute;
+    top: -3rem;
+    left: 32.5rem;
+    width: 5rem;
+    height: 5rem;
+    z-index: -1;
+    transform: rotate(45deg);
+    background: rgb(226,182,70);
+    background: linear-gradient(135deg, rgba(226,182,70,1) 0%, rgba(47,72,88,1) 45%, rgba(47,72,88,1) 100%);
+`;
+
 
 export {
     section,
+    intro,
     content,
+    name,
     text,
-    img
+    img,
+    quot,
+    light,
+    back,
 }
