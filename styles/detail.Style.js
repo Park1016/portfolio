@@ -187,6 +187,7 @@ const content = styled.div`
             return css`
                 background: #2D3748;
                 @media screen and (max-width: 920px) {
+                    min-height: 40rem;
                     height: auto;
                 }
                 @media screen and (max-height: 600px) {
@@ -1062,8 +1063,8 @@ const view = styled.div`
         /* height: calc(615px * 0.7); */
     }
     @media screen and (max-width: 920px) {
-        width: calc(100vw - 0.6rem);
-        height: calc(100vh - 9rem);
+        width: calc(100vw - 0.25rem);
+        height: calc(100vh - 8.9rem);
     }
     /* @media screen and (max-width: 750px) {
         width: calc(1094px * 0.5);
@@ -1283,7 +1284,7 @@ const toggle = styled.div`
                             span:nth-child(2){
                                 width: 25rem;
                                 position: absolute;
-                                transform: translate(-19rem, 2.5rem);
+                                transform: translate(-13.5rem, 2.5rem);
                             }
                         }
                     `;
