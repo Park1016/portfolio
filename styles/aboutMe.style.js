@@ -159,24 +159,10 @@ const text = styled.div`
         width: 50rem;
     }
     @media screen and (max-width: 850px) {
-        display: none;
-    }
-`;
-
-const resText = styled.div`
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    p {
-        text-align: center;
-        background: rgb(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 1.5rem 0.5rem;
-        width: 90vw;
-    }
-    @media screen and (max-width: 850px) {
-        display: flex;
+        white-space: normal;
+        p {
+            width: 90vw;
+        }
     }
     @media screen and (max-width: 430px) {
         p {
@@ -222,7 +208,6 @@ export {
     content,
     name,
     text,
-    resText,
     img,
     quot,
     light,

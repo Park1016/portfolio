@@ -81,9 +81,6 @@ const AboutMe = (props) => {
                 <S.text>
                     <p>{aboutMe.aboutMe[0].text.replace(/(?:\r\n|\r|\n)/g, '\n')}</p>
                 </S.text>
-                <S.resText>
-                    <p>{aboutMe.aboutMe[0].text}</p>
-                </S.resText>
             </S.content>
         </S.section>
     )

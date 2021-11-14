@@ -569,13 +569,15 @@ const detailUl = styled.ul`
                         display: flex;
                         width: 60rem;
                         flex-wrap: wrap;
+                        /* align-items: center;
+                        justify-content: center; */
                         p {
                             display: flex;
                             flex-direction: row;
                             margin-bottom: 1rem;
                             span:nth-child(1){
                                 width: 5.5rem;
-                                margin-right: 1rem;
+                                margin: 0 0.5rem;
                                 display: flex;
                                 align-items: flex-start;
                                 justify-content: flex-end;
@@ -779,7 +781,12 @@ const detailUl = styled.ul`
                         }
                     }
                     li:nth-child(6) {
-                        transform: translate(16vw, -4.4rem);
+                        transform: translate(18vw, -4.4rem);
+                    }
+                }
+                @media screen and (max-width: 380px) {
+                    li:nth-child(6) {
+                        transform: translate(21vw, -4.4rem);
                     }
                 }
             `;
@@ -1026,12 +1033,8 @@ const videoBox = styled.div`
         height: calc(70vh * 0.5);
     }
     @media screen and (max-width: 520px) {
-        width: calc(921px * 0.4);
-        height: calc(70vh * 0.4);
-    }
-    @media screen and (max-width: 420px) {
-        width: calc(921px * 0.3);
-        height: calc(70vh * 0.3);
+        width: 100vw;
+        height: calc(100vw * 0.56);
     }
 `;
 
@@ -1313,7 +1316,23 @@ const toggle = styled.div`
                     return css`
                         p:nth-child(3) {
                             span:nth-child(2){
-                                width: 80vw;
+                                width: 85vw;
+                                transform: translate(-15rem, 2.5rem);
+                            }
+                        }
+                    `;
+                }
+            }
+        }}
+    }
+    @media screen and (max-width: 400px) {
+        ${(props)=>{
+            if(props.id === '0') {
+                if(props.two){
+                    return css`
+                        p:nth-child(3) {
+                            span:nth-child(2){
+                                width: 90vw;
                                 transform: translate(-14rem, 2.5rem);
                             }
                         }

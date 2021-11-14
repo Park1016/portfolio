@@ -504,6 +504,19 @@ const modal = styled.div`
                             }
                         }
                     }
+                    @media screen and (max-width: 460px) {
+                        ul:nth-child(2){
+                            li:nth-child(4){
+                                flex-direction: column;
+                                a {
+                                    margin-bottom: 0.5rem;
+                                }
+                                button {
+                                    margin-top: 0.5rem;
+                                }
+                            }
+                        }
+                    }
                 }
                 @media screen and (max-width: 570px) {
                     width: 85vw;
@@ -604,6 +617,19 @@ const modal = styled.div`
                                 }
                                 button {
                                     margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                    @media screen and (max-width: 460px) {
+                        ul:nth-child(2){
+                            li:nth-child(4){
+                                flex-direction: column;
+                                a {
+                                    margin-bottom: 0.5rem;
+                                }
+                                button {
+                                    margin-top: 0.5rem;
                                 }
                             }
                         }
@@ -715,6 +741,19 @@ const modal = styled.div`
                             }
                         }
                     }
+                    @media screen and (max-width: 460px) {
+                        ul:nth-child(2){
+                            li:nth-child(4){
+                                flex-direction: column;
+                                a {
+                                    margin-bottom: 0.5rem;
+                                }
+                                button {
+                                    margin-top: 0.5rem;
+                                }
+                            }
+                        }
+                    }
                 }
                 @media screen and (max-width: 570px) {
                     width: 85vw;
@@ -812,6 +851,19 @@ const modal = styled.div`
                                 }
                                 button {
                                     margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                    @media screen and (max-width: 460px) {
+                        ul:nth-child(2){
+                            li:nth-child(4){
+                                flex-direction: column;
+                                a {
+                                    margin-bottom: 0.5rem;
+                                }
+                                button {
+                                    margin-top: 0.5rem;
                                 }
                             }
                         }

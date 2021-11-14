@@ -84,6 +84,8 @@ const ul = styled.ul`
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
+            background: #fff;
+            padding: 1rem 0;
             p {
                 font-size: 1.2rem;
             }
